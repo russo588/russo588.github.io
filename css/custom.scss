@@ -4,11 +4,11 @@ body { padding-top: 150px; }
   max-width: 300px;
 }
 
-nav{
-  position: fixed;
-  ul{
-    li{
-
-    }
+@media (min-width: 768px){
+  .navbar-nav{
+    margin: 0 auto !important;
+    display: table !important;
+    table-layout: fixed !important;
+    float:none !important;
   }
 }

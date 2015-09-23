@@ -4,7 +4,11 @@ body {
 #profilepic {
   max-width: 300px; }
 
-nav {
-  position: fixed; }
+@media (min-width: 768px) {
+  .navbar-nav {
+    margin: 0 auto !important;
+    display: table !important;
+    table-layout: fixed !important;
+    float: none !important; } }
 
 /*# sourceMappingURL=custom.css.map */
