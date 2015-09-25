@@ -22,7 +22,13 @@ nav {
     margin: 0 auto !important;
     display: table !important;
     table-layout: fixed !important;
-    float: none !important; } }
+    float: none !important;
+    width: 720px !important;
+    margin-left: auto;
+    margin-right: auto; }
+    .navbar-nav li:nth-child(1), .navbar-nav li:nth-child(2), .navbar-nav li:nth-child(4), .navbar-nav li:nth-child(5) {
+      text-align: center;
+      width: calc((100% - 50px)/4); } }
 main {
   height: 100%; }
   main section {
@@ -49,7 +55,7 @@ html, body {
 /* Small Devices, Tablets */
 @media only screen and (min-width: 768px) {
   #brand_icon {
-    visibility: hidden; }
+    display: none; }
 
   main {
     padding-top: 70px; } }
