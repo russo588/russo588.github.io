@@ -1,8 +1,31 @@
-body { padding-top: 150px; }
+@mixin font-size($sizeValue: 1.6) {
+  font-size: ($sizeValue * 10) + px;
+  font-size: $sizeValue + rem;
+}
+
+body {
+  height: 100%;
+  section{
+    font-family: 'Open Sans', sans-serif;
+  }
+
+  h1 {
+    font-family: 'Roboto', cursive !important;
+    font-weight: 300 !important;
+    font-style: italic;
+    @include font-size(6)
+  }
+}
+
+nav{
+  font-family: 'Poiret', cursive;
+  @include font-size(2)
+}
 
 #profilepic{
   max-width: 300px;
 }
+
 
 @media (min-width: 768px){
   .navbar-nav{
@@ -11,4 +34,52 @@ body { padding-top: 150px; }
     table-layout: fixed !important;
     float:none !important;
   }
+}
+
+main{
+  height: 100%;
+  section{
+    background-color: #ffffff;
+    padding-top: 15px;
+  }
+}
+
+html, body {
+  height: 100%;
+}
+.block {
+  display: table-row;
+  height: 1px;
+}
+.push {
+  height: auto;
+}
+
+
+@media only screen and (min-width : 320px) {
+  main{
+    padding-top: 50px;
+  }
+}
+
+/* Extra Small Devices, Phones */
+@media only screen and (min-width : 480px) {
+
+}
+
+/* Small Devices, Tablets */
+@media only screen and (min-width : 768px) {
+  main{
+    padding-top: 70px;
+  }
+}
+
+/* Medium Devices, Desktops */
+@media only screen and (min-width : 992px) {
+
+}
+
+/* Large Devices, Wide Screens */
+@media only screen and (min-width : 1200px) {
+
 }

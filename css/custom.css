@@ -1,5 +1,18 @@
 body {
-  padding-top: 150px; }
+  height: 100%; }
+  body section {
+    font-family: 'Open Sans', sans-serif; }
+  body h1 {
+    font-family: 'Roboto', cursive !important;
+    font-weight: 300 !important;
+    font-style: italic;
+    font-size: 60px;
+    font-size: 6rem; }
+
+nav {
+  font-family: 'Poiret', cursive;
+  font-size: 20px;
+  font-size: 2rem; }
 
 #profilepic {
   max-width: 300px; }
@@ -10,5 +23,31 @@ body {
     display: table !important;
     table-layout: fixed !important;
     float: none !important; } }
+main {
+  height: 100%; }
+  main section {
+    background-color: #ffffff;
+    padding-top: 15px; }
+
+html, body {
+  height: 100%; }
+
+.block {
+  display: table-row;
+  height: 1px; }
+
+.push {
+  height: auto; }
+
+@media only screen and (min-width: 320px) {
+  main {
+    padding-top: 50px; } }
+/* Extra Small Devices, Phones */
+/* Small Devices, Tablets */
+@media only screen and (min-width: 768px) {
+  main {
+    padding-top: 70px; } }
+/* Medium Devices, Desktops */
+/* Large Devices, Wide Screens */
 
 /*# sourceMappingURL=custom.css.map */

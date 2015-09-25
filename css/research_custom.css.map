@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAAA,IAAI;EACF,gBAAgB,EAAE,4BAA4B",
+"sources": ["research_custom.scss"],
+"names": [],
+"file": "research_custom.css"
+}
