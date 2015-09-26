@@ -18,7 +18,9 @@ body {
 }
 
 nav{
-  font-family: 'Poiret', cursive;
+  font-family: 'Lato', sans-serif !important;
+  font-weight: 300 !important;
+  font-style: italic;
     @include font-size(2.2);
 }
 
