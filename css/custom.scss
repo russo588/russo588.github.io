@@ -22,6 +22,14 @@ nav{
   font-weight: 300 !important;
   font-style: italic;
     @include font-size(2.2);
+  .container{
+    padding: 0;
+  }
+  #icon{
+    a{
+      padding: 0 !important;
+    }
+  }
 }
 
 #profilepic{
@@ -29,15 +37,11 @@ nav{
 }
 
 
-@media (min-width: 768px){
-
-}
-
 main{
   height: 100%;
   section{
     background-color: #ffffff;
-    padding: 30px !important;
+    padding: 15px !important;
   }
 }
 
@@ -67,6 +71,12 @@ html, body {
 @media only screen and (max-width: 768px) {
   #icon{
     display: none;
+  }
+  nav{
+    .container{
+      padding-left: 15px;
+      padding-right: 15px;
+    }
   }
 }
 /* Small Devices, Tablets */
