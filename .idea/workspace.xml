@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5caa3b05-c4da-4fb5-833e-2d907ff98aae" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/teaching.html" afterPath="$PROJECT_DIR$/teaching.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/research.html" afterPath="$PROJECT_DIR$/research.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="russo588.github.io.iws" />
@@ -29,30 +29,54 @@
       <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-5.2083335">
-              <caret line="18" column="0" selection-start-line="17" selection-start-column="4" selection-end-line="18" selection-end-column="0" />
+            <state vertical-scroll-proportion="-1.25">
+              <caret line="2" column="6" selection-start-line="2" selection-start-column="6" selection-end-line="2" selection-end-column="6" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="research.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="custom.scss" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/css/custom.scss">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-12.5">
+              <caret line="20" column="27" selection-start-line="20" selection-start-column="27" selection-end-line="20" selection-end-column="27" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="research.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/research.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-8.125">
-              <caret line="18" column="0" selection-start-line="17" selection-start-column="4" selection-end-line="18" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.5629139">
+              <caret line="63" column="95" selection-start-line="63" selection-start-column="95" selection-end-line="63" selection-end-column="95" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="cv.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="cv.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/cv.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0992647">
+            <state vertical-scroll-proportion="-3.375">
               <caret line="14" column="54" selection-start-line="14" selection-start-column="54" selection-end-line="14" selection-end-column="54" />
               <folding />
             </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="gplaypattern.png" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/img/gplaypattern.png">
+          <provider selected="true" editor-type-id="images">
+            <state />
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="random_grey_variations.png" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/img/random_grey_variations.png">
+          <provider selected="true" editor-type-id="images">
+            <state />
           </provider>
         </entry>
       </file>
@@ -106,9 +130,9 @@
         <option value="$PROJECT_DIR$/css/teaching_custom.scss" />
         <option value="$PROJECT_DIR$/css/cv_custom.scss" />
         <option value="$PROJECT_DIR$/cv.html" />
-        <option value="$PROJECT_DIR$/research.html" />
         <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/teaching.html" />
+        <option value="$PROJECT_DIR$/research.html" />
       </list>
     </option>
   </component>
@@ -578,12 +602,12 @@
       <updated>1441475733128</updated>
       <workItem from="1441475744123" duration="761000" />
       <workItem from="1443042887887" duration="5090000" />
-      <workItem from="1443198060393" duration="10622000" />
+      <workItem from="1443198060393" duration="11336000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="16473000" />
+    <option name="totallyTimeSpent" value="17187000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -738,11 +762,6 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/img/gplaypattern.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/css/index_custom.scss">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.05382775">
@@ -754,14 +773,6 @@
     <entry file="file://$PROJECT_DIR$/img/icon.png">
       <provider selected="true" editor-type-id="images">
         <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/css/custom.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-21.25">
-          <caret line="35" column="16" selection-start-line="35" selection-start-column="16" selection-end-line="35" selection-end-column="16" />
-          <folding />
-        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/css/research_custom.scss">
@@ -788,22 +799,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-5.2083335">
-          <caret line="18" column="0" selection-start-line="17" selection-start-column="4" selection-end-line="18" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/research.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-8.125">
-          <caret line="18" column="0" selection-start-line="17" selection-start-column="4" selection-end-line="18" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/teaching.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-11.25">
@@ -814,8 +809,42 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/cv.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0992647">
+        <state vertical-scroll-proportion="-3.375">
           <caret line="14" column="54" selection-start-line="14" selection-start-column="54" selection-end-line="14" selection-end-column="54" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/img/gplaypattern.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/img/random_grey_variations.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-1.25">
+          <caret line="2" column="6" selection-start-line="2" selection-start-column="6" selection-end-line="2" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/custom.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-12.5">
+          <caret line="20" column="27" selection-start-line="20" selection-start-column="27" selection-end-line="20" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/research.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5629139">
+          <caret line="63" column="95" selection-start-line="63" selection-start-column="95" selection-end-line="63" selection-end-column="95" />
           <folding />
         </state>
       </provider>
