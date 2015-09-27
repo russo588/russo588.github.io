@@ -1,3 +1,155 @@
+$logo-color: #0c093b;
+$active-border: 2px;
+
 body{
   background-image: url(../img/old_mathematics.png);
+}
+
+main {
+  h2{
+    color: $logo-color;
+    margin-bottom: 0 !important;
+    margin-top: 0 !important;
+  }
+  article {
+    padding-left: 30px;
+    ul {
+      padding-left: 0;
+      list-style: none;
+      li:before {
+        content: "\00BB \0020";
+      }
+    }
+    .links{
+      padding-left: 30px;
+    }
+  }
+  &#teaching {
+    > section {
+      padding-left: 0 !important;
+      padding-right: 0 !important;
+      padding-top: 0 !important;
+      #teaching-body {
+        padding-left: 0 !important;
+      }
+      nav {
+        padding-right: 0 !important;
+      }
+      span {
+        margin-top: -50px; /* Size of fixed header */
+        padding-bottom: 50px;
+        display: block;
+      }
+      background-color: transparent !important;
+      section {
+        background-color: white;
+      }
+    }
+  }
+  .affix {
+    top: 70px;
+    float: right;
+    margin-left: -15px;
+    background-color: white;
+    padding-left: 15px;
+  }
+  #nav{
+    background-color: white;
+  }
+  nav div {
+    * {
+      color: $logo-color;
+      &:hover, &.active {
+        background-color: white !important;
+      }
+    }
+    > ul > .active > a {
+      border-left: $active-border solid $logo-color;
+      padding-left: calc(15px - #{$active-border});
+    }
+    ul {
+      list-style: none;
+    }
+    > ul {
+      .nav{
+        margin-bottom: 15px !important;
+      }
+      > li.active {
+        > ul {
+        }
+      }
+      > li {
+        ul {
+          display: block;
+          font-size: small;
+          font-weight: 300;
+          a {
+            margin-left: 20px;
+
+            padding-top: 2px !important;
+            padding-bottom: 2px !important;
+          }
+          li.active {
+            border-left: $active-border solid $logo-color;
+            a {
+              padding-left: calc(15px - #{$active-border});
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (min-width : 320px) {
+  main{
+    padding-top: 50px;
+  }
+}
+
+/* Extra Small Devices, Phones */
+@media only screen and (min-width : 480px) {
+
+}
+
+@media only screen and (max-width: 768px) {
+  #icon{
+    display: none;
+  }
+  nav{
+    .container{
+      padding-left: 15px;
+      padding-right: 15px;
+    }
+  }
+  #teaching-body{
+    padding-right: 0 !important;
+  }
+}
+/* Small Devices, Tablets */
+@media only screen and (min-width : 768px) {
+  #brand_icon{
+    display: none
+  }
+
+  main{
+    padding-top: 70px;
+  }
+  .affix{
+    width: 187.5px;
+  }
+}
+
+/* Medium Devices, Desktops */
+@media only screen and (min-width : 992px) {
+  .affix{
+    width: 242.5px;
+  }
+}
+
+/* Large Devices, Wide Screens */
+@media only screen and (min-width : 1200px) {
+  .affix{
+    width: 292.5px;
+  }
 }

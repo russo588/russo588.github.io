@@ -2,12 +2,16 @@ body {
   height: 100%; }
   body section {
     font-family: 'Lato', sans-serif; }
-  body h1 {
+  body h1, body h2, body h3, body h4, body h5, body h6 {
     font-family: 'Lato', sans-serif !important;
     font-weight: 300 !important;
-    font-style: italic;
+    font-style: italic; }
+  body h1 {
     font-size: 70px;
     font-size: 7rem; }
+  body h2 {
+    font-size: 50px;
+    font-size: 5rem; }
 
 nav {
   font-family: 'Lato', sans-serif !important;
@@ -26,8 +30,8 @@ nav {
 main {
   height: 100%; }
   main section {
-    background-color: #ffffff;
-    padding: 15px; }
+    background-color: #ffffff !important;
+    padding: 15px !important; }
 
 html, body {
   height: 100%; }
@@ -49,7 +53,10 @@ html, body {
 
   nav .container {
     padding-left: 15px;
-    padding-right: 15px; } }
+    padding-right: 15px; }
+
+  #teaching-body {
+    padding-right: 0 !important; } }
 /* Small Devices, Tablets */
 @media only screen and (min-width: 768px) {
   #brand_icon {

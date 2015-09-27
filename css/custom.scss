@@ -9,11 +9,16 @@ body {
     font-family: 'Lato', sans-serif;
   }
 
-  h1 {
+  h1,h2,h3,h4,h5,h6 {
     font-family: 'Lato', sans-serif !important;
     font-weight: 300 !important;
     font-style: italic;
-    @include font-size(7)
+  }
+  h1{
+    @include font-size(7);
+  }
+  h2{
+    @include font-size(5);
   }
 }
 
@@ -40,10 +45,11 @@ nav{
 main{
   height: 100%;
   section{
-    background-color: #ffffff;
+    background-color: #ffffff !important;
     padding: 15px !important;
   }
 }
+
 
 html, body {
   height: 100%;
@@ -55,7 +61,6 @@ html, body {
 .push {
   height: auto;
 }
-
 
 @media only screen and (min-width : 320px) {
   main{
@@ -78,6 +83,9 @@ html, body {
       padding-right: 15px;
     }
   }
+  #teaching-body{
+      padding-right: 0 !important;
+  }
 }
 /* Small Devices, Tablets */
 @media only screen and (min-width : 768px) {
@@ -97,5 +105,4 @@ html, body {
 
 /* Large Devices, Wide Screens */
 @media only screen and (min-width : 1200px) {
-
 }
