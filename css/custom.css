@@ -7,11 +7,11 @@ body {
     font-weight: 300 !important;
     font-style: italic; }
   body h1 {
-    font-size: 70px;
-    font-size: 7rem; }
+    font-size: 68px;
+    font-size: 6.8rem; }
   body h2 {
-    font-size: 50px;
-    font-size: 5rem; }
+    font-size: 46px;
+    font-size: 4.6rem; }
 
 nav {
   font-family: 'Lato', sans-serif !important;
@@ -43,6 +43,9 @@ html, body {
 .push {
   height: auto; }
 
+.text-xs-right {
+  text-align: right; }
+
 @media only screen and (min-width: 320px) {
   main {
     padding-top: 50px; } }
@@ -59,12 +62,21 @@ html, body {
     padding-right: 0 !important; } }
 /* Small Devices, Tablets */
 @media only screen and (min-width: 768px) {
+  .text-sm-right {
+    text-align: right; }
+
   #brand_icon {
     display: none; }
 
   main {
     padding-top: 70px; } }
 /* Medium Devices, Desktops */
+@media only screen and (min-width: 992px) {
+  .text-md-right {
+    text-align: right; } }
 /* Large Devices, Wide Screens */
+@media only screen and (min-width: 1200px) {
+  .text-lg-right {
+    text-align: right; } }
 
 /*# sourceMappingURL=custom.css.map */

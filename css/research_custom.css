@@ -1,4 +1,10 @@
 body {
   background-image: url(../img/gplaypattern.png); }
 
+#publications article h3 {
+  margin-top: 6px;
+  margin-bottom: 4px; }
+  #publications article h3:last-of-type {
+    margin-bottom: 15px; }
+
 /*# sourceMappingURL=research_custom.css.map */

@@ -1,6 +1,6 @@
 {
 "version": 3,
-"mappings": "AAAA,IAAI;EACF,gBAAgB,EAAE,4BAA4B",
+"mappings": "AAAA,IAAI;EACF,gBAAgB,EAAE,4BAA4B;;AAK5C,wBAAE;EACA,UAAU,EAAE,GAAG;EACf,aAAa,EAAE,GAAG;EAClB,qCAAc;IACZ,aAAa,EAAE,IAAI",
 "sources": ["research_custom.scss"],
 "names": [],
 "file": "research_custom.css"
