@@ -25,7 +25,7 @@ nav {
     padding: 0 !important; }
 
 #profilepic {
-  max-width: 300px; }
+  max-width: 100%; }
 
 main {
   height: 100%; }
