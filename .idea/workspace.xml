@@ -1,39 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5caa3b05-c4da-4fb5-833e-2d907ff98aae" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/img/agsquare.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/img/agsquare_@2X.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/img/cream_pixels.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/img/cream_pixels_@2X.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/img/icon.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/img/icon_sm.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/img/noisy_grid.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/img/noisy_grid_@2X.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/img/old_mathematics.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/img/old_mathematics_@2X.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/img/profilepic.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/img/project_papper.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/img/project_papper_@2X.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/img/random_grey_variations.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/img/random_grey_variations_@2X.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/img/strange_bullseyes.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/img/strange_bullseyes_@2X.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/img/tiny_grid.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/img/tiny_grid_@2X.png" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/index_custom.css.map" afterPath="$PROJECT_DIR$/css/index_custom.css.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/index_custom.css" afterPath="$PROJECT_DIR$/css/index_custom.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/index_custom.scss" afterPath="$PROJECT_DIR$/css/index_custom.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/research.html" afterPath="$PROJECT_DIR$/research.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/research_custom.css.map" afterPath="$PROJECT_DIR$/css/research_custom.css.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/research_custom.scss" afterPath="$PROJECT_DIR$/css/research_custom.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/teaching.html" afterPath="$PROJECT_DIR$/teaching.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/teaching_custom.css.map" afterPath="$PROJECT_DIR$/css/teaching_custom.css.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/teaching_custom.css" afterPath="$PROJECT_DIR$/css/teaching_custom.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/teaching_custom.scss" afterPath="$PROJECT_DIR$/css/teaching_custom.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-    </list>
+    <list default="true" id="5caa3b05-c4da-4fb5-833e-2d907ff98aae" name="Default" comment="" />
     <ignored path="russo588.github.io.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path="$PROJECT_DIR$/out/" />
@@ -525,12 +493,12 @@
       <workItem from="1443235233704" duration="8392000" />
       <workItem from="1443375964990" duration="9246000" />
       <workItem from="1443630736450" duration="3559000" />
-      <workItem from="1444019870327" duration="4164000" />
+      <workItem from="1444019870327" duration="4229000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="43495000" />
+    <option name="totallyTimeSpent" value="43560000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
