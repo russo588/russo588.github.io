@@ -1,5 +1,5 @@
 body {
-  background-image: url(../img/old_mathematics.png); }
+  background-image: url(../img/gplaypattern.png); }
 
 main h2 {
   color: #0c093b;
@@ -14,6 +14,12 @@ main article {
       content: "\00BB \0020"; }
   main article .links {
     padding-left: 30px; }
+main #past-courses h1:first-of-type {
+  margin-top: 70px; }
+main #office-hours {
+  padding-left: 30px; }
+  main #office-hours ul {
+    list-style: none; }
 main#teaching > section {
   padding-left: 0 !important;
   padding-right: 0 !important;

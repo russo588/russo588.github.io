@@ -1,6 +1,6 @@
 {
 "version": 3,
-"mappings": "AAAA,IAAI;EACF,gBAAgB,EAAE,4BAA4B;;AAK5C,wBAAE;EACA,UAAU,EAAE,GAAG;EACf,aAAa,EAAE,CAAC;EAChB,qCAAc;IACZ,aAAa,EAAE,IAAI;EAErB,sCAAe;IACb,UAAU,EAAE,IAAI",
+"mappings": "AAAA,IAAI;EACD,gBAAgB,EAAE,4BAA4B;;AAK7C,wBAAE;EACA,UAAU,EAAE,GAAG;EACf,aAAa,EAAE,CAAC;EAChB,qCAAc;IACZ,aAAa,EAAE,IAAI;EAErB,sCAAe;IACb,UAAU,EAAE,IAAI",
 "sources": ["research_custom.scss"],
 "names": [],
 "file": "research_custom.css"

@@ -2,7 +2,7 @@ $logo-color: #0c093b;
 $active-border: 2px;
 
 body{
-  background-image: url(../img/old_mathematics.png);
+  background-image: url(../img/gplaypattern.png);
 }
 
 main {
@@ -22,6 +22,17 @@ main {
     }
     .links{
       padding-left: 30px;
+    }
+  }
+  #past-courses{
+    h1:first-of-type{
+      margin-top: 70px;
+    }
+  }
+  #office-hours{
+    padding-left: 30px;
+    ul{
+      list-style: none;
     }
   }
   &#teaching {
