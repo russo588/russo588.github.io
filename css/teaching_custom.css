@@ -29,11 +29,6 @@ main#teaching > section {
     padding-left: 0 !important; }
   main#teaching > section nav {
     padding-right: 0 !important; }
-  main#teaching > section span {
-    margin-top: -50px;
-    /* Size of fixed header */
-    padding-bottom: 50px;
-    display: block; }
   main#teaching > section section {
     background-color: white; }
 main .affix {
