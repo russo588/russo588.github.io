@@ -10,25 +10,30 @@
 <!-- REDIRECTING STARTS -->
 <link rel="canonical" href="http://benrussomath.com/teaching.html#math2710"/>
 <noscript>
-	<meta http-equiv="refresh" content="0;URL=http://benrussomath.com/teaching.html#math2710">
+	<meta http-equiv="refresh" content="5;URL=http://benrussomath.com/teaching.html#math2710">
 </noscript>
 <!--[if lt IE 9]><script type="text/javascript">var IE_fix=true;</script><![endif]-->
 <script type="text/javascript">
 	var url = "http://benrussomath.com/teaching.html#math2710";
-	if(typeof IE_fix != "undefined") // IE8 and lower fix to pass the http referer
+	var delay = "5000";
+	window.onload = function ()
 	{
-		document.write("redirecting..."); // Don't remove this line or appendChild() will fail because it is called before document.onload to make the redirect as fast as possible. Nobody will see this text, it is only a tech fix.
-		var referLink = document.createElement("a");
-		referLink.href = url;
-		document.body.appendChild(referLink);
-		referLink.click();
+		setTimeout(GoToURL, delay);
 	}
-	else { window.location.replace(url); } // All other browsers
+	function GoToURL()
+	{
+		if(typeof IE_fix != "undefined") // IE8 and lower fix to pass the http referer
+		{
+			var referLink = document.createElement("a");
+			referLink.href = url;
+			document.body.appendChild(referLink);
+			referLink.click();
+		}
+		else { window.location.replace(url); } // All other browsers
+	}
 </script>
 <!-- Credit goes to http://insider.zone/ -->
 <!-- REDIRECTING ENDS -->
-    <meta charset="utf-8">
-    <title>Ben Russo</title>
 </head>
 <body> 
 Hello   
