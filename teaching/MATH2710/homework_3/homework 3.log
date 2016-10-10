@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  3 OCT 2016 16:33
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  10 OCT 2016 10:02
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -284,6 +284,11 @@ Underfull \hbox (badness 10000) in paragraph at lines 59--61
  []
 
 
+Underfull \hbox (badness 10000) in paragraph at lines 74--77
+
+ []
+
+
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 27.05003pt.
  We now make it that large for the rest of the document.
@@ -294,24 +299,25 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
 ]
 (./homework 3.aux) ) 
 Here is how much of TeX's memory you used:
- 3097 strings out of 493089
- 39932 string characters out of 6134842
- 119492 words of memory out of 5000000
- 6557 multiletter control sequences out of 15000+600000
- 8285 words of font info for 32 fonts, out of 8000000 for 9000
+ 3099 strings out of 493089
+ 39953 string characters out of 6134842
+ 120492 words of memory out of 5000000
+ 6558 multiletter control sequences out of 15000+600000
+ 8592 words of font info for 33 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  35i,10n,43p,1015b,210s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsf
-onts/cm/cmmi12.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfo
-nts/cm/cmmi8.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfont
-s/cm/cmr12.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/
-cm/cmr8.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/
-cmsy10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/symb
-ols/msbm10.pfb>
-Output written on "homework 3.pdf" (1 page, 57501 bytes).
+onts/cm/cmbx12.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfo
+nts/cm/cmmi12.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfon
+ts/cm/cmmi8.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts
+/cm/cmr12.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/c
+m/cmr8.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/c
+msy10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/symbo
+ls/msbm10.pfb>
+Output written on "homework 3.pdf" (1 page, 70766 bytes).
 PDF statistics:
- 32 PDF objects out of 1000 (max. 8388607)
- 22 compressed objects within 1 object stream
+ 36 PDF objects out of 1000 (max. 8388607)
+ 25 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
