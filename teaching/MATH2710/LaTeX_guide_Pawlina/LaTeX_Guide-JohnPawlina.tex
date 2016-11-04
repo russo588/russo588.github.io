@@ -1,0 +1,1382 @@
+%--------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%						Settings
+%--------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%-----------------------------------------------------------------------------
+%						General (Borrowed from Keith Conrad)
+%-----------------------------------------------------------------------------
+
+\documentclass[10pt]{article}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{array}
+\usepackage[all]{xy}
+\usepackage{fancyhdr}
+\usepackage{euscript}
+\usepackage{graphics}
+\usepackage{cancel}
+\usepackage{fancybox}
+
+\usepackage{pstricks}
+\usepackage{pst-plot}
+
+\usepackage{setspace}
+\onehalfspacing
+
+\setlength{\oddsidemargin}{.5in}
+\setlength{\evensidemargin}{.5in}
+\setlength{\textwidth}{6.in}
+\setlength{\topmargin}{0in}
+\setlength{\headsep}{.20in}
+\setlength{\textheight}{8.5in}
+
+\pdfpagewidth 8.5in
+ \pdfpageheight 11in
+
+%General
+\newcommand{\FF}{\mathbf F}
+\newcommand{\ZZ}{\mathbf Z}
+\newcommand{\RR}{\mathbf R}
+\newcommand{\QQ}{\mathbf Q}
+\newcommand{\CC}{\mathbf C}
+\newcommand{\NN}{\mathbf N}
+\newcommand{\Zn}[1]{\mathbf{Z}/#1\mathbf{Z}}
+\newcommand{\Znx}[1]{(\mathbf{Z}/#1\mathbf{Z})^\times}
+\newcommand{\X}{\times} 
+\newcommand{\set}[2]{\left\{#1 : #2\right\}}          
+\newcommand{\sett}[1]{\left\{#1\right\}}                
+\newcommand{\nonempty}{\neq\varnothing}
+\newcommand{\ds}{\displaystyle}
+\newcommand{\abs}[1]{\left| {#1} \right|}
+\newcommand{\qedbox}{\rule{2mm}{2mm}}
+\renewcommand{\qedsymbol}{\qedbox}											
+\newcommand{\aand}{\qquad\hbox{and}\qquad}
+\newcommand{\e}{\varepsilon}
+\newcommand{\tto}{\rightrightarrows}
+\newcommand{\gs}{\geqslant}
+\newcommand{\ls}{\leqslant}
+\renewcommand{\tilde}{\widetilde}
+\renewcommand{\hat}{\widehat}
+\newcommand{\norm}[1]{\left\| #1 \right\|}
+\newcommand{\md}[3]{#1\equiv#2\;(\mathrm{mod}\;#3)}     
+\newcommand{\gen}[1]{\left\langle #1 \right\rangle}
+\renewcommand{\Re}{\operatorname{Re}}
+\renewcommand{\Im}{\operatorname{Im}}
+\newcommand{\zero}{\boldsymbol{0}}
+
+\newcommand{\be}[1]{\textbf{\emph{#1}}}
+\newcommand{\hhat}[1]{\hat{\! \hat{#1}}}
+
+\newcommand{\fto}[1]{\xrightarrow{\hspace{4pt} #1 \hspace{4pt}}}
+\newcommand{\flto}[1]{\xrightarrow{\quad #1 \quad}}
+
+\newcommand{\dist}{\operatorname{dist}}
+\newcommand{\esssup}{\operatorname{ess\:sup}}
+\newcommand{\id}{\operatorname{id}}
+\newcommand{\card}{\operatorname{card}}
+
+\newcommand{\dmu}{\:\mathrm{d}\mu}
+\newcommand{\dm}{\:\mathrm{d}m}
+\newcommand{\dx}{\:\mathrm{d}x}
+\newcommand{\dt}{\:\mathrm{d}t}
+\newcommand{\dz}{\:\mathrm{d}z}
+\newcommand{\dtheta}{\:\mathrm{d}\theta}
+\newcommand{\dw}{\:\mathrm{d}w}
+
+%Algebra
+\newcommand{\End}{\operatorname {End}}
+\newcommand{\Skew}{\operatorname {Skew}}
+\newcommand{\Sym}{\operatorname {Sym}}
+\newcommand{\Stab}{\operatorname {Stab}}
+\newcommand{\M}{\operatorname{M}}
+\newcommand{\GL}{\operatorname{GL}}
+\newcommand{\PGL}{\operatorname{PGL}}
+\newcommand{\SL}{\operatorname{SL}}
+\newcommand{\PSL}{\operatorname{PSL}}
+\newcommand{\Heis}{\operatorname{Heis}}
+\newcommand{\Aff}{\operatorname{Aff}}
+\newcommand{\Aut}{\operatorname{Aut}}
+\newcommand{\image}{\operatorname{im}}
+\newcommand{\Syl}[2]{\operatorname{\emph{Syl}}_{#1}\left(#2\right)}
+\newcommand{\Hom}{\operatorname{Hom}}
+\newcommand{\Tor}{\operatorname{Tor}}
+\newcommand{\Gal}{\operatorname{Gal}}
+\newcommand{\ch}{\operatorname{ch}}
+\newcommand{\rad}{\operatorname{rad}}
+\newcommand{\iso}{\cong}
+\newcommand{\normal}{\unlhd}
+\newcommand{\semi}{\rtimes}
+\newcommand{\Nm}{\operatorname {N}}
+\newcommand{\Tr}{\operatorname {Tr}}
+\newcommand{\disc}{\operatorname {disc}}
+\newcommand{\Pol}{\operatorname{Pol}}
+
+%Euler Script Characters
+\newcommand{\esa}{\EuScript{A}}
+\newcommand{\esb}{\EuScript{B}}
+\newcommand{\esc}{\EuScript{C}}
+\newcommand{\esd}{\EuScript{D}}
+\newcommand{\ese}{\EuScript{E}}
+\newcommand{\esf}{\EuScript{F}}
+\newcommand{\esg}{\EuScript{G}}
+\newcommand{\esh}{\EuScript{H}}
+\newcommand{\esi}{\EuScript{I}}
+\newcommand{\esj}{\EuScript{J}}
+\newcommand{\esk}{\EuScript{K}}
+\newcommand{\esl}{\EuScript{L}}
+\newcommand{\esm}{\EuScript{M}}
+\newcommand{\esn}{\EuScript{N}}
+\newcommand{\eso}{\EuScript{O}}
+\newcommand{\esp}{\EuScript{P}}
+\newcommand{\esq}{\EuScript{Q}}
+\newcommand{\esr}{\EuScript{R}}
+\newcommand{\ess}{\EuScript{S}}
+\newcommand{\est}{\EuScript{T}}
+\newcommand{\esu}{\EuScript{U}}
+\newcommand{\esv}{\EuScript{V}}
+\newcommand{\esw}{\EuScript{W}}
+\newcommand{\esx}{\EuScript{X}}
+\newcommand{\esy}{\EuScript{Y}}
+\newcommand{\esz}{\EuScript{Z}}
+
+%Calligraphic Characters
+\newcommand{\cala}{\mathcal{A}}
+\newcommand{\calb}{\mathcal{B}}
+\newcommand{\calc}{\mathcal{C}}
+\newcommand{\cald}{\mathcal{D}}
+\newcommand{\cale}{\mathcal{E}}
+\newcommand{\calf}{\mathcal{F}}
+\newcommand{\calg}{\mathcal{G}}
+\newcommand{\calh}{\mathcal{H}}
+\newcommand{\cali}{\mathcal{I}}
+\newcommand{\calj}{\mathcal{J}}
+\newcommand{\calk}{\mathcal{K}}
+\newcommand{\call}{\mathcal{L}}
+\newcommand{\calm}{\mathcal{M}}
+\newcommand{\caln}{\mathcal{N}}
+\newcommand{\calo}{\mathcal{O}}
+\newcommand{\calp}{\mathcal{P}}
+\newcommand{\calq}{\mathcal{Q}}
+\newcommand{\calr}{\mathcal{R}}
+\newcommand{\cals}{\mathcal{S}}
+\newcommand{\calt}{\mathcal{T}}
+\newcommand{\calu}{\mathcal{U}}
+\newcommand{\calv}{\mathcal{V}}
+\newcommand{\calw}{\mathcal{W}}
+\newcommand{\calx}{\mathcal{X}}
+\newcommand{\caly}{\mathcal{Y}}
+\newcommand{\calz}{\mathcal{Z}}
+
+%Gothic Characters
+\newcommand{\fraka}{\mathfrak{a}}
+\newcommand{\frakb}{\mathfrak{b}}
+\newcommand{\frakc}{\mathfrak{c}}
+\newcommand{\frakd}{\mathfrak{d}}
+\newcommand{\frake}{\mathfrak{e}}
+\newcommand{\frakf}{\mathfrak{f}}
+\newcommand{\frakg}{\mathfrak{g}}
+\newcommand{\frakh}{\mathfrak{h}}
+\newcommand{\fraki}{\mathfrak{i}}
+\newcommand{\frakj}{\mathfrak{j}}
+\newcommand{\frakk}{\mathfrak{k}}
+\newcommand{\frakl}{\mathfrak{l}}
+\newcommand{\frakm}{\mathfrak{m}}
+\newcommand{\frakn}{\mathfrak{n}}
+\newcommand{\frako}{\mathfrak{o}}
+\newcommand{\frakp}{\mathfrak{p}}
+\newcommand{\frakq}{\mathfrak{q}}
+\newcommand{\frakr}{\mathfrak{r}}
+\newcommand{\fraks}{\mathfrak{s}}
+\newcommand{\frakt}{\mathfrak{t}}
+\newcommand{\fraku}{\mathfrak{u}}
+\newcommand{\frakv}{\mathfrak{v}}
+\newcommand{\frakw}{\mathfrak{w}}
+\newcommand{\frakx}{\mathfrak{x}}
+\newcommand{\fraky}{\mathfrak{y}}
+\newcommand{\frakz}{\mathfrak{z}}
+
+\newcommand{\frakA}{\mathfrak{A}}
+\newcommand{\frakB}{\mathfrak{B}}
+\newcommand{\frakC}{\mathfrak{C}}
+\newcommand{\frakD}{\mathfrak{D}}
+\newcommand{\frakE}{\mathfrak{E}}
+\newcommand{\frakF}{\mathfrak{F}}
+\newcommand{\frakG}{\mathfrak{G}}
+\newcommand{\frakH}{\mathfrak{H}}
+\newcommand{\frakI}{\mathfrak{I}}
+\newcommand{\frakJ}{\mathfrak{J}}
+\newcommand{\frakK}{\mathfrak{K}}
+\newcommand{\frakL}{\mathfrak{L}}
+\newcommand{\frakM}{\mathfrak{M}}
+\newcommand{\frakN}{\mathfrak{N}}
+\newcommand{\frakO}{\mathfrak{O}}
+\newcommand{\frakP}{\mathfrak{P}}
+\newcommand{\frakQ}{\mathfrak{Q}}
+\newcommand{\frakR}{\mathfrak{R}}
+\newcommand{\frakS}{\mathfrak{S}}
+\newcommand{\frakT}{\mathfrak{T}}
+\newcommand{\frakU}{\mathfrak{U}}
+\newcommand{\frakV}{\mathfrak{V}}
+\newcommand{\frakW}{\mathfrak{W}}
+\newcommand{\frakX}{\mathfrak{X}}
+\newcommand{\frakY}{\mathfrak{Y}}
+\newcommand{\frakZ}{\mathfrak{Z}}
+
+%Lowercase Bold Letters
+\newcommand{\bfa}{\mathbf{a}}
+\newcommand{\bfb}{\mathbf{b}}
+\newcommand{\bfc}{\mathbf{c}}
+\newcommand{\bfd}{\mathbf{d}}
+\newcommand{\bfe}{\mathbf{e}}
+\newcommand{\bff}{\mathbf{f}}
+\newcommand{\bfg}{\mathbf{g}}
+\newcommand{\bfh}{\mathbf{h}}
+\newcommand{\bfi}{\mathbf{i}}
+\newcommand{\bfj}{\mathbf{j}}
+\newcommand{\bfk}{\mathbf{k}}
+\newcommand{\bfl}{\mathbf{l}}
+\newcommand{\bfm}{\mathbf{m}}
+\newcommand{\bfn}{\mathbf{n}}
+\newcommand{\bfo}{\mathbf{o}}
+\newcommand{\bfp}{\mathbf{p}}
+\newcommand{\bfq}{\mathbf{q}}
+\newcommand{\bfr}{\mathbf{r}}
+\newcommand{\bfs}{\mathbf{s}}
+\newcommand{\bft}{\mathbf{t}}
+\newcommand{\bfu}{\mathbf{u}}
+\newcommand{\bfv}{\mathbf{v}}
+\newcommand{\bfw}{\mathbf{w}}
+\newcommand{\bfx}{\mathbf{x}}
+\newcommand{\bfy}{\mathbf{y}}
+\newcommand{\bfz}{\mathbf{z}}
+
+%Customized Theorem Environments
+\newtheoremstyle%
+{custom}%
+{}%                         Space above
+{}%			Space below
+{}%			Body font
+{}%                         Indent amount
+{}%                         Theorem head font
+{.}%                        Punctuation after heading
+{ }%                        Space after heading
+{\thmname{}%                Additional specifications for theorem head
+\thmnumber{}%
+\thmnote{\bfseries #3}}%
+
+\newtheoremstyle%
+{Theorem}%
+{}%
+{}%
+{\itshape}%
+{}%
+{}%
+{.}%
+{ }%
+{\thmname{\bfseries #1}%
+\thmnumber{\;\bfseries #2}%
+\thmnote{\;(\bfseries #3)}}%
+
+%Theorem Environments
+\theoremstyle{Theorem}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{cor}{Corollary}[section]
+\newtheorem{lemma}{Lemma}[section]
+\newtheorem{prop}{Proposition}[section]
+\newtheorem*{nonumthm}{Theorem}
+\newtheorem*{nonumprop}{Proposition}
+\newtheorem{conjecture}[theorem]{Conjecture}
+
+%These deal with definition-like environments (i.e., non-italic)
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem*{answer}{Answer}
+\newtheorem*{nonumdfn}{Definition}
+\newtheorem*{nonumex}{Example}
+\newtheorem{ex}{Example}[section]
+\newtheorem*{note}{Note}
+\newtheorem*{notation}{Notation}
+\theoremstyle{custom}
+\newtheorem*{cust}{Definition}
+
+\newcommand{\xbox}[2]{\begin{center}\fbox{\parbox{#1\linewidth}{#2}}\end{center}}
+%-----------------------------------------------------------------------------
+%						Document Specific
+%-----------------------------------------------------------------------------
+
+\usepackage{fixltx2e}
+
+\usepackage{xy}
+\usepackage{ stmaryrd }
+\usepackage{verbatim}
+\usepackage{xy}
+\usepackage{ stmaryrd }
+\usepackage{verbatim}
+
+\usepackage{xcolor}
+\definecolor{darkgreen}{RGB}{46,139,87}
+\definecolor{darkbrown}{RGB}{160,82,45}
+
+\usepackage{graphicx}
+\usepackage{caption}            %These three are used to create the various figures starting in the Itemize section
+\usepackage{subcaption}
+
+\usepackage{cite}			%For the bibliography
+
+\usepackage{hyperref}		%For hyper-links, also amazing for links within a pdf!
+
+\usepackage{tabularx}			%Makes the tables a bit nicer by adding some more space after the hline
+\setlength{\extrarowheight}{3pt} 
+
+\usepackage{tipa}			%For the textrevglotstop command in our resources example.
+
+\usepackage{xcolor}
+\definecolor{darkgreen}{RGB}{46,139,87}
+\definecolor{darkbrown}{RGB}{160,82,45}
+
+\usepackage{graphicx}
+\usepackage{caption}            %These three are used to create the various figures starting in the Itemize section
+\usepackage{subcaption}
+
+\usepackage{cite}			%For the bibliography
+
+\usepackage{hyperref}		%For hyper-links, also amazing for links within a pdf!
+
+\usepackage{tabularx}			%Makes the tables a bit nicer by adding some more space after the hline
+\setlength{\extrarowheight}{3pt} 
+
+\usepackage{mathtools}		%For the dcases* and cases* environments.
+
+\usepackage{tipa}			%For the textrevglotstop command in our resources example.
+
+%--------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%						Document
+%--------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+\begin{document}
+
+%-------------------------------------------------------------------------------
+%		Title Page, ToC
+%-------------------------------------------------------------------------------
+
+
+\thispagestyle{empty}
+
+\begin{center}
+	\Large{Introduction to \LaTeX}
+\end{center}
+\begin{center}
+	\large{John Richard Pawlina\\
+	Department of Mathematics Undergraduate\\
+	University of Connecticut, Storrs Campus\\
+	Storrs, CT 06268}
+\end{center}
+\begin{center}
+	\large{\today}
+\end{center}
+
+\vfill
+
+\begin{abstract}
+	This document aims to familiarize the reader with skills in \LaTeX\ for undergraduate writing. We begin with a general introduction to the program, with a rundown of what one can find in most \LaTeX\ distribution packages. The first main section explains how to use \LaTeX\ as a word processor, and from there we move on to basic and advanced types of math typesetting.\\
+\indent It should be noted that this article was written with the \TeX works \LaTeX\ editor, and assumes the reader is following along with the same editor. What one finds in one editor is usually exactly what he would find in another editor, but the layouts can vary. So long as the reader is aware of that, he will not have issue following along while using an editor other than \TeX works.
+\end{abstract}
+
+\vfill
+
+\newpage
+
+\tableofcontents
+
+\newpage
+
+%--------------------------------------------------------------------------------------------------------------------------------------------------------
+%		Introduction
+%--------------------------------------------------------------------------------------------------------------------------------------------------------
+
+%The first section is my own inclusion.%
+
+\section{Introduction} %Introduces my personal favorite options, and the notion of compiling/typesetting.
+	\LaTeX, pronounced ``lah-tech'' or occasionally ``lay-tech,'' is a program used often when writing mathematics. The program is, with a bit of practice, convenient for quickly typesetting proofs, problems (e.g. for a quiz), and entire articles that are filled with mathematical symbols and shorthand. It is also great for organizing one's work and quickly editing errors. (Correcting an error in a hand-written document can be painstakingly annoying, but editing a line or two of code can be much simpler.) \LaTeX\ does come with some disadvantages, but they mostly reside in the area of coding. For example, those who have done some sort of coding before may find that learning to use \LaTeX\ is very intuitive, but even the best of us can have difficulty troubleshooting compiling or typesetting errors when we do not have a fair amount of experience.\\
+	\indent In the above paragraph I mentioned \textit{typesetting}. When we use a \LaTeX\ editor, we are writing code that the editor then compiles into our document. To typeset with \TeX works, you can select the first option under the Typeset tab, press the green button on the top of the editor, or press Ctrl+t. When you have written something in \LaTeX\ you will not be done with your document until you have compiled it, and you may have to compile the document a few times to work out some errors (such as errors in counts, which we discuss in \ref{sec:Sectioning}, that the document uses). By default \TeX works compiles your code into a Portable Document Format file, or PDF, but this is not the only format you can use. Under the Typset tab at the top of the editor you may select several other file types to create. Usually we will create PDFs, so for the remainder of the article we will give instructions pertaining to that format. Other formats may have different nuances than PDFs, so if you wish to create something other than a PDF you should do more research to prepare. The final section of this article gives some resources to investigate.\\
+	\indent When you begin your first document in \LaTeX\ your writing will look like that of a Word document; it will be a lot of black text on a white background. This can be troublesome when coding as it leaves much for anyone, as the coder or one looking over some code, to interpret on his own. I suggest that you always adjust your settings to be most convenient for you. When opening \TeX works, I always select three options. First, I look under the Format tab and select Line Numbers. This helps significantly when later looking for errors because the error will always reference a line number. It also aids in keeping track of how I have organized my code, so that I can see when I have put too much in one line (thus making it harder to distinguish where \textit{exactly} my errors lie). Second, I choose Format$>$Syntax Coloring$>$LaTeX. This option brings color to your code, and will be one of your best tools while writing code. The \LaTeX\ syntax coloring option colors your code based on what it is. That is, notes in the code (section \ref{sec:Formatting}) appear in \textcolor{red}{red}, commands (section \ref{sec:Formatting}) appear in \textcolor{blue}{blue}, environments (section \ref{sec:Lists}) appear in \textcolor{darkgreen}{dark green}, and command operators (section \ref{sec:Formatting}) appear in \textcolor{darkbrown}{dark brown}. The third recommended setting is to enable spell check under Edit$>$Spelling$>$English. As with Word this underlines misspelled or unknown words with a squiggly red line. This is very useful while writing code so long as the coder pays attention to his writing as he is writing it. If one were to wait until the very end of writing his document to check his spelling, he may have a hard time going about it while the coloring options are enabled and large blocks of texts are present. What I do in that situation is disable the coloring options, and sometimes I enlarge the text size under Format$>$Font. The three suggestions and more preferences can be set to default under Edit $>$Preferences.
+
+\newpage
+
+%--------------------------------------------------------------------------------------------------------------------------------------------------------
+%		LaTeX as a Word Processor
+%--------------------------------------------------------------------------------------------------------------------------------------------------------
+
+%The second section is for Homework 08.%
+
+\section{\LaTeX\ as a Word Processor}
+	This document was written in \LaTeX, though we have yet to see any mathematics. That is because \LaTeX\ is also great as a word processor, and depending on your document class (section \ref{sec:Formatting}) your documents will have that unique ``math style'' you may have noticed in your exams and handouts. It is crucial to understand that \LaTeX\ is not simply for presenting mathematics. It is for presenting writing that explains mathematics and other topics. Like any piece of writing you compose you should aim to clearly present your ideas to the reader, even if you use \LaTeX\ to write a short proof or answers to an assignment. This includes revising and redrafting your documents several times during the writing process. If you are finding it difficult to present your ideas in an effective manner, you should not hesitate to visit your university's writing center or other such similar resource. Knowledge of mathematics and knowledge of good writing should not be mutually exclusive (and in an ideal world, they would be mutually inclusive). While improving your writing you might be able to help another improve his mathematics!\\
+	\indent That aside, this section aims to present the very basics of \LaTeX\ for our use. One will learn how a document is structured in \LaTeX\ and will be given tips for organizing his documents.
+
+%--------------------------------------------------------------------------------------------------------------------------------------------------------
+
+\subsection{Overview of a TeX Document} %Explains the skeleton structure of a TeX document. Preamble, begin/end{document}, etc.
+	This may seem counterintuitive, but before we learn the skeleton structure of a TeX document, we will learn how to insert notes into the document. This way we can examine examples of verbatim (``copied word for word'') code that have notes without being too confused by the new information. Here is an example of what we would put into our code for a note:
+\begin{example} \label{ex:Note}
+	\begin{verbatim}
+		%This is an example of a note.
+	\end{verbatim}
+\end{example}
+	Here we see one shortfall of \LaTeX. While in our code the example is red, here in print it is not. In general our examples will not be so long that colored code will add much to our understanding, but it is recommended that you follow along with a TeX editor so that you may see firsthand what the examples do. After I explain how to start a TeX document (with its skeleton), you will easily be able to copy (and improve, if so motivated) the provided examples.\\
+	\indent Now, more importantly, what is our example \ref{ex:Note} saying? When we use \verb|%| in our code, everything following it (on the same line) is considered a note. This code is not typeset and is left only as a way for the coder to leave a message behind, for himself or others, explaining the code. This is useful when planning out a document or explaining to a new user of \LaTeX\ how to use a new command. Usually I like to surround a note with \verb|%| when it is a self-contained note and to use only one \verb|%| on the left of the note when the note references the line it is on.
+
+\newpage
+
+\begin{example}
+	\label{ex:Skeleton}
+	$ $ %Forcing a line break as best as I can...
+	\begin{verbatim}
+		%This space is where your preamble goes.%
+		\begin{document} %This officially starts the document.
+		%This space is where all of your writing goes.%
+		\end{document} %This officially ends the document.
+	\end{verbatim}
+\end{example}
+	\indent The preamble is the space in the document where one tells the editor everything that describes the document. This includes things like what packages one wants to use (section \ref{sec:Formatting}), new commands that we define (which are not covered by this document), and the style and formatting of our document (section \ref{sec:Formatting}).\\
+	\indent We have written \verb|\begin{document}| and \verb|\end{document}|, both of which are examples of commands and their operators (section \ref{sec:Formatting}). For now you should just understand that the bulk of your document will reside between these two lines of text. In fact, nothing should follow the \verb|\end{document}| line, except perhaps for more notes.
+
+%--------------------------------------------------------------------------------------------------------------------------------------------------------
+
+\subsection{Typical Formatting Options} %Commands, command operators, package. A few document classes, at least including amsart and article. Font size.
+	\label{sec:Formatting}
+	So far you will have seen that a lot of new vocabulary has been promised for this section. We begin with several definitions.
+\begin{definition}
+	\textit{A \textbf{command} in our code is something that tells the editor to perform a function or to do something special with what the code is operating on.}
+\end{definition}
+\begin{definition}
+	A \textbf{command operator} is something that a command works on. Usually it makes a general command into a specific one.
+\end{definition}
+	For example, we have the \verb|\begin{document}| command and command operator combination. The code \verb|\begin| is telling the editor that something is about to start, that something will usually be a new environment (section \ref{sec:Lists}). We have \verb|document| as a type of environment, and we surround it with \verb|{}| to tell the editor that it is acting as a command operator for \verb|\begin|. Whenever we use the \verb|\begin| command we must later use the \verb|\end| command to specify the end of the environment. This way we may nest environments within each other, but we discuss this more in section \ref{sec:Lists}.\\
+	\indent In general we use \verb|{}| and \verb|[]| around command operators when we alter a command or wish to specify what the command is acting upon. This may sound confusing, but after reading some of the examples later in this article you should understand how they work. If we ever are unsure how to use a specific command, we can always do some research to quickly find an explanation. The last section of this article provides some resources.\\
+	\indent Other examples of commands include \verb|\int| which starts an integral and \verb|\frac| which allows us to write fractions, both of which I explain further in \ref{sec:Functions}. \textbf{Note:} Commands are usually lowercase and are only ever uppercase if for a specific purpose. We will see such example in section \ref{sec:Word}.
+\begin{definition}
+	A \textbf{package} is a type of extension for the \LaTeX\ editor that allows us to use commands that are not already included in the original distribution of the editor.
+\end{definition}
+	In the preamble we also include all packages we will use in the document. One can find what packages he needs online by referencing the commands he plans to use. All special commands that we find information on will tell us what package they require unless they are the very basic commands included in all \LaTeX\ editors. Including extraneous packages can slow down the compiling speed of the editor, so it is not recommended to include in our preamble every package we have ever used. However, we will often times come back to the same packages and commands in several documents, so creating a template TeX file from which to begin is not unusual.\\
+	\indent To add a package to the preamble, just add \verb|\usepackage{[package name]}| where we replace \verb|[package name]| with the name of the package we wish to include. While writing our preamble it is important to remain organized, which includes keeping our various packages together. It would not hurt to arrange the packages by their function or by another enlightening manner so that anyone who reads the TeX file will have an easy time understanding what we plan to do.\\
+	\indent We conclude this section with a discussion of some typical document classes.
+\begin{definition}
+	A \textbf{document class} is a type of document, be it an article, a book, etc.
+\end{definition}
+	The document class for this document is the \verb|article| document class. At the very top of the preamble we have written \verb|\documentclass{article}|. The document class should always be the first thing specified in a document. Two main document classes are the \verb|article| and \verb|amsart| (short for ``American Mathematical Society Article'') classes.\footnote{The following website was used for information regarding the two classes: \url{http://www.math.uiuc.edu/~hildebr/tex/tips-packages.html}} The difference between the two classes is their ``look''. In general the two classes are interchangeable, with their handling of title pages being the main difference. In \verb|article| format, the abstract goes after the \verb|\maketitle| command (section \ref{sec:Title}) if it is used, while in \verb|amsart| it is written beforehand. Any packages that have ``ams'' in their names are automatically included in an \verb|amsart| document, but not in an \verb|article| document. In \verb|amsart| documents equation numbers (section \ref{sec:Environments}) are to the left of equations, but in \verb|article| documents the numbers are to the right.\\
+	\indent Those are the main differences between the two document classes. Really one can just use whichever he prefers, as either document class may be manipulated to do as one desires. Let it be clear then that the remainder of the document assumes the use of the \verb|article| class.
+
+%--------------------------------------------------------------------------------------------------------------------------------------------------------
+
+\subsection{Creating a Title Page} %Title page, including author, date, and abstract.
+	\label{sec:Title}
+	A title page is a nice addition to any document we write. It lets the reader know who wrote the paper and where it came from, as well as when it was produced. This is important in evaluating the background we might be expected to have to read the paper, as well as for determining if the paper is still relevant today. A good title page will also include an abstract to explain what is assumed before the start of the document and what is to be explained by the end of the document.
+
+\newpage
+
+	\indent Let us note that I \textit{did not} use the \verb|\maketitle| command while writing this document as I am not a big fan of it.
+\begin{example}\label{ex:rho} This is an example of how one might start a document with the \verb|\maketitle| command, as seen on the \LaTeX\ wikibook webpage:
+	\begin{verbatim}
+		\thispagestyle{empty}
+
+		\title{The Triangulation of Titling Data in
+		       Non-Linear Gaussian Fashion via $\rho$ Series}
+		\date{October 31, 475}
+		\author{John Doe\\ Magic Department, Richard Miles University
+		        \and Richard Row, \LaTeX\ Academy}
+
+		\maketitle
+	\end{verbatim}
+\end{example}
+	Most of the above code seems self-explanatory. The \verb|\title|, \verb|\date|, and \verb|\author| commands do as one might imagine. The rest is not so obvious.\\
+	\indent The command \verb|\thispagestyle| tells the editor that for the particular page the style \verb|empty| should be used. The empty page style has no headings or footers (including page numbers). If we used \verb|\pagestyle| we would be declaring the page style for the entire document following the command. There are other page styles, all of which can be easily found by performing a web search for ``LaTeX page style.'' The code \verb|$\rho$| is an example of something from math mode and will be discussed in section \ref{sec:Math1}. The code \verb|\\| is a line break, used for starting a new line (like pressing ``enter'' while using Word) or creating a blank line. The \verb|\and| command helps separate the names in the title. The \verb|\LaTeX\| command is responsible for creating the special character ``\LaTeX'' seen throughout this document. Finally, the \verb|\maketitle| command indicates that the TeX preceding it is to be used for a title page. Should the TeX above it not be on a new page, it will, for most document classes, automatically be put on one. If we are using the \verb|article| document class, the title will be placed at the top of the first page of the document.\\
+	\indent We can easily make an abstract with the abstract environment:
+\begin{example}
+	\begin{verbatim}
+
+		\begin{abstract}
+		%Your abstract goes in this space.%
+		\end{abstract}
+	\end{verbatim}
+\end{example}
+	As stated before it is important to explain what one requires as prior knowledge and to summarize what the document covers. Many authors choose to include, after their abstracts, references for their documents and for prior reading.
+
+%--------------------------------------------------------------------------------------------------------------------------------------------------------
+
+\subsection{Sectioning and Organization} %"Sectioneering", dynamic labels of sections and counts, referencing sections, table of contents.
+	\label{sec:Sectioning}
+	Organization is key to presenting any information to your reader. This document would not be very helpful if it were not broken into sections. Primarily we are interested in creating sections and subsections, as well as counting them for references.
+\begin{example}
+	\begin{verbatim}
+		\section{\LaTeX\ as a Word Processor}
+	\end{verbatim}
+\end{example}
+	The above code was used to label the current section. Note that no numbers were used. Sections and subsections are automatically labeled by number. It is possible to exclude the section numbers, as discussed in section \ref{sec:Environments}. The code \verb|\section| tells the editor that this is going to be a new section, which has the title surrounded by \verb|{}|.
+\begin{example}
+	\begin{verbatim}
+
+		\subsection{Sectioning and Organization} %"Sectioneering", dynamic labels of 
+		sections and counts, referencing sections, table of contents.
+			\label{sec:Sectioning}
+	\end{verbatim}
+\end{example}
+	The code \verb|\subsection| creates a subsection, analogously to how we created a new section. Subsections are understood by the editor to be a part of the most recent section. The included note was a note I left for myself while I was organizing my document. It tells me what I planned to include in the section so that I will not need to guess when I come back to the document. The code \verb|\label| is an example of a code that dynamically changes with the document. Including it after the code for a section or a subsection tells the editor that I will later reference the section (with the automatically affixed number for the section) with the label ``sec:Sectioning.'' This way I can use the code \verb|\ref| to insert a reference to this one section, without worrying about how adding a new section might affect the reference. Both \verb|\label| and \verb|\ref| can be used for other commands in a document, including figures and examples.
+\begin{example}
+	The code \verb|section \ref{sec:Sectioning}| produces ``section \ref{sec:Sectioning}'', which has been used several times in this document to reference this subsection.
+\end{example}
+	The dynamic labeling of sections is also convenient for creating a table contents. The entire table of contents after the title page was written with the code \verb|\tableofcontents|, and automatically included page numbers for all of the sections.\\
+	\indent If we use a PDF reader to read this document, we will see that every section is linked to from the table of contents and that every reference also acts as a link. This is the result of the \verb|hyperref| package which, after being included in the preamble, automatically links the table of context to each section and every reference to the part of the document being referenced. The other basic commands we may want to use are the \verb|\url| and \verb|\href| commands. \verb|\url{[URL]}| creates a link to the specified URL, while \verb|\href{[URL]}{[Description]}| creates a link to a URL but with the text replaced by the provided description (word, phrase, equation, or other text).
+\begin{example}
+	\verb|\url{http://www.uconn.edu}| becomes the link \url{http://www.uconn.edu}.\\
+	\verb|\href{http://www.uconn.edu}{UConn}| becomes the link \href{http://www.uconn.edu}{UConn}.
+\end{example}
+	It is best to use the \verb|\url| command when we know that the document will be read in print (otherwise the reader will not know what website is being referenced).
+
+%--------------------------------------------------------------------------------------------------------------------------------------------------------
+
+\subsection{Paragraphing} %Indentation, spacing including paragraph alignment (center, left, right) and page breaks.
+	\label{sec:Spacing}
+	You may have noticed that while paragraph indentation is used throughout this document, no paragraph at the beginning of a section is indented. This is standard practice in math writing. The tab key is used in the editor as a way of making code more legible, but it will not indent a paragraph. Instead, wherever one wishes to indent a part of his writing he must use the \verb|\indent| command. This will not indent the first line of the section, though you are encouraged to see for yourself.\\
+	\indent As explained before, the enter key is similar to the tab key in that it does not translate to a new line in the typeset document. Instead we use \verb|\\| to create a new line, though attempting to use multiple \verb|\\| to make several new lines does not work. Instead we would have to use the command \verb|\newline|, which behaves as does \verb|\\| except that it may be used several times. The code \verb|\\| is used most often while writing several paragraphs, or while line breaking in math mode, while \verb|\newline| is used most often when trying to create several new lines.\\
+	\indent We have a few more intuitively named commands. The command \verb|\newpage| forces a new page, which may be useful when one wants to prevent an example or definition from spreading over two pages. The code \verb|\linebreak| works as a line break in Word. The code \verb|\pagebreak| forces the page to end after the current line is finished.\\
+	\indent While environments will be fully explained in section \ref{sec:Lists}, we make note of three special environments for word processing here. For now you may accept the code ``as-is'' as with the \verb|document| environment before. If we want to center our writing, we enclose the to-be-centered text with \verb|\begin{center}| and \verb|\end{center}|. To create multiple lines within the same \verb|center| environment, just use \verb|\\|. We may similarly use \verb|\begin{flushleft}| and \verb|\end{flushleft}| or \verb|\begin{flushright}| and \verb|\end{flushright}| to produce text that is flush-left or flush-right respectively.\\
+	\indent If we want to create an evenly distributed but dynamically changing amount of space between paragraphs on the same page, we may place \verb|\vfill| (``vertical fill'') before and after each paragraph that we want affected. Similarly, \verb|\hfill|(``horizontal fill'') can create even spacing in a single line, horizontally. These two commands may take some practice to master. An example of \verb|\vfill| is seen in section \ref{sec:Word} example \ref{ex:Title}.
+
+\newpage
+
+%--------------------------------------------------------------------------------------------------------------------------------------------------------
+
+\subsection{Usual Word Processing Functions} %Italics, bold, underline, footnotes, quotations, Large and large commands, etc.
+	\label{sec:Word}
+	Now that we can properly organize our documents, we examine some typical word processing features included in \LaTeX.
+\begin{example} \label{ex:Title} To create the title page, this document started with the following code, after the $\verb|\begin{document}|$ command:
+
+	\begin{verbatim}
+		\thispagestyle{empty}
+
+		\begin{center}
+		           \Large{Introduction to \LaTeX}
+		\end{center}
+		\begin{center}
+		           \large{John Richard Pawlina\\
+		           Department of Mathematics Undergraduate\\
+		           University of Connecticut, Storrs Campus\\
+		           Storrs, CT 06268}
+		\end{center}
+		\begin{center}
+		           \large{\today}
+		\end{center}
+
+		\vfill
+
+		\begin{abstract}
+		           %The abstract%
+		\end{abstract}
+
+		\vfill
+	\end{verbatim}
+\end{example}
+	There is a lot going on in the above example, though it should not be too hard to digest. I snipped out the abstract to save on space, but this should serve as an example for many of the mentioned commands in the last section and some new ones we are about to identify.\\
+	\indent Take note of the code \verb|\today|. It tells the typesetter to insert the current date (when you compile the code). This can be very convenient for when you plan to repeatedly update a file and then distribute it as a PDF. The code is not so good when you plan to share you \TeX because there may be an inaccurate version of your document floating around.\\
+	\indent The only other new code in this example are \verb|Large| and \verb|large|. These, along with other similar commands, make text of varying sizes (where an uppercase version of a code is larger than its lowercase version but still smaller than the next size above it). A list of such commands can easily be found online.\\
+	\indent \LaTeX\ can \textit{italicize}, \textbf{boldface}, and \underline{underline} text. To italicize, use the command \verb|\textit| (``text italics'') followed by the to-be-italicized text surrounded by \verb|{}|. For example, ``\textit{italicize}'' was written with the code \verb|\textit{italicize}|. Similarly, we use \verb|\textbf| (``text boldface'') and \verb|\underline| for boldfaced and underlined text, respectively.\\
+	\indent Quotations can be tricky. One may wish to use the quotations key on his keyboard, but it leads to errors in the compiling process.
+\begin{example}
+	\verb|"Math is cool"| writes "Math is cool".
+\end{example}
+	The left quotation marks are off. Instead we use \verb|`| (the mark on the same key as \verb|~|) twice to make the left quotation mark, and we use \verb|'| (the apostrophe) twice to surround our quoted text.
+\begin{example}
+	\verb|``Math is cool''| writes ``Math is cool''.
+\end{example}
+	Adding footnotes\footnote{Footnotes are very important when referencing your work or organizing side thoughts.} is very important when writing an article.
+\begin{example}
+	The previous sentence and its footnote were written the following way:
+	\begin{verbatim}
+		Adding footnotes\footnote{Footnotes are very important when referencing your
+		work or organizing side thoughts.} is very important when writing an article.
+	\end{verbatim}
+\end{example}
+	Footnotes are very easy to add to a document because one adds the complete footnote right after the word, phrase, or sentence that it is referencing. However, this can make reading the sentence it is a part of (in the code) a pain, so it may not be for the best to abuse footnotes.
+
+\newpage
+%--------------------------------------------------------------------------------------------------------------------------------------------------------
+%		Lists, Tables, and Bibliographies
+%--------------------------------------------------------------------------------------------------------------------------------------------------------
+
+%The third section is for Homework 09.%
+
+\section{Lists, Tables, and Bibliographies} %Environments, the rest is pretty self-explanatory and precisely what Dragon wants. He wants the tutorial to have a bibliography...Perhaps tie it in to the Recommended Resources section?
+	\label{sec:Lists}
+	This section can be thought of as a segue from paragraph mode, the default mode of the \verb|document| environment where we write typical word-processed documents, to math mode, the mode we may use to easily write equations and math short-hand, because we move from simple word-processing to specialized commands. We have yet to formally define what an environment is, though by now you should have a vague notion.
+\begin{definition}
+	In \LaTeX, an \textbf{environment} is a logical structure\footnote{This definition come from the following webpage, which is also has examples of different environments we may use. \url{http://www.maths.adelaide.edu.au/anthony.roberts/LaTeX/ltxenviron.php}} used by the editor.
+\end{definition}
+	An environment always lies between the \verb|\begin| and \verb|\end| commands, which we use to tell the editor which environment we will be using. This allows us to nest the environments. For example, every environment used in the body of a document is nested within the \verb|document| environment. Another example is the nesting of the \verb|example| environment (which I have defined on my own but which can be easily learned through examples online) and the \verb|verbatim| environment (section \ref{sec:Verbatim}). This nesting of environments was used in almost every example of verbatim code seen in this document.
+\begin{example}
+	\label{ex:Verbatim}
+	$ $\\ %Note: I tried using "$ $\\" on a whim to force a line break and it worked.
+	\verb|\begin{example} %This is a user-defined environment.|\\
+	\verb|\begin{verbatim}|\\
+	\verb|%This is where the verbatim code seen in the examples was written.%|\\
+	\verb|\end{verbatim}|\\
+	\verb|\end{example}|
+\end{example}
+	Nesting one environment within itself can be challenging and lead to errors. In the above example I tried to nest \verb|verbatim| within itself, but this caused the editor to think the verbatim version of \verb|\end{verbatim}| was ending the actual \verb|verbatim| environment I meant to use. I had to work around this issue with the second method of entering verbatim code, as seen in section \ref{sec:Verbatim}.
+
+%--------------------------------------------------------------------------------------------------------------------------------------------------------
+
+\subsection{The Itemize and Enumerate Environments}
+	The \verb|itemize| environment is a way to make lists using bullet points, while the \verb|enumerate| environment creates numbered lists. The two are used the same way.
+\begin{example}$ $
+	\begin{figure}[!h] %The positioning of this figure was incredibly annoying and I recommend not altering this 	
+					%permanently...
+	        \centering
+	        \begin{subfigure}[b]{0.3\textwidth}
+	                \centering
+	               \begin{verbatim}
+			\begin{itemize}
+			\item Item 1
+			\item Item 2
+			\end{itemize}
+			\end{verbatim}
+	                \caption{The code we use.}
+	        \end{subfigure}%
+	        ~ %add desired spacing between images, e. g. ~, \quad, \qquad etc. 
+	          %(or a blank line to force the subfigure onto a new line)
+	        \begin{subfigure}[b]{0.3\textwidth}
+	                \centering
+	                \begin{itemize}
+			\item Item 1
+			\item Item 2
+			\end{itemize}
+	                \caption{The bulleted list.}
+	       \end{subfigure}
+	\end{figure}
+\end{example}
+
+\newpage
+
+\begin{example}$ $
+	\begin{figure}[!h] %The positioning of this figure was incredibly annoying and I recommend not altering this 	
+				%permanently...
+	        \centering
+	        \begin{subfigure}[b]{0.3\textwidth}
+	                \centering
+	               \begin{verbatim}
+			\begin{enumerate}
+			\item Item 1
+			\item Item 2
+			\end{enumerate}
+			\end{verbatim}
+	                \caption{The code we use.}
+	        \end{subfigure}%
+	        ~ %add desired spacing between images, e. g. ~, \quad, \qquad etc. 
+	          %(or a blank line to force the subfigure onto a new line)
+	        \begin{subfigure}[b]{0.3\textwidth}
+	                \centering
+	                \begin{enumerate}
+			\item Item 1
+			\item Item 2
+			\end{enumerate}
+	                \caption{The numbered list.}
+	       \end{subfigure}
+	\end{figure}
+\end{example}
+	The above examples should make the use of the environments rather straightforward. Before every bullet point or number we use the command \verb|\item| to indicate that we want a new point/number. It is not necessary to use \verb|\\| or \verb|\newline| to change lines. It is also not necessary to start a new line within the code to create a new point/number, but it is recommended to do so for the sake of clarity.\\
+	\indent Bullets are the default symbols used in the \verb|itemize| environment, but we can use others. We may also use \verb|\begin{itemize}[$\star$]| to start an \verb|itemize| environment with stars, and similar code to use different symbols, which we may find code for online. Similar to \verb|$\rho$| seen in example \ref{ex:rho}, \verb|$\star$| is an example of something from math mode which we will discuss later.\\
+	\indent Numbers are the default labeling system used in the \verb|enumerate| environment, but we can use others. For example, \verb|\begin{enumerate}[I]| will start an \verb|enumerate| environment using Roman numerals. Similarly, replacing \verb|[I]| with \verb|[(a)]| will replace it with items starting with (a), (b), (c), and so forth.
+
+%--------------------------------------------------------------------------------------------------------------------------------------------------------
+
+\subsection{Tabular Environments}
+	The \verb|tabular| environment is used for creating tables with or without vertical or horizontal lines. The \verb|tabular| environment can look intimidating but do not worry. We start with an example.
+\begin{example}The following code creates the table beneath it.
+	\begin{verbatim}
+		\begin{center}
+			\begin{tabular}{|c||c|c|c||c|}
+				\hline
+				1 & 2 & 3 & 4 & 5 \\ \hline
+				6 & 7 & 8 & 9 & 10 \\ \hline
+				11 & 12 & 13 & 14 & 15 \\ \hline
+			\end{tabular}
+		\end{center}
+	\end{verbatim}
+	\begin{center}
+		\begin{tabular}{|c||c|c|c||c|}
+			\hline
+			1 & 2 & 3 & 4 & 5 \\ \hline
+			6 & 7 & 8 & 9 & 10 \\ \hline
+			11 & 12 & 13 & 14 & 15 \\ \hline
+		\end{tabular}
+	\end{center}
+\end{example}
+	The centering, of course, was not necessary for the creation of the table and was used only for the aesthetic appeal of the document. This does present a good example of when you would want to nest your environments. If we had wanted to right-align the table we would have used the \verb|flushright| environment in place of the \verb|center| environment.\\
+	\indent Let us examine the various components of the \verb|tabular| environment. The beginning and ending code should be familiar. What does the code \verb+{|c||c|c|c||c|}+ do? %Trying to use | within \verb was fruitless, but I found that I could use \verb+___+ instead of \verb|____|. This might only be helpful in this case.
+Within the braces we specify how we want the layout of the table's columns to be. (The rest of the table defines the format and content of the rows.) Adding \verb+|+ tells the editor that to we want a vertical line in that position. The \verb|c| tells the editor that we want that column centered. We could use a combination of \verb|c|, \verb|l|, and \verb|r| to align the columns to the center, the left, or to the right, respectively. We need not use any \verb+|+ in the table, but we do need to specify the alignment of each row.
+\begin{example}The following code creates the table beneath it.
+	\begin{verbatim}
+		\begin{center}
+			\begin{tabular}{|c c|l|c||r|}
+				\hline
+				1 & 2 & 3 & 4 & 5 \\ \hline
+				6 & 7 & 8 & 9 & 10 \\ \hline
+				11 & 12 & 13 & 14 & 15 \\ \hline
+			\end{tabular}
+		\end{center}
+	\end{verbatim}
+	\begin{center}
+		\begin{tabular}{|c c|l|c||r|}
+			\hline
+			1 & 2 & 3 & 4 & 5 \\ \hline
+			6 & 7 & 8 & 9 & 10 \\ \hline
+			11 & 12 & 13 & 14 & 15 \\ \hline
+		\end{tabular}
+	\end{center}
+\end{example}
+	Within the \verb|tabular| environment, the command \verb|\hline| creates a horizontal line at its place within the table. Two successive \verb|\hline| commands will not create a blank row but will instead break the table at that point.
+\begin{example}The following code creates the table beneath it.
+	\begin{verbatim}
+		\begin{center}
+			\begin{tabular}{|c||c|c|c||c|}
+				\hline
+				1 & 2 & 3 & 4 & 5 \\ \hline \hline
+				6 & 7 & 8 & 9 & 10 \\ \hline
+				11 & 12 & 13 & 14 & 15 \\ \hline
+			\end{tabular}
+		\end{center}
+	\end{verbatim}
+	\begin{center}
+		\begin{tabular}{|c||c|c|c||c|}
+			\hline
+			1 & 2 & 3 & 4 & 5 \\ \hline \hline
+			6 & 7 & 8 & 9 & 10 \\ \hline
+			11 & 12 & 13 & 14 & 15 \\ \hline
+		\end{tabular}
+	\end{center}
+\end{example}
+	The numbers 1-15 are acting as placeholders in our code, and we may replace them with anything we would like to put into the table. The ampersand (\&) is used to separate elements of the same row. If we want to leave an element blank, we may use two successive ampersands. And while it is not necessary to put spaces within the code, it is recommended that we do so for the sake of clarity. The \verb|\\| is used to indicate the end of a row.
+
+%--------------------------------------------------------------------------------------------------------------------------------------------------------
+
+\subsection{Bibliographies}
+	To write a bibliography we may use Bib\TeX, a tool separate from \LaTeX\ that is included in most \LaTeX\ distributions. We are not forced to adhere to a specific citation format, though your audience may have its own standards. In this section we learn how to create a simple bibliography. Details on the use of Bib\TeX\ can be found online. See the Resources section for a head start.\\
+	\indent To create a bibliography we use the \verb|thebibliography| environment, which we put anywhere in our document where we want our bibliography to appear (usually at the end).
+\begin{example} The \LaTeX\ wikibook page for \textit{Bibliography Management} provides the following example of a bibliography with one item:
+	\begin{verbatim}
+		\begin{thebibliography}{9}
+
+		\bibitem{lamport94}
+		  Leslie Lamport,
+		  \emph{\LaTeX: A Document Preparation System}.
+		  Addison Wesley, Massachusetts,
+		  2nd Edition,
+		  1994.
+
+		\end{thebibliography}
+	\end{verbatim}
+	The above code generates the following section:
+	\begin{thebibliography}{9}
+
+	\bibitem{lamport94}
+	  Leslie Lamport,
+	  \emph{\LaTeX: A Document Preparation System}.
+	  Addison Wesley, Massachusetts,
+	  2nd Edition,
+	  1994.
+
+	\end{thebibliography}
+\end{example}
+	The spacing used by the author of this references section is a fine example which we should emulate in our own code. Notice that while the different lines in the code do not directly translate to line breaks in the output, the use of multiple lines clarifies the information in the code for all who read it.\\
+	\indent The \verb|\begin| command has been modified with the code \verb|{9}|. The number 9 itself is not what concerns us; instead we care about the number of digits in the number we tag on to the end of the \verb|\begin| command. The number of digits tells the editor the largest number of resources we will include. A 1-digit number will imply up to 9 different possible resources, so we often use the number 9 as our one digit number. We could just tell the editor exactly how many resources we plan to have, but using 9, 99, or 999 is the easiest method when we only want to estimate our planned number of resources. For example, we could write \verb|\begin{thebibliography}{99}| if we planned to use between 10 and 99 resources.\\
+	\indent The other important piece of information is the \verb|\bibitem| command. It acts similarly to a combination of \verb|\item| (in the \verb|enumerate| environment) and \verb|\ref| in that it allows us to label a list of numbered resources with easy to use, dynamic references within the document. The code \verb|\emph| is interchangeable with the code \verb|\textit|.\\
+	\indent Once we have something in the references section we can cite it within the document with \verb|\cite{[bibitem name]}| command, where \verb|[bibitem name]| is the name used in the \verb|\bibitem| command, like \verb|lamport94| in the example.
+
+%--------------------------------------------------------------------------------------------------------------------------------------------------------
+
+\subsection{Presenting Verbatim Code} %Explain both the environment and in-line verbatim text.
+	\label{sec:Verbatim}
+	As we have seen, this document presents a lot of verbatim code. While mainly useful for writing tutorials, being able to write verbatim code has other practical applications, such as when asking for help with one's \TeX\ through an email correspondence. There are two prevalent ways of sharing verbatim code.
+\begin{enumerate}
+	\item Using the \verb|verbatim| environment.
+	\item Using the \verb+\verb+ command.
+\end{enumerate}
+	Example \ref{ex:Verbatim} shows how to use the \verb|verbatim| environment, but here I provide another example to reinforce the information outside of a demonstration of nested environments.
+\begin{example}The following code (1) creates the example of verbatim text (2) beneath it.
+	\begin{enumerate}
+		\item
+			\verb|\begin{verbatim}|\\
+			\verb|%Code we wish to display verbatim.%|\\
+			\verb|\end{verbatim}|\\
+		\item
+			\begin{verbatim}
+			%Code we wish to display verbatim.%
+			\end{verbatim}
+	\end{enumerate}
+\end{example}
+	The \verb|verbatim| environment is useful for presenting a lot of verbatim code at once as it might appear in an editor. The \verb+\verb+ command is useful for presenting verbatim text in line.
+\begin{example}The following code (1) creates the example of verbatim text (2) beneath it.
+	\begin{enumerate}
+		\item \verb+Here is a sentence where we reference the \verb|\ref| command.+
+		\item Here is a sentence where we reference the \verb|\ref| command.
+	\end{enumerate}
+\end{example}
+	As we learned earlier, we cannot nest the \verb|verbatim| environment. However, it is easy to nest the \verb|\verb| command. The \verb+|+ may be replaced with \verb|+| to differentiate between the two uses of \verb+\verb+. How, then, did I write example \ref{ex:Verbatim}?
+\begin{example}The following code was used to generate example \ref{ex:Verbatim}:\\
+	\verb+\begin{example}+\\
+	\verb+	\label{ex:Verbatim}+\\
+	\verb+$ $\\ %Note: I tried using "$ $\\" on a whim to force a line break and it worked.+\\
+	\verb+\verb|\begin{example} %This is a user-defined environment.|\\+\\
+	\verb+\verb|\begin{verbatim}|\\+\\
+	\verb+\verb|%This is where the verbatim code seen in the examples was written.%|\\+\\
+	\verb+\verb|\end{verbatim}|\\+\\
+	\verb+\verb|\end{example}|+\\
+%	\verb+\end{example}+
+\end{example}
+	If you can figure out how I wrote the above example then you are already a master of \LaTeX\ and can probably stop reading here.
+	
+	
+\newpage
+
+%--------------------------------------------------------------------------------------------------------------------------------------------------------
+%		Basic Math Typesetting
+%--------------------------------------------------------------------------------------------------------------------------------------------------------
+
+%The fourth section is for Homework 10.%
+
+\section{Basic Math Typesetting} %Like, simple functions...Differentiate between Math and Paragraph modes.
+	In this section we aim to learn the fundamentals of math mode. Math mode is used for creating things such as ``$\int_{0}^{\infty} f(x) dx$'' or equations and other such mathematics in our documents. Some environments default to math mode while others default to paragraph mode, and in section \ref{sec:Environments} we will learn about these math environments. Before learning what kind of math we may write in \LaTeX\ we will learn how to insert math into our documents.
+
+%--------------------------------------------------------------------------------------------------------------------------------------------------------
+
+\subsection{Relevant Packages} %Lists a few important ones
+	There are two main packages one will want to use when writing math, the \verb|amsmath| and \verb|amssymb|\footnote{For more details on AMS packages visit this page from the AMS website: \url{http://www.ams.org/publications/authors/tex/amslatex}} packages. As stated prior, we tend not to include all packages we \textit{might} use as this is wasteful of our resources and causes compiling to take longer, though we might create a template document with packages we almost always use, such as \verb|amsmath| and \verb|amssymb|, already in the preamble.\\
+	\indent The \verb|amsmath|\footnote{The AMS has a detailed, downloadable guide on the package, which can be accessed from the link in the previous footnote.} package allows us to write most standard equations in \LaTeX, such as fractions, integrals, and the exponential function. Beyond this the package also enables us to do use many fancy formatting options, such as matrices, piecewise functions, and under-braces (sections \ref{sec:Matrices}, \ref{sec:Piecewise}, and \ref{sec:Braces}, respectively). Of course, the \verb|amsmath| package does much more than these few things and it is recommended that you investigate its capabilities.\\
+	\indent The \verb|amssymb| package expands the library of symbols that one may include in his document. This includes symbols such as $\square, \lozenge$, and $\rightsquigarrow$. The package is not always necessary for a simple write-up of, say, a homework assignment, but it is useful in documents heavy in mathematical notation. If there is ever a symbol we wish to write in \LaTeX\ we can easily search for the symbol online. The \href{http://detexify.kirelabs.org/classify.html}{Detexify} website is very useful for the budding \LaTeX\ user as it allows us to search for the code for many symbols. For more information on the Detexify website see section \ref{sec:Resources}.
+
+%--------------------------------------------------------------------------------------------------------------------------------------------------------
+
+\subsection{Basics of Math Mode} %What it does, i.e. spacing of equations, dollars and double dollars, etc.
+	\label{sec:Math1}
+	Inserting mathematics into \LaTeX\ is done by entering math mode. We enter math mode by using the \verb|$| character around our math code.
+\begin{example}$ $\\
+	The code\\
+	\verb+$P(X \in A|X \in B)=\frac{P(X \in A \cap B)}{P(X \in B)}$+\\
+	yields the equation $P(X \in A|X \in B)=\frac{P(X \in A \cap B)}{P(X \in B)}$, a formula seen in Probability Theory.
+\end{example}
+	The codes \verb|\in| and \verb|\cap| are examples of code for some typical mathematical shorthand, which we shall see in section \ref{sec:Shorthand}.\\
+	\indent Notice that \verb|$| has us write our math in line with the rest of our text and that the example has a formula that is difficult to read because it has so much going on. When we want to present math in its own line we could go through the trouble of starting a new line and centering the text, but this can result in dissatisfying spacing in our document. Instead we can surround our math with \verb|$$| to display it in a more presentable way.
+\begin{example}$ $\\
+	The code
+	\begin{verbatim}
+		The formula for conditional probability,
+		$$P(X \in A|X \in B)=\frac{P(X \in A \cap B)}{P(X \in B)},$$
+		as seen in Probability Theory, is very useful.
+	\end{verbatim}
+	yields the text:\\
+	The formula for conditional probability, $$P(X \in A|X \in B)=\frac{P(X \in A \cap B)}{P(X \in B)},$$ as seen in Probability Theory, is very useful.
+\end{example}
+	It is not necessary to put the code surrounded by \verb|$$| on its own line, but when the expression is long (as in this example) it is easier to read that way. The code \verb|$$| automatically puts itself on a new line and starts another new line after it is completed, so we do not need to tell it to put the words ``...as seen in Probability Theory...'' on a new line. Note that because the new lines are automatic, code like ``\verb|$$ %expression% $$,|'' will put the comma at the start of the new line, so we must include our punctuation within the two \verb|$$|. Also note that the effects of using \verb|$$| can also be achieved by using the \verb|displaymath| environment. You might use the \verb|displaymath| environment if you prefer to use environments when possible.\\
+	\indent Spacing within math mode is done automatically, though there are ways to change the spacing. Using \verb|\| will create another space within math mode. Furthermore, most text in math mode is italicized. When referencing variables in a paper it is important to italicize them by using the \verb|\textit| command or, more easily, the \verb|$| version of math mode.
+\begin{example}
+	A mathematician will be able to read and understand a sentence like ``Let $A$ be any element of the Affine Group on $\RR$'' but will pretend to be dumbfounded by the sentence ``Let A be any element of the Affine Group on $\RR$''. (``Let a \textit{what} be an element in the Affine Group on $\RR$?'')
+\end{example}
+	With practice you will develop the habit of italicizing your variables. Until then careful editing should help you catch mistakes in labeling during the drafting process.
+
+\newpage
+
+%--------------------------------------------------------------------------------------------------------------------------------------------------------
+
+\subsection{Relevant Environments} %Align versus eqnarray (how to align equations), use of *, referencing equations, text in math mode, etc.
+	\label{sec:Environments}
+	When presenting equations and work in \LaTeX\ there are two main environments we use, namely the \verb|eqnarray| (``equation array'') and \verb|align| environments. Both work very similarly as the \verb|align| environment is a modified \verb|eqnarray| environment.
+\begin{example}$ $
+	\begin{figure}[!h] %The positioning of this figure was incredibly annoying and I recommend not altering this 	
+				%permanently...
+	        \centering
+	        \begin{subfigure}[b]{0.3\textwidth}
+	                \centering
+	               \begin{verbatim}
+			\begin{eqnarray}
+			f(x )&=& 2x+3x\\
+			&=&  5x
+			\end{eqnarray}
+			\end{verbatim}
+	                \caption{The code we use.}
+	        \end{subfigure}%
+	        ~ %add desired spacing between images, e. g. ~, \quad, \qquad etc. 
+	          %(or a blank line to force the subfigure onto a new line)
+	        \begin{subfigure}[b]{0.3\textwidth}
+	                \centering
+			\begin{eqnarray}
+			f(x) &=& 2x+3x\\
+			&=& 5x
+			\end{eqnarray}
+	                \caption{The resulting equations.}
+	       \end{subfigure}
+	\end{figure}
+\end{example}
+	In the \verb|eqnarray| environment we do not need to indicate that we are using math mode as it assumes we are using math mode. We must also indicate where we want our lines to end by using the code \verb|\\| to break the line. Most importantly, we use the code \verb|&=$| to show the compiler which equals signs we want to align (as we do not have to have every equals sign align with the rest). Similarly we could replace the equals sign with anything else, such as the less than sign. The environment also automatically numbers each of the lines lines with the code \verb|&=&|. Note that we do not necessarily have to use the environment for one long equation; we could use the environment to align several equations.
+\begin{example}$ $
+	\begin{figure}[!h] %The positioning of this figure was incredibly annoying and I recommend not altering this 	
+				%permanently...
+	        \centering
+	        \begin{subfigure}[b]{0.3\textwidth}
+	                \centering
+	               \begin{verbatim}
+			\begin{align}
+			f(x )&= 2x+3x\\
+			&= 5x
+			\end{align}
+			\end{verbatim}
+	                \caption{The code we use.}
+	        \end{subfigure}%
+	        ~ %add desired spacing between images, e. g. ~, \quad, \qquad etc. 
+	          %(or a blank line to force the subfigure onto a new line)
+	        \begin{subfigure}[b]{0.3\textwidth}
+	                \centering
+			\begin{align}
+			f(x) &= 2x+3x\\
+			&= 5x
+			\end{align}
+	                \caption{The resulting equations.}
+	       \end{subfigure}
+	\end{figure}
+\end{example}
+	One should note that the count used for the equations in the \verb|align| environment continued from the count used in the \verb|eqnarray| environment. There are some differences, though. While the \verb|align| environment also assumes math mode and we still need to use \verb|\\| to separate the lines, we need only one \verb|&| to tell the environment where to align our equations (we could still use two).\\
+	\indent If one were to do some research online, he would quickly find that there exists a lot of hate for the \verb|eqnarray| environment. In fact, annoyances with the \verb|eqnarray| environment are what lead to the development of the \verb|align| environment. Tinkering around with both environments reveals that the \verb|eqnarray| environment has issues with spacing of the equals signs (they are spaced farther from the rest of the equation in the aligned column than they are if they appear again in the same line) while the \verb|align| environment does not. Long equations in the \verb|eqnarray| environment will intersect the equation numbers (I had to trim down my example because of this). There are also occasional problems when referencing equations from the \verb|eqnarray| environment. Overall the \verb|align| environment is much preferred to the \verb|eqnarray| environment.\\
+	\indent Sometimes we do not want to number our equations (for example, when writing a solution to a single problem). In this case we can use the \verb|align*| environment to create aligned equations which are not numbered.
+\begin{example}$ $
+	\begin{figure}[!h] %The positioning of this figure was incredibly annoying and I recommend not altering this 	
+				%permanently...
+	        \centering
+	        \begin{subfigure}[b]{0.3\textwidth}
+	                \centering
+	               \begin{verbatim}
+			\begin{align*}
+			f(x )&= 2x+3(x^{2}+x)\\
+			&= 3x^{2}+5x
+			\end{align*}
+			\end{verbatim}
+	                \caption{The code we use.}
+	        \end{subfigure}%
+	        ~ %add desired spacing between images, e. g. ~, \quad, \qquad etc. 
+	          %(or a blank line to force the subfigure onto a new line)
+	        \begin{subfigure}[b]{0.3\textwidth}
+	                \centering
+			\begin{align*}
+			f(x )&= 2x+3(x^{2}+x)\\
+			&= 3x^{2}+5x
+			\end{align*}
+	                \caption{The resulting equations.}
+	       \end{subfigure}
+	\end{figure}
+\end{example}
+	This method of using \verb|*| can be used in many environments to prevent numbering. For example, all of the sections in this document could be created with the \verb|\section*| command to create unnumbered sections.\\
+	\indent To add text within math mode, we use the \verb|\text| command to differentiate the text from (italicized) variables. This is not exactly necessary for the \verb|$| command as we can just end it, add some text, and begin again, but it is useful for adding text within the \verb|$$| command and the \verb|align| environment.
+\begin{example}$ $\\
+	The code
+	\begin{verbatim}
+		The formulas
+		$$\sinh{x}=\frac{e^{x}-e^{-x}}{2} \text{ and} \cosh{x}=\frac{e^{x}+e^{-x}}{2}$$
+		are very useful functions in Complex Analysis.
+	\end{verbatim}
+	yields the text:\\
+	The formulas
+	$$\sinh{x}=\frac{e^{x}-e^{-x}}{2} \text{ and} \cosh{x}=\frac{e^{x}+e^{-x}}{2}$$
+	are very useful functions in Complex Analysis.
+\end{example}
+	Note that we needed to add a space before the word ``and'' in the \verb|\text| command. The typesetter automatically puts the word ``and'' next to the hyperbolic sine function otherwise. However it does recognize that a space is needed between the ``and'' and the hyperbolic cosine function. To clarify; the typesetter does not put a space before the \verb|\text| command (because it cannot be sure that one is needed) but it will put one at the end of the command.\\
+	\indent Do not forget to try writing your own examples as you follow along. At this point we have seen many different types of code and ways to combine them and it would be a very good idea to experiment on your own to become comfortable with what you are learning.\\
+	\indent As before, we could use the \verb|\label| and \verb|\ref| commands to label and reference our equations as before. We do so by putting \verb|\label| before the linebreak of the equation we want to later reference. This works so long as the equations are not in the \verb|align*| environment. To label an equation in the \verb|align*| environment, we must use the \verb|\tag| command before the line break (where \verb|\tag| functions identically to \verb|\label|).
+\begin{example} Within the \verb|align| environment we have
+	\begin{verbatim}
+		\begin{align}
+		f(x)&=e^{2x+3} \label{ex:Exp1} \\
+		&=e^{2x}e^{3} \label{ex:Exp2}
+		\end{align}.
+	\end{verbatim}
+	This creates
+	\begin{align}
+		f(x)&=e^{2x+3} \label{ex:Exp1} \\
+		&=e^{2x}e^{3} \label{ex:Exp2}.
+	\end{align}
+	And here we reference (\ref{ex:Exp1}) and (\ref{ex:Exp2}) with \verb|(\ref{ex:Exp1})| and \verb|(\ref{ex:Exp2})|, respectively. Note that we must add the parentheses ourselves.
+\end{example}
+
+\newpage
+
+%--------------------------------------------------------------------------------------------------------------------------------------------------------
+
+\subsection{Typical Functions in Math Mode} %Parentheses and sizing of them, use of {} in equations, fractions, square-root symbols, integrals, etc.
+	\label{sec:Functions}
+	This subsection may be referenced for its table of typical functions an undergrad might use in his paper. First, examine this example about parentheses:
+\begin{example}
+	The code \verb|($\frac{\frac{1}{2}}{\frac{1}{3}})$| becomes $(\frac{\frac{1}{2}}{\frac{1}{3}})$.
+\end{example}
+	The parentheses are terribly small for the expression. Instead we can use \verb|\left(| and \verb|\right)|.
+\begin{example}
+	The code \verb|\left($\frac{\frac{1}{2}}{\frac{1}{3}}\right)$|\\
+	becomes $\left(\frac{\frac{1}{2}}{\frac{1}{3}}\right)$.
+\end{example}
+	Similarly we can use \verb|\left[|, \verb|\left{\{}|, and many other such commands for parentheses-like symbols. (Symbols like \{ or \& which have meaning in our code must be written as \verb|\{| or \verb|\&|.)\\
+	\indent While the following table is certainly not all-encompassing, it should serve as a good place to begin for most functions you will write as an undergraduate. Everything else you might need can be found online. Again, see section \ref{sec:Resources} for some research tips. Many functions like the square-root symbol and fractions automatically adjust their sizes. You should experiment with the sizing of various notation within your document.
+
+\newpage
+
+\begin{center}
+	\textbf{Table of Common Mathematical Expressions for Undergraduates}
+	\begin{tabular}{|c|c|c|p{5cm}|}
+		\hline
+		Name & Expression & Code & Notes\\ \hline \hline
+		Exponents & $x^{a}$ & \verb|$x^{2}$| & If there is only one character within the \verb|{}|,
+					we may omit the \verb|{| and \verb|}| characters.\\ \hline
+		Roots & $\sqrt[n]{x}$ & \verb|$\sqrt[n]{x}$| & We can omit the \verb|[n]| to write a regular square-root symbol.\\ \hline
+		Indexing & $a_{k}$ & \verb|$a_{k}$| & While not quite a function, you might use this a lot.\\ \hline
+		Fractions & $\frac{a}{b}$ & \verb|$\frac{a}{b}$| &This is just as we saw in the examples.\\ \hline
+		Sine & $\sin{x}$ & \verb|$\sin{x}$| & There is a difference be-\\
+		Cosine & $\cos{x}$ & \verb|$\cos{x}$| & tween using the commands\\
+		Tangent & $\tan{x}$ & \verb|$\tan{x}$| & and writing out the letters. \\ \hline
+		Integral & $\int_{a}^{b} f(x) dx$ & \verb|$\int_{a}^{b} f(x) dx$| & The upper and lower bounds are written
+					with \verb|^| and \verb|_|, respectively. The $dx$ is written with just the letters that produce it. \\ \hline
+		Derivative & $\frac{d}{dx}f(x)$ & \verb|$\frac{d}{dx}f(x)$| & It is written just as a normal fraction would be.\\
+			& $\dot{f(x)}$ & \verb|$\dot{f(x)}$| & Writing \verb|ddot| makes a second derivative, etc.\\ \hline
+		Sums & $\sum_{k=a}^{b}a_{k}$ & \verb|$\sum_{k=a}^{b}a_{k}$| & This works just like integrals.\\
+		 & or  $\displaystyle{\sum_{k=a}^{b}a_{k}}$ & \verb| $\displaystyle{. . .}$| & Placing the sum within
+					\verb|\displaystyle| results in the second version.\\ \hline
+		Equality Signs & $=$, $\neq$, & \verb|$=$, $\neq$,| & Try to remember the codes\\
+		& $<$, $\leq$, & \verb|$<$, $\leq$| &  like \verb|\geq| as ``greater equal''.\\
+		& $>$, $\geq$ & \verb|$>$, $\geq$| &\\ \hline
+	\end{tabular}
+\end{center}
+
+\newpage
+
+%--------------------------------------------------------------------------------------------------------------------------------------------------------
+%		Advanced Typesetting in Math Mode
+%--------------------------------------------------------------------------------------------------------------------------------------------------------
+
+%The fifth section is for Homework 11.%
+
+\section{Advanced Typesetting in Math Mode} %Now we're talking about organizing ourselves and doing special things.
+	None of the new techniques in this section is exceptionally more difficult than anything presented earlier in this document. The techniques are advanced in that they describe mathematics that the typical undergraduate may not require for everyday mathematics but are otherwise important to learn. The first few subsections explain some of the more involved methods of presenting mathematics, while section \ref{sec:Shorthand} has a table of typical math shorthand, similar to the table of common mathematical symbols in the previous section.
+
+%--------------------------------------------------------------------------------------------------------------------------------------------------------
+
+\subsection{Types of Math Fonts} %Blackboard bold, etc.
+	Some important sets, groups, numbers, etc., have their own special characters. For example, we use bold characters when representing typical, important sets like the set of real numbers $\RR$. We also use $\ZZ$ for the set of integers and $\QQ$ for the set of all rational numbers (``Q'' for quotients, i.e. fractions). How do we type these and other such characters?
+\begin{example}
+	The code \verb|$\mathbf{A}$| creates the boldface character $\mathbf{A}$.
+\end{example}
+	Why not simply use \verb|\textbf|? We could as easily do so, but the value of \verb|\mathbf| lies in its distinction between the typical boldfaced character and the mathematically significant boldface character \textit{within our code}. Furthermore the code \verb|\mathbf| works within math mode without having to enter paragraph mode, making it convenient for writing shorthand or using it within equations.\\
+	\indent While I stated that I would not teach you how to create new commands, I would like to take this opportunity to share some commands that are a convenient replacement for \verb|\mathbf|. I borrowed the following code from a \TeX\ file that Keith Conrad\footnote{\url{http://www.math.uconn.edu/~kconrad/}} provided.
+\begin{verbatim}
+	\newcommand{\FF}{\mathbf F}
+	\newcommand{\ZZ}{\mathbf Z}
+	\newcommand{\RR}{\mathbf R}
+	\newcommand{\QQ}{\mathbf Q}
+	\newcommand{\CC}{\mathbf C}
+	\newcommand{\NN}{\mathbf N}
+\end{verbatim}
+	I gather that these are sets Dr.\ Conrad %Had to use "Dr.\ Conrad" for spacing concerns after the period.
+references often. Putting the above code in our preamble allows us to write \verb|$\RR$| to create the character $\RR$ quickly. It is easier for me to remember this code than it is to remember to use \verb|\mathbf| every time, and it makes our code look better (and more compact).\\
+	\indent These are not the only ways to represent these sets. Another popular font is the ``blackboard bold'' font (similar to how we bold characters on a blackboard).
+\begin{example}
+	The code \verb|$\mathbb{R}$| creates the character $\mathbb{R}$.
+\end{example}
+	Whichever of these two fonts you use is a matter of preference. If you wish to begin learning how to create your own commands, you might want to try changing the provided code from Keith Conrad to use the blackboard bold font instead of the usual bold font.\\
+	\indent Some other examples of special fonts include \verb|$\mathcal{A}$|, $\mathcal{A}$, the font \verb|$\mathfrak{A}$|, $\mathfrak{A}$, and the font \verb|$\mathrm{A}$|, $\mathrm{A}$. There are many more examples online.
+
+%--------------------------------------------------------------------------------------------------------------------------------------------------------
+
+\subsection{Matrices} %How we make them...Explain the components.
+	\label{sec:Matrices}
+	Matrices are written in math mode, so keep in mind that we may use either \verb|$| or \verb|$$| to create them. The examples in this section will be written with the \verb|$| command only, however. Matrices are written very similarly to tables. The following example should be sufficient to master the use of matrices, though I will display the code two different ways.
+\begin{example}$ $\\ Both examples of code create the matrix beneath them.
+	\begin{enumerate}
+		\item \label{ex:Matrix1}
+			\begin{verbatim}
+				$\left(\begin{matrix}a&b\\c&d\end{matrix}\right)$
+			\end{verbatim}
+		\item \label{ex:Matrix2}
+			\begin{verbatim}
+				$\left(
+				\begin{matrix}
+				a&b\\
+				c&d
+				\end{matrix}
+				\right)$
+			\end{verbatim}
+	\end{enumerate}
+	\begin{center}
+	$\left(\begin{matrix}a&b\\c&d\end{matrix}\right)$.
+	\end{center}
+\end{example}
+	Of course you should use whichever form of the code is easiest for you to read. Personally I use (\ref{ex:Matrix1}) for smaller matrices, and (\ref{ex:Matrix2}) for larger (e.g. 3$\times$3) matrices. Larger matrices are written much like we write larger tables.
+\begin{example}$ $\\ The code
+	\begin{verbatim}
+		$\left(
+		\begin{matrix}
+			a&b&c\\
+			d&e&f\\
+			g&h&i
+		\end{matrix}
+		\right)$
+	\end{verbatim}
+creates the 3$\times$3 matrix
+\begin{center}
+	$\left(
+	\begin{matrix}
+		a&b&c\\
+		d&e&f\\
+		g&h&i
+	\end{matrix}
+	\right)$.
+\end{center}
+\end{example}
+	You should be able to write any size matrix, even those which are not square. For practice you might try writing a 5$\times$2 matrix. Now there is one other way we might want to write a matrix.
+
+\newpage
+
+\begin{example}$ $\\ The code\\
+	\verb|$(\begin{smallmatrix}a&b\\c&d\end{smallmatrix})$|\\
+	creates the matrix
+	\begin{center} $(\begin{smallmatrix}a&b\\c&d\end{smallmatrix})$. \end{center}
+\end{example}
+	This matrix is not, in general, very nice for most matrix sizes, but when writing 2$\times$2 matrices within a sentence it can be useful.
+
+%--------------------------------------------------------------------------------------------------------------------------------------------------------
+
+\subsection{Piecewise Functions}
+	\label{sec:Piecewise}
+	One method of writing a piecewise function is with the \verb|cases| environment. The following example will serve as our illustration.
+\begin{example}$ $\\ The code
+	\begin{verbatim}
+		$$|x| =
+	  	\begin{cases}
+   			x & \text{if } x \geq 0 \\
+   			-x & \text{if } x < 0
+	  	\end{cases}$$
+	\end{verbatim}
+	creates the function
+	$$|x| =
+  	\begin{cases}
+   		x & \text{if } x \geq 0 \\
+   		-x & \text{if } x < 0.
+  	\end{cases}$$
+\end{example}
+	The cases environment must be used within math mode to work properly. Note that we had to put a space within the \verb|\text| command, as before. Recall that the code \verb|\| adds a space within math mode. Here I used the code \verb|\ \| to make the spacing in the function look better.\\
+	\indent A variant of the \verb|cases| environment is the \verb|dcases| environment (used just as the \verb|cases| environment is used) which forces all of the mathematics in the environment to use the display style. We may also augment the environments with \verb|*| to tell the typesetter that everything after the \verb|&| is in paragraph mode. These three environments require the \verb|mathtools| package while the \verb|cases| environment only requires the \verb|amsmath| package.
+\begin{example}$ $\\ The previous example may have been written with the following alternative code.
+	\begin{verbatim}
+		$$|x| =
+	  	\begin{cases*}
+	   		x & if $x \geq 0$\\
+	   		-x & if $x < 0$
+	  	\end{cases*}$$
+	\end{verbatim}
+\end{example}
+	Remember that if an environment is not working you may have neglected to add the required package to the preamble. This tip is repeated in the troubleshooting subsection, section \ref{sec:Troubleshooting}.
+
+%--------------------------------------------------------------------------------------------------------------------------------------------------------
+
+\subsection{Typical Mathematical Shorthand and Special Symbols} %At least include: in, subset, intersection, union, to, rightarrow, ellipses - cdots, vdots, ddots (especially as derivatives), most shorthand, also stuff like stars.
+	\label{sec:Shorthand}
+	This section includes a table of typical mathematical shorthand. If the set notation is unfamiliar to you, you might want to take a transition to advanced mathematics course. Other notations may not be recognizable without having taken a related course. That is, do not feel worried if the table is entirely foreign to you.
+\begin{center}
+	\textbf{Table of Special Characters and Common Mathematical Shorthand}
+	\begin{tabular}{|c|c|c|p{5cm}|}
+		\hline
+		Symbol & Code & Shorthand for... & Notes\\ \hline \hline
+		$\in$ & \verb|$\in$| & ``belongs to'' and & Describes membership \\
+		$\notin$ & \verb|$\notin$| & ``does not belong to'' & to a set. \\ \hline
+		$\forall$ & \verb|$\forall$| & ``for all'' & For $|$, use the key above \\
+		$\exists$ & \verb|$\exists$| & ``there exists'' &  backslash, not ``L''.\\
+		$|$ & \verb+$|$+ & ``such that'' & Alternatively use ``s.t.''\\ \hline
+		$\therefore$ & \verb|$\therefore$| & ``therefore'' & \\ \hline
+		$\cup$ & \verb|$\cup$| & ``union'' and & Often used as relationships\\
+		$\cap$ & \verb|$\cap$| & ``intersection'' & between two sets.\\ \hline
+		$\subset$ & \verb|$\subset$| & ``is a subset of'', & \\
+		$\subseteq$ & \verb|$\subseteq$| & ``is a proper subset of'', and & Relationships between sets.\\
+		$\nsubseteq$ & \verb|$\nsubseteq$| & ``is not a subset of'' & \\ \hline
+		$\rightarrow$ &\verb|$\rightarrow$| & ``to'' and & Meanings vary with\\
+		$\leftarrow$ &\verb|$\leftarrow$| & ``from'' & context.\\
+			& & & (E.g.\ limits, description of a function.)\\ \hline
+		$...$ & \verb|$...$| &  Normal ellipsis. & \\
+		$\cdots$ & \verb|$\cdot$| & Spaced ellipsis. & These are useful in matrices.\\
+		$\vdots$ & \verb|$\vdot$| & Vertical ellipsis. & \\
+		$\ddots$ & \verb|$\ddot$| & Diagonal ellipsis. & \\ \hline
+		$\Gamma$ & \verb|$\Gamma$| & Uppercase Greek letter. & Other Greek letters\\
+		$\gamma$ & \verb|$\gamma$| & Lowercase Greek letter. & written similarly.\\ \hline
+		$\star$ & \verb|$\star$| & A star. & Other symbols may\\
+		$\circ$ & \verb|$\circ$| & A circle. & be written analogously.\\ \hline
+		$\infty$ & \verb|$\infty$| & Infinity. & Apparently easier than \verb|$\infinity$|.\\ \hline
+	\end{tabular}
+\end{center}
+
+\newpage
+
+%--------------------------------------------------------------------------------------------------------------------------------------------------------
+
+\subsection{Special Arrows and Over- or Under-braces} % xrightarrow, xleftarrow, braces
+	\label{sec:Braces}
+	First we learn about two special arrows made with the \verb|\xrightarrow| and \verb|\xleftarrow| commands. Modifying the commands with \verb|[]| writes text beneath the arrow while modification with \verb|{}| writes text above the arrow, and both may be used with the same arrow.\footnote{Most of the examples in this section were taken from the following location:\\ \url{http://en.wikibooks.org/wiki/LaTeX/Advanced_Mathematics}}
+\begin{example}$ $\\ The code
+	\begin{verbatim}
+		$$A \xleftarrow{\text{this way}} B
+  		\xrightarrow[\text{or that way}]{} C$$
+	\end{verbatim}
+	creates the display
+	$$A \xleftarrow{\text{this way}} B
+  	\xrightarrow[\text{or that way}]{} C.$$
+\end{example}
+	With the \verb|mathtools| package we can expand the number of arrow types we use with this package.
+\begin{example}$ $
+	\begin{center}
+		\begin{tabular}{|c|c|}
+			\hline
+			Code & Display \\ \hline
+			\verb|$a \xleftrightarrow[under]{over} b$| & $a \xleftrightarrow[under]{over} b$ \\ \hline
+			\verb|$A \xLeftarrow[under]{over} B$| & $A \xLeftarrow[under]{over} B$ \\ \hline
+			\verb|$B \xRightarrow[under]{over} C$| & $B \xRightarrow[under]{over} C$ \\ \hline
+			\verb|$C \xLeftrightarrow[under]{over} D$| & $C \xLeftrightarrow[under]{over} D$ \\ \hline
+			\verb|$D \xhookleftarrow[under]{over} E$| & $D \xhookleftarrow[under]{over} E$ \\ \hline
+			\verb|$E \xhookrightarrow[under]{over} F$| & $E \xhookrightarrow[under]{over} F$ \\ \hline
+			\verb|$F \xmapsto[under]{over} G$| & $F \xmapsto[under]{over} G$ \\ \hline
+			\verb|$G \curvearrowleft H$| & $G \curvearrowleft H$ \\ \hline
+			\verb|$H \curvearrowright I$| & $H \curvearrowright I$ \\ \hline
+		\end{tabular}
+	\end{center}
+\end{example}
+	Over- and under-braces are convenient for explaining processes within computational work, such as specifying what is your $u$ and what is your $dv$ in an example involving integration by parts. To create them we use the \verb|\overbrace| and \verb|\underbrace| commands.
+\begin{example}$ $\\
+	The code
+	\begin{verbatim}
+		$z = \overbrace{
+		\underbrace{x}_\text{real} +
+		\underbrace{iy}_\text{imaginary}
+		}^\text{complex number}$
+	\end{verbatim}
+	creates the equation
+	$$z = \overbrace{
+	\underbrace{x}_\text{real} +
+	\underbrace{iy.}_\text{imaginary}
+	}^\text{complex number}$$
+\end{example}
+	There are also similar codes for over- and under-brackets, \verb|\ovrebracket| and \verb|\underbracket|, which are used the same way.
+
+%--------------------------------------------------------------------------------------------------------------------------------------------------------
+
+\subsection{The \textit{stackrel} Command} %stackrel, etc.
+	The \verb|\stackrel| command can be used to create stacks of things, much like the \verb|\frac| command is used to make fractions. The command is best for code that spans several likes because, unlike some environments like \verb|displaymath|, the \verb|\stackrel| command will take input from several likes.  The \verb|\stackrel| command can replace many other commands (such as the \verb|\overset| and \verb|\underset| commands, which you may want to look up).  To stack things with the code, we modify the code with \verb|{item}|, editing the items in order from top to bottom.
+\begin{example}
+	The code \verb|$\stackrel{A}{B}$| creates the display $$\stackrel{A}{B}.$$
+\end{example}
+\begin{example}
+	An example of the use of L'H\^{o}pital's rule:\\
+	The code
+	\begin{verbatim}
+		$$\lim_{x\to 0}{\frac{e^x-1}{2x}}
+		\stackrel{\left[\frac{0}{0}\right]}{=}
+		\lim_{x\to 0}{\frac{e^x}{2}}={\frac{1}{2}}$$
+	\end{verbatim}
+	yields the display
+	$$\lim_{x\to 0}{\frac{e^x-1}{2x}}
+	\stackrel{\left[\frac{0}{0}\right]}{=}
+	\lim_{x\to 0}{\frac{e^x}{2}}={\frac{1}{2}}$$
+\end{example}
+
+%Not doing a section on "Other Syntaxes" since I am not sure what else what I might want to include. I've only written for this class and Algebra, and I don't think I've encountered anything that this document doesn't already introduce.
+
+\newpage
+
+
+%--------------------------------------------------------------------------------------------------------------------------------------------------------
+%		Final Words
+%--------------------------------------------------------------------------------------------------------------------------------------------------------
+
+%The seventh section was not required, but I am including it because it seems like I ought to.%
+
+\section{Final Words}
+	It should be noted that this document was only an \textit{introduction} to all of the techniques, commands, etc., that we discussed. We actually have much more control over the various environments and commands than I let on in this document. Following is a list of very helpful resources for \LaTeX\ and tips for using the program effectively.
+
+%--------------------------------------------------------------------------------------------------------------------------------------------------------
+
+\subsection{Recommended Resources} %How to Google things for \LaTeX\, specific resources, etc. This is not simply a bibliography so I have not created this section as a bibliography.
+	\label{sec:Resources}
+\begin{itemize}
+	\item \textit{\url{Google.com}}
+
+		If you have a question, search Google. In the next section we look at effective Google search methods for \LaTeX.
+
+	\item \textit{\url{http://en.wikibooks.org/wiki/LaTeX}}
+
+		The \LaTeX\ wikibook. Most everything I did not know I found on this website. Sometimes the search function is less than satisfying, so looking for links to this website from Google can be a better method.
+	\item \textit{\url{https://tex.stackexchange.com/}}
+
+		StackExchange is a friendly community where you can ask others for help with your \TeX. Be sure to search for old posts detailing problems similar to your own before starting a new conversation.
+
+	\item \textit{\url{http://detexify.kirelabs.org/classify.html}}
+
+		 De\TeX ify is a great website for finding code for characters you want to draw use in your document. I used this website to figure out how to write $\cap$. For practice, see if you can write the character \textrevglotstop. The website also tells you which mode, paragraph/text or math, to which it belongs, as well as any packages it needs.
+
+	\item \textit{\url{http://www.latextemplates.com/}}
+
+		This website contains templates for multiple types of documents. If you want to see what kind of style is appropriate for the purpose of your document, you should check this website for examples. It would also be a good idea to see some of the \TeX\ the authors of the templates used. You can always learn something new by examining a \TeX\  file!
+\end{itemize}
+
+%--------------------------------------------------------------------------------------------------------------------------------------------------------
+
+\subsection{Troubleshooting Tips}%Notes in your code, jumping to the PDF, reading an error log, etc. Specifically mention capitalization of commands, unclosed environments, and the like.
+	\label{sec:Troubleshooting}
+	If we ever ask, ``can I do [X] with \LaTeX?'' the answer is usually yes. The fastest method to learning how to start something new (e.g. finding out if we can make tables) would be to search with Google. Then, once we know the basics of a new command we should play around with it (e.g. trying to see if we can set a table's row height to be constant).\\
+	\indent Now, you will undoubtedly encounter many errors while using \LaTeX, especially when you are just starting. I still have many errors, but they are often the same recurring problems.
+\\
+\begin{center}
+	\textbf{Things I do to prevent errors.}
+\end{center}
+\begin{enumerate}
+	\item I compile the .tex file often. This minimizes the number of errors I encounter.
+	\item When an error occurs it will reference a line, so I make sure to avoid grouping large chunks of code in a single line.
+\end{enumerate}
+	The error will almost always reference a command within the specified line. When this happens I go through the following process.
+\\
+\begin{center}
+	\textbf{Things I do to resolve errors.}
+\end{center}
+\begin{enumerate}
+	\item I check that I spelled the command correctly. (Did I accidentally capitalize the command?)
+	\item I check that I have included all relevant packages. (Done with a quick Google search and review of my preamble).
+	\item I check that the syntax of my command is correct. (Did I use \verb|{}| correctly?)
+	\item Sometimes the error is something as simple as adding \verb|\| or \verb|\\| before a command that automatically spaces itself. If all else seems correct, try removing such code around the problem command.
+	\item If the above fails, I put the code and it's needed packages in a new document and see if it works there. If it does not I may decide to keep trying or to find a new command to reach my goal. If it does work, I scrutinize my code again, since the error should be resolved by one of the above three suggestions.
+\end{enumerate}
+\begin{center}
+	\textbf{How to search for information on LaTeX with Google.}
+\end{center}
+\begin{enumerate}
+	\item Keep in mind that without careful searching, you might find websites about ``latex'' instead of``\LaTeX''. Google does not differentiate between different capitalizations of searched words, so keep in mind that you \textit{might} find some fetish sights. If that is your thing, then search at ease!
+	\item Use only key words in your search. Searches like, ``How do I make it so that tables in latex are centered but also so that the displayed equations don't intersect the lines of the table'' are really bad, but searches like ``LaTeX tabular environment spacing'' are more likely to yield helpful results.
+	\item Familiarize yourself with the helpful links (above). Results leading to those pages are more likely to be helpful. This rings true with any other site you find consistently helpful.
+\end{enumerate}
+
+\end{document}
+
+%--------------------------------------------------------------------------------------------------------------------------------------------------------
+%		Notes
+%--------------------------------------------------------------------------------------------------------------------------------------------------------
+
+%	1) Consider adding exercises (with solutions)
+%	2) The use of \today may not be good because I do plan to share my TeX
+
+
+
+
+
+
+
+
+
+

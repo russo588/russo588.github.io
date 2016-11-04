@@ -1,0 +1,87 @@
+\documentclass[12pt,letterpaper]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{amsmath}
+\usepackage{enumerate}
+
+%Here are some user-defined notations
+\newcommand{\RR}{\mathbf R}  %bold R
+\newcommand{\CC}{\mathbf C}  %bold C
+\newcommand{\ZZ}{\mathbf Z}   %bold Z
+\newcommand{\QQ}{\mathbf Q}   %bold Q
+\newcommand{\rr}{\mathbb R}     %blackboard bold R
+\newcommand{\cc}{\mathbb C}    %blackboard bold R
+\newcommand{\zz}{\mathbb Z}    %blackboard bold R
+\newcommand{\qq}{\mathbb Q}   %blackboard bold Q
+\newcommand{\calM}{\mathcal M}  %calligraphic M
+\newcommand{\sm}{\setminus} 
+\newcommand{\bfa}{\mathbf a}
+\newcommand{\bfb}{\mathbf b}
+\newcommand{\bfc}{\mathbf c}
+
+
+
+
+%Here are some user-defined operators
+\newcommand{\re}{\operatorname {Re}}
+\newcommand{\im}{\operatorname {Im}}
+
+
+%These commands deal with theorem-like environments (i.e., italic)
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{conjecture}[theorem]{Conjecture}
+
+%These deal with definition-like environments (i.e., non-italic)
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{remark}[theorem]{Remark}
+
+%your name and date in the header.
+\usepackage[us]{datetime} 
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\lhead{}
+\chead{MATH 2710\\ Homework 3}
+\rhead{ Your name \\ \today}
+\lfoot{}
+\cfoot{}
+\rfoot{\thepage}
+\renewcommand{\headrulewidth}{0 pt}
+\renewcommand{\footrulewidth}{0 pt}
+\begin{document}
+\begin{enumerate}[1.]
+\item Let $A$ be a set and define $P(A)$ to be the set of all subsets of $A$. Let $C$ be a fixed subset of the set $A$ and define relation $R$ on the set $P(A)$ by $X R Y$ if and only if $X\cap C=Y\cap C$. Prove that this is an equivalence relation. 
+\ \\
+\item Let $A$ be a set and let $P$ be a partition of the set $A$ i.e. $P=\{A_1, A_2, \ldots A_n\}$ where 
+\begin{enumerate}[i)]
+\item $A_i\subset A$, 
+\item $\emptyset \not \in P$
+\item $A_1\cup A_2\cup \ldots \cup A_n=A$ 
+\item $A_i\cap A_j =\emptyset $ when $i\neq j$. 
+\end{enumerate}
+For $x,y \in A$ we say that $x R y$ if and only if $x\in A_i$ and $y\in A_i$ for the same $i$. Prove this is an equivalence relation. 
+\item Prove or disprove: The relation $R$ defined on the set $\mathbb{Z}$ by $x R y$ if and only if $xy>0$ is an equivalence relation. 
+\item Find all the $x$ that satisfy the following equation. (Hint: Use Fermat's Little theorem and notice that if $x_0$ is a solution then it's entire residue class is a solution.) 
+\[x^{86} \equiv 2\ \ \  \text{(mod 7)}\]
+\item Prove that every integer of the form $5n+3$ for $n\in \mathbb{Z}$, $n\geq 1$, cannot be a perfect square.  
+\end{enumerate}
+{\bf Bonus Question: (+3 Points added to exam)}\\
+\ \\
+Jim is looking to have a easy life and make a lot of money. Jim goes looking for employment and finds a mysterious man. The man points to a bridge and says the following to Jim: ``The work I have for you is light and you will get rich. Do you see the bridge? Each time you cross it I will double the money in your pocket. But since I am so generous you must give me back \$ 24 after each crossing.'' Jim accepts and walks across the bridge. Miraculously the money in his pocket doubled! He threw \$ 24 dollars to the mystery man for the first crossing and crossed again.  Amazingly his money doubled! He paid the mystery man \$ 24 again for the second crossing. He crossed a third time, again his money doubles. He goes to pay the mystery man, but the mystery man laughs because Jim only had \$ 24 dollars in his pocket and had to give it all away. How much money did Jim start with ?
+
+
+\end{document}
+
+
+
+
+
+
+
+

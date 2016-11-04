@@ -1,0 +1,94 @@
+\documentclass[12pt,letterpaper]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{amsmath}
+\usepackage{enumerate}
+
+%Here are some user-defined notations
+\newcommand{\RR}{\mathbf R}  %bold R
+\newcommand{\CC}{\mathbf C}  %bold C
+\newcommand{\ZZ}{\mathbf Z}   %bold Z
+\newcommand{\QQ}{\mathbf Q}   %bold Q
+\newcommand{\rr}{\mathbb R}     %blackboard bold R
+\newcommand{\cc}{\mathbb C}    %blackboard bold R
+\newcommand{\zz}{\mathbb Z}    %blackboard bold R
+\newcommand{\qq}{\mathbb Q}   %blackboard bold Q
+\newcommand{\calM}{\mathcal M}  %calligraphic M
+\newcommand{\sm}{\setminus} 
+\newcommand{\bfa}{\mathbf a}
+\newcommand{\bfb}{\mathbf b}
+\newcommand{\bfc}{\mathbf c}
+
+
+
+
+%Here are some user-defined operators
+\newcommand{\re}{\operatorname {Re}}
+\newcommand{\im}{\operatorname {Im}}
+
+
+%These commands deal with theorem-like environments (i.e., italic)
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{conjecture}[theorem]{Conjecture}
+
+%These deal with definition-like environments (i.e., non-italic)
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{remark}[theorem]{Remark}
+
+%your name and date in the header.
+\usepackage[us]{datetime} 
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\lhead{}
+\chead{MATH 2710\\ Homework 1}
+\rhead{ Your name \\ \today}
+\lfoot{}
+\cfoot{}
+\rfoot{\thepage}
+\renewcommand{\headrulewidth}{0 pt}
+\renewcommand{\footrulewidth}{0 pt}
+\begin{document}
+\begin{enumerate}[1.]
+\item Prove or give a counter example. 
+\[(S\cap T) \cup U=S\cap(T\cup U)\text{ for any sets }S,\ T, \text{ and }U.\]
+{\bf Solution:} We will provide a counter example. Let 
+\[S=\{1,2,3\},\ T=\{2,4,5,6\}, \text{ and }U=\{8,9,10\}.\]
+We have that
+\[S\cap T=\{2\}\]
+and so 
+\[(S\cap T)\cup U=\{2,8,9,10\}.\]
+Moreover, we have 
+\[T\cup U=\{2,4,5,6,8,9,10\}\]
+and so 
+\[S\cap(T\cup U)=\{2\}.\]
+\item Prove or give a counter example.
+\[S\cup T = T \Longleftrightarrow S\subseteq T.\]
+{\bf Solution: }We will show that the statement is true.
+\begin{proof} We will first show that if $S\cup T=T$ then $S\subseteq T$. By definition of union we have that $S\subseteq S\cup T$. Since $S\cup T=T$ we have that $S\subseteq T$. Now suppose that $S\subseteq T$, we will show that this implies that $S\cup T=T$. To do this we show that $S\cup T\subseteq T$ and that $T\subseteq S\cup T$. However, we automatically will have that $T\subseteq S\cup T$. So let $x\in S\cup T$ be arbitrary. If $x\in S$ then since $S\subseteq T$ we have that $x\in T$. If $x\in T$ then obviously $x\in T$. In both cases we have that $x\in T$ and thus since $x\in S\cup T$ was arbitrary we have that $S\cup T\subseteq T$ if $S\subseteq T$.
+\end{proof}
+\item Prove the distributive law. 
+\[A\cap(B\cup C) =(A\cap B) \cup (A\cap C)\]
+\begin{proof}We will prove the proposition by show that $A\cap (B\cup C)\subseteq (A\cap B)\cup (A\cap C)$ and 
+$(A\cap B)\cup (A\cap C)\subseteq A\cap(B\cup C)$. Let $x\in A\cap (B\cup C)$ be arbitrary. We have that $x\in A$ and $x\in B\cup C$. Since $x\in B\cup C$ then $x\in B$ or $x\in C$ (or both). If $x\in B$ then $x\in A\cap B$ and hence $x\in (A\cap B)\cup (A\cap C)$. Similarly if $x\in C$ we have that $x\in (A\cap B)\cup (A\cap C)$. Hence, since $x\in A\cap (B\cup C)$ was arbitrary we have that 
+\[A\cap (B\cup C)\subseteq (A\cap B)\cup (A\cap C).\]
+Now let $x\in (A\cap B)\cup (A\cap C)$ be arbitrary. If $x\in (A\cap B)\cup (A\cap C)$ then $x\in (A\cap B)$ or $x\in (A\cap C)$ (or both). If $x\in A\cap B$ then $x\in A$ and $x\in B$ and therefore $x\in B\cup C$ as well. So if $x\in A\cap B$ then $x\in A\cap (B\cup C)$. Similarly, if $x\in A\cap C$ then $x\in A\cap (B\cup C)$. Hence since $x\in (A\cap B)\cup (A\cap C)$ was arbitrary we have that 
+\[(A\cap B)\cup (A\cap C)\subseteq A\cap (B\cup C).\]
+\end{proof}
+\end{enumerate}
+
+\end{document}
+
+
+
+
+
+
+
+
