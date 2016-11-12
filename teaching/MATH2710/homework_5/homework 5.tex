@@ -1,0 +1,86 @@
+\documentclass[12pt,letterpaper]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{amsmath}
+\usepackage{enumerate}
+
+%Here are some user-defined notations
+\newcommand{\RR}{\mathbf R}  %bold R
+\newcommand{\CC}{\mathbf C}  %bold C
+\newcommand{\ZZ}{\mathbf Z}   %bold Z
+\newcommand{\QQ}{\mathbf Q}   %bold Q
+\newcommand{\rr}{\mathbb R}     %blackboard bold R
+\newcommand{\cc}{\mathbb C}    %blackboard bold R
+\newcommand{\zz}{\mathbb Z}    %blackboard bold R
+\newcommand{\qq}{\mathbb Q}   %blackboard bold Q
+\newcommand{\calM}{\mathcal M}  %calligraphic M
+\newcommand{\sm}{\setminus} 
+\newcommand{\bfa}{\mathbf a}
+\newcommand{\bfb}{\mathbf b}
+\newcommand{\bfc}{\mathbf c}
+
+
+\usepackage{tikz}
+\usetikzlibrary{positioning}
+\usepackage{graphicx}
+
+
+%Here are some user-defined operators
+\newcommand{\re}{\operatorname {Re}}
+\newcommand{\im}{\operatorname {Im}}
+
+
+%These commands deal with theorem-like environments (i.e., italic)
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{conjecture}[theorem]{Conjecture}
+
+%These deal with definition-like environments (i.e., non-italic)
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{remark}[theorem]{Remark}
+
+%your name and date in the header.
+\usepackage[us]{datetime} 
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\lhead{}
+\chead{MATH 2710\\ Homework 5}
+\rhead{ Your name \\ Nov. 11th}
+\lfoot{}
+\cfoot{}
+\rfoot{\thepage}
+\renewcommand{\headrulewidth}{0 pt}
+\renewcommand{\footrulewidth}{0 pt}
+\begin{document}
+\ \\
+\begin{enumerate}[1.]
+\item Let $f:X\rightarrow Y$ and $g:Y\rightarrow X$ be functions so that $g\circ f=1_X$. Prove that $f$ is injective and that $g$ is surjective. \\
+\ \\
+\item Prove that if $|A|=|B|$ then $|A\times A|=|B\times B|$. \\
+\ \\
+%\item Prove that $|\mathbb{R}^2|=|\mathbb{R}|$.\\
+%\ \\
+%{\bf Hint:} Use Schr\"{o}der-Bernstein Theorem to prove that $|(0,1)^2|=|(0,1)|$.\\
+\item If $f(x+y)=f(x)f(y)$ and $f$ is a bijection, show that the inverse satisfies 
+\[f^{-1}(xy)=f^{-1}(x)+f^{-1}(y)\]      
+\ \\
+\item  A card shuffling machine always rearranges cards in the same way relative to the order in which they were given to it. All of the hearts arranged in order from ace to king were put into the machine, and then the shuffled cards were put into the machine again to be shuffled. If the cards emerged in the order 10, 9, Q, 8, K, 3, 4, A, 5, J, 6, 2, 7, in what order were the cards after the first shuffle?\\
+\ \\
+\item Let $f:X\rightarrow Y$ and $g:Y\rightarrow Z$ and suppose that $g\circ f$ is onto. Prove that $g$ is onto then prove or disprove that $f$ is onto. 
+\end{enumerate}
+
+\end{document}
+
+
+
+
+
+
+
+
