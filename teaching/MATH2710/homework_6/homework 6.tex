@@ -62,7 +62,15 @@
 \begin{enumerate}[1.]
 \item Let $X$ and $Y$ be sets of positive real numbers which are bounded above. Define \[XY=\{xy\, |\ x\in X,\, y\in Y\}.\] Show that $\lub(XY)=\lub(X)\cdot \lub(Y)$.  \\
 \ \\
-
+Hint: Do the following: 
+Let $x=\lub(X)$ and $y=\lub(Y)$ and $\varepsilon>0$. 
+\begin{enumerate}[(i)]
+\item Show that $XY$ is bounded above.
+\item Show that there exists an $\hat{x}\in X$ such that $\hat{x}\geq x-\frac{\varepsilon}{x+y}$
+\item Show that there exists an $\hat{y}\in Y$ such that $\hat{y}\geq y-\frac{\varepsilon}{x+y}$
+\item Show $\hat{x}\hat{y}\geq xy-\varepsilon$
+\item Use the above to conclude $xy=\lub(XY)$.\\
+\end{enumerate}
 \item Show, that the sequence 
 \[a_n=\frac{2n-3}{n+5}\ \ \ \ n\geq 1\] 
 converges.
