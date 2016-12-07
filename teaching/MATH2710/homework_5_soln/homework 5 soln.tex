@@ -114,11 +114,13 @@ We know that after two shuffles,
 \[A \mapsto \text{position }8\]
 \[\vdots \]
 \[7 \mapsto \text{position }13\]
-
-If we start to write this in cycle notation we get 
-\[(A,\underline{\ \ \ \ }, 8,\underline{\ \ \ \ }, 4, \underline{\ \ \ \ }, 7, \ldots,\underline{\ \ \ \ }, 9).\]
-Completed, the permutation written in cycle notation is written as 
-\[(A, 2, 8, Q, 4, 3, 7, 6, K, J, 5, 10, 9)\]
+Letting $\sigma$ represent the permutation of the cards we have that 
+\[\sigma^2=(A, 8 , 4, 7, K, 5, 9, 2, Q, 3, 6, J, 10)\]
+Since, $\sigma^2$ is a 13 cycle, $\sigma$ must have also been a 13 cycle. (Powers of a cycle do not increase the cycle length, the only possibility is to split into smaller disjoint cycles.) 
+If we start to write $\sigma$ in cycle notation we get  
+\[\sigma=(A,\underline{\ \ \ \ }, 8,\underline{\ \ \ \ }, 4, \underline{\ \ \ \ }, 7, \ldots,\underline{\ \ \ \ }, 9).\]
+Completed, the permutation $\sigma$ written in cycle notation is written as 
+\[\sigma=(A, 2, 8, Q, 4, 3, 7, 6, K, J, 5, 10, 9)\]
 Which means after one shuffle the order of the cards is \[9, A, 4, Q, J , 7, 3, 2, 10, 5, K, 8, 6.\]
 
 \item Let $f:X\rightarrow Y$ and $g:Y\rightarrow Z$ and suppose that $g\circ f$ is onto. Prove that $g$ is onto then prove or disprove that $f$ is onto. \\
