@@ -1,0 +1,169 @@
+\documentclass[12pt,letterpaper]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{amsmath}
+\usepackage{enumerate}
+
+%Here are some user-defined notations
+\newcommand{\RR}{\mathbf R}  %bold R
+\newcommand{\CC}{\mathbf C}  %bold C
+\newcommand{\ZZ}{\mathbf Z}   %bold Z
+\newcommand{\QQ}{\mathbf Q}   %bold Q
+\newcommand{\rr}{\mathbb R}     %blackboard bold R
+\newcommand{\cc}{\mathbb C}    %blackboard bold R
+\newcommand{\zz}{\mathbb Z}    %blackboard bold R
+\newcommand{\qq}{\mathbb Q}   %blackboard bold Q
+\newcommand{\calM}{\mathcal M}  %calligraphic M
+\newcommand{\sm}{\setminus} 
+\newcommand{\bfa}{\mathbf a}
+\newcommand{\bfb}{\mathbf b}
+\newcommand{\bfc}{\mathbf c}
+\newcommand{\lub}{\text{lub}}
+
+\usepackage{tikz}
+\usetikzlibrary{positioning}
+\usepackage{graphicx}
+
+
+%Here are some user-defined operators
+\newcommand{\re}{\operatorname {Re}}
+\newcommand{\im}{\operatorname {Im}}
+
+
+%These commands deal with theorem-like environments (i.e., italic)
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{conjecture}[theorem]{Conjecture}
+
+%These deal with definition-like environments (i.e., non-italic)
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{remark}[theorem]{Remark}
+
+%your name and date in the header.
+\usepackage[us]{datetime} 
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\lhead{}
+\chead{MATH 2710\\ Homework 6}
+\rhead{ Your name \\ Dec. 9th}
+\lfoot{}
+\cfoot{}
+\rfoot{\thepage}
+\renewcommand{\headrulewidth}{0 pt}
+\renewcommand{\footrulewidth}{0 pt}
+\begin{document}
+\ \\
+\begin{enumerate}[1.]
+\item Let $X$ and $Y$ be sets of positive real numbers which are bounded above. Define \[XY=\{xy\, |\ x\in X,\, y\in Y\}.\] Show that $\lub(XY)=\lub(X)\cdot \lub(Y)$.  \\
+\ \\
+Hint: Do the following: 
+Let $x=\lub(X)$ and $y=\lub(Y)$ and $\varepsilon>0$. 
+\begin{enumerate}[(i)]
+\item Show that $XY$ is bounded above.
+\item Show that there exists an $\hat{x}\in X$ such that $\hat{x}\geq x-\frac{\varepsilon}{x+y}$
+\item Show that there exists an $\hat{y}\in Y$ such that $\hat{y}\geq y-\frac{\varepsilon}{x+y}$
+\item Show $\hat{x}\hat{y}\geq xy-\varepsilon$
+\item Use the above to conclude $xy=\lub(XY)$.\\
+\end{enumerate}
+{\bf Solution:}
+\begin{proof} Given that $X$ and $Y$ are sets of positive real numbers that are bounded above, by the least upper bound property we have that $X$ and $Y$ both have a least upper bound. Denote the least upper bounds of $X$ and $Y$ as $x$ and $y$ respectively. Note that $x\geq \tilde{x}>0$ for all $\tilde{x}\in X$, and thus $x>0$. Similarly, we have that $y>0$. 
+
+Since $X$ is bounded above by $x$ and $Y$ is bounded above by $y$. The set $XY$ is bounded above by $xy$ since $\tilde{x}<x$ for all $\tilde{x}\in X$ and $\tilde{y}<y$ for all $\tilde{y}\in Y$. Hence  $\tilde{x}\tilde{y}<xy$ for all $\tilde{x}\tilde{y} \in XY$.  Thus the set $XY$ is bounded above and has a least upper bound. Denote the least upper bound of the set $XY$ as $\alpha$. 
+
+We claim that $\alpha=xy$. To see this we will show that given an $\varepsilon >0$ the number $xy-\varepsilon$ is not an upper bound. Since $x$ is the least upper bound of $X$ we have that $x-\frac{\varepsilon}{x+y}$ is not an upper bound and thus there exists an $\hat{x}\in X$ such that 
+\[\hat{x}\geq x-\frac{\varepsilon}{x+y}.\]
+Similarly, there exists a $\hat{y}\in Y$ such that 
+\[\hat{y}\geq y-\frac{\varepsilon}{x+y}.\]
+Note that 
+\[\hat{x}\hat{y}\geq \left(x-\frac{\varepsilon}{x+y}\right) \left(y-\frac{\varepsilon}{x+y}\right)=xy-\varepsilon +\frac{\varepsilon^2}{(x+y)^2}>xy-\varepsilon\]
+since $\frac{\varepsilon^2}{(x+y)^2}>0$. Hence there exists an element $\hat{x}\hat{y}\in XY$ such that 
+\[\hat{x}\hat{y}>xy-\varepsilon\]
+for any given $\varepsilon >0$. Thus we must have that $xy=\alpha$, i.e. $xy$ is the least upper bound of $XY$. 
+\end{proof}
+\item Show, that the sequence 
+\[a_n=\frac{2n-3}{n+5}\ \ \ \ n\geq 1\] 
+converges.\\
+\ \\
+{\bf Solution:}
+\begin{proof}We will show the sequence converges to $2$.  Let $\varepsilon>0$ be given. Choose an $N\in \mathbb{Z}^+$ such that $\frac{13}{N}<\varepsilon$. If $n>N$, then 
+\[\left|\frac{2n-3}{n+5}-2\right|=\left|\frac{-13}{n+5}\right |=\frac{13}{n+5}\leq \frac{13}{n}\leq \frac{13}{N}<\varepsilon.\]
+\end{proof}
+\item Prove that $\left \{n^2+2\right \}_{n=1}^\infty$ diverges to infinity. \\      
+\ \\
+{\bf Solution:}
+\begin{proof} Let $M>0$ be given. Choose an $N\in \mathbb{Z}^+$ such that $N>M^{1/2}$. If $n\geq N$, then 
+\[n^2+2\geq N^2+2\geq N^2>M.\]
+
+
+\end{proof}
+
+
+\item Let $\{x_n\}$ and $\{y_n\}$ be convergent sequences with limits $x$ and $y$ respectively. Prove
+\begin{enumerate}[(a)]
+\item $\{cx_n\}$ converges to $cx$ where $c\in \mathbb{R}$.
+\item $\{x_n+y_n\}$ converges to $x+y$. \\
+\end{enumerate}
+{\bf Solution:}
+\begin{enumerate}[(a)]
+\item 
+\begin{proof}
+Suppose $c\neq 0$, otherwise the statement is trivial. Let $\varepsilon>0$ be given.  Since $x_n$ converges to $x$ there exists an $N\in \mathbb{Z}^+$ such that if $n> N$, then 
+\[|x_n-x|< \frac{\varepsilon}{|c|}.\] Hence, if $n>N$ then 
+\[|cx_n-cx|=|c||x_n-x|< |c|\frac{\varepsilon}{|c|}=\varepsilon.\]
+\end{proof}
+\item 
+\begin{proof} Let $\varepsilon >0$ be given. Since $x_n$ converges to $x$ there exists an $N_1\in \mathbb{Z}^+$ such that if $n> N_1$, then 
+\[|x_n-x|<\frac{\varepsilon}{2}.\] Simlarly, there exists an $N_2\in \mathbb{Z}^+$ such that if $n> N_2$, then 
+\[|y_n-y|<\frac{\varepsilon}{2}.\]
+Let $N=\max\{N_1,N_2\}$. If $n>N$, then 
+\[|(x_n+y_n)-(x+y)|\leq |x_n-x|+|y_n-y|< \frac{\varepsilon}{2}+\frac{\varepsilon}{2}=\varepsilon\]
+by the triangle inequality. 
+\end{proof} 
+
+\end{enumerate}
+\item Use the monotone convergence theorem to show the sequence $\{x_n\}$ defined by
+\[x_1=\sqrt{2},\ \ x_{n+1}=\sqrt{2+x_{n}}\ \ \text{ for }n>1\]
+converges.
+\vspace{.15in}\\
+Hint: Show by induction that the sequence is increasing and bounded above by 2.\\
+\ \\
+{\bf Solution:}\\
+\ \\
+We first show by induction that the sequence is bounded above by 2.
+\begin{proof}
+\ \\
+{\noindent\bf Base case: }Clearly, $\sqrt{2}\leq 2$.\\
+\ \\
+{\bf Induction Hypothesis: }For $n=k$, $x_k\leq 2$. \\
+\ \\
+We now show that $x_{k+1}\leq 2$. By definition 
+\[x_{k+1}=\sqrt{2+x_k}\leq \sqrt{2+2}=2.\]
+\end{proof}
+Now, we show by induction that the sequence is increasing.
+\begin{proof}
+\ \\
+{\bf Base case: }Clearly, $\sqrt{2}\leq \sqrt{2+\sqrt{2}}$.\\
+\ \\
+{\bf Induction Hypothesis: }For $n=k$, $x_k\leq x_{k+1}$. \\
+\ \\
+We now show that $x_{k+1}\leq x_{k+2}$. By definition 
+\[x_{k+1}=\sqrt{2+x_k}\leq \sqrt{2+x_{k+1}}=x_{k+2}.\]
+\end{proof}
+Since, the sequence is monotone increasing and bounded above it must converge. 
+\end{enumerate}
+
+\end{document}
+
+
+
+
+
+
+
+
