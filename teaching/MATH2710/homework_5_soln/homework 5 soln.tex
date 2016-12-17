@@ -1,0 +1,144 @@
+\documentclass[12pt,letterpaper]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{amsmath}
+\usepackage{enumerate}
+
+%Here are some user-defined notations
+\newcommand{\RR}{\mathbf R}  %bold R
+\newcommand{\CC}{\mathbf C}  %bold C
+\newcommand{\ZZ}{\mathbf Z}   %bold Z
+\newcommand{\QQ}{\mathbf Q}   %bold Q
+\newcommand{\rr}{\mathbb R}     %blackboard bold R
+\newcommand{\cc}{\mathbb C}    %blackboard bold R
+\newcommand{\zz}{\mathbb Z}    %blackboard bold R
+\newcommand{\qq}{\mathbb Q}   %blackboard bold Q
+\newcommand{\calM}{\mathcal M}  %calligraphic M
+\newcommand{\sm}{\setminus} 
+\newcommand{\bfa}{\mathbf a}
+\newcommand{\bfb}{\mathbf b}
+\newcommand{\bfc}{\mathbf c}
+
+
+\usepackage{tikz}
+\usetikzlibrary{positioning}
+\usepackage{graphicx}
+
+
+%Here are some user-defined operators
+\newcommand{\re}{\operatorname {Re}}
+\newcommand{\im}{\operatorname {Im}}
+
+
+%These commands deal with theorem-like environments (i.e., italic)
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{conjecture}[theorem]{Conjecture}
+
+%These deal with definition-like environments (i.e., non-italic)
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{remark}[theorem]{Remark}
+
+%your name and date in the header.
+\usepackage[us]{datetime} 
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\lhead{}
+\chead{MATH 2710\\ Homework 5}
+\rhead{ Your name \\ Nov. 11th}
+\lfoot{}
+\cfoot{}
+\rfoot{\thepage}
+\renewcommand{\headrulewidth}{0 pt}
+\renewcommand{\footrulewidth}{0 pt}
+\begin{document}
+\ \\
+\begin{enumerate}[1.]
+\item Let $f:X\rightarrow Y$ and $g:Y\rightarrow X$ be functions so that $g\circ f=1_X$. Prove that $f$ is injective and that $g$ is surjective. \\
+\ \\
+{\bf Solution:}
+\begin{proof}
+Suppose that $f(x_1)=f(x_2)$ and apply $g$ to both sides of the equality. Hence, 
+\[g\circ f(x_1)=g\circ f(x_2)\] since $g$ is a function. 
+Since, $g\circ f=1_X$ we have that 
+\[x_1=x_2\] and thus $f$ is injective. 
+Now let $x\in X$, to show $g$ is surjective we must show there exists a $y\in Y$ such that $g(y)=x$. Note, 
+\[x=1_x(x)=g\circ f(x)=g(f(x)).\]
+Hence, if $y=f(x)$ then $g(y)=x$.
+\end{proof}
+\ \\
+\item Prove that if $|A|=|B|$ then $|A\times A|=|B\times B|$. \\
+\ \\
+{\bf Solution:}
+\begin{proof}
+Since $|A|=|B|$ there exists a bijection $f:A\rightarrow B$. Define the function \[F:A\times A\rightarrow B\times B\] by 
+\[F(a_1,a_2)=(f(a_1), f(a_2)).\]
+We will show that $F$ is a bijection. To show that $F$ is surjective, let $(b_1, b_2)\in B$. Since $f$ is a bijection, f is surjective. Hence, there exists $a_1, a_2\in A$ such that $f(a_1)=b_1$ and $f(a_2)=b_2$. Note, 
+\[F(a_1, a_2)=(f(a_1), f(a_2))=(b_1, b_2)\] by definition. Thus, $F$ is surjective. To show that $F$ is injective suppose that 
+\[F(a_1, a_2)=F(a_1^*, a_2^*) \] for some $(a_1, a_2), (a_1^*, a_2^*)\in A\times A$. 
+We have that 
+\[(f(a_1), f(a_2))=(f(a_1^*), f(a_2^*))\] by definition of $F$. 
+Since $f$ is an injection,  $f(a_1)=f(a_1^*)$ and $f(a_2)= f(a_2^*)$ implies that $a_1=a_1^*$ and $a_2=a_2^*$. Hence, $(a_1, a_2)=(a_1^*, a_2^*)$ and $F$ is an injection. 
+\end{proof}
+\ \\
+\item If $f(x+y)=f(x)f(y)$ and $f$ is a bijection, show that the inverse satisfies 
+\[f^{-1}(xy)=f^{-1}(x)+f^{-1}(y)\]      
+{\bf Solution:} In truth, without some sort of information about the domain, this is not generally true. 
+Consider the following counter example. Let $f(x)=e^x$ and $f^{-1}(x)=\ln(x)$. 
+\[e^{(0+1)}=e^0e^1\]
+but 
+\[\ln(0\cdot 1)=\ln(0)+\ln(1)\]
+is not defined.
+
+For the following proof, we will assume that $f$ and $f^{-1}$ are defined on the same domain.  
+\begin{proof} Since $f(s+t)=f(s)f(t)$ for all $s$ and $t$ in the domain of $f$
+\[
+xy=f(f^{-1}(x))f(f^{-1}(y))=f(f^{-1}(x)+f^{-1}(y))
+\]
+If we apply $f^{-1}$ to both sides we get 
+\[f^{-1}(xy)=f^{-1}(f(f^{-1}(x)+f^{-1}(y)))=f^{-1}(x)+f^{-1}(y)\]
+\end{proof}
+\item  A card shuffling machine always rearranges cards in the same way relative to the order in which they were given to it. All of the hearts arranged in order from ace to king were put into the machine, and then the shuffled cards were put into the machine again to be shuffled. If the cards emerged in the order 10, 9, Q, 8, K, 3, 4, A, 5, J, 6, 2, 7, in what order were the cards after the first shuffle?\\
+\ \\
+{\bf Solution:}
+We know that after two shuffles, 
+\[10 \mapsto \text{position }1\]\[9 \mapsto \text{position }2\]
+\[Q \mapsto \text{position }3\]
+\[\vdots\]
+\[A \mapsto \text{position }8\]
+\[\vdots \]
+\[7 \mapsto \text{position }13\]
+Letting $\sigma$ represent the permutation of the cards we have that 
+\[\sigma^2=(A, 8 , 4, 7, K, 5, 9, 2, Q, 3, 6, J, 10)\]
+Since, $\sigma^2$ is a 13 cycle, $\sigma$ must have also been a 13 cycle. (Powers of a cycle do not increase the cycle length, the only possibility is to split into smaller disjoint cycles.) 
+If we start to write $\sigma$ in cycle notation we get  
+\[\sigma=(A,\underline{\ \ \ \ }, 8,\underline{\ \ \ \ }, 4, \underline{\ \ \ \ }, 7, \ldots,\underline{\ \ \ \ }, 9).\]
+Completed, the permutation $\sigma$ written in cycle notation is written as 
+\[\sigma=(A, 2, 8, Q, 4, 3, 7, 6, K, J, 5, 10, 9)\]
+Which means after one shuffle the order of the cards is \[9, A, 4, Q, J , 7, 3, 2, 10, 5, K, 8, 6.\]
+
+\item Let $f:X\rightarrow Y$ and $g:Y\rightarrow Z$ and suppose that $g\circ f$ is onto. Prove that $g$ is onto then prove or disprove that $f$ is onto. \\
+\ \\
+{\bf Solution:}
+\begin{proof}
+Let $z_0\in Z$, we will show that there exists a $y_0\in Y$ such that $g(y_0)=z_0$. Since $g\circ f$ is onto, there exists an $x_0\in X$ such that $g\circ f(x_0)=z_0$. If we let $y_0=f(x_0)$ then \[g(y_0)=g(f(x_0))=g\circ f(x_0)=z_0.\]  
+
+\end{proof}
+\end{enumerate}
+
+
+\end{document}
+
+
+
+
+
+
+
+
