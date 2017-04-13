@@ -1,0 +1,145 @@
+\documentclass[11pt]{exam}
+\RequirePackage{amssymb, amsfonts, amsmath, latexsym, verbatim, xspace, setspace}
+\RequirePackage{tikz, pgflibraryplotmarks}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath, amsthm, amssymb}
+\newtheorem*{thm}{{\bf Theorem}}
+\newtheorem{lemma}{{\bf Lemma}}
+\newcommand{\A}{\mathfrak{A}}
+\theoremstyle{definition}
+\newtheorem{define}{Definition}
+\newtheorem{claim}{Claim}
+\newtheorem*{method}{Method}
+\newtheorem{ex}{Example}
+\newcommand{\dydx}{\dfrac{dy}{dx}}
+\newcommand{\dydt}{\dfrac{dy}{dt}}
+\newcommand{\dxdt}{\dfrac{dx}{dt}}
+\newcommand{\dxdy}{\dfrac{dx}{dy}}
+\newcommand{\pp}{\prime\prime}
+\newcommand{\p}{\prime}
+\renewcommand{\d}[2]{\dfrac{d#1}{d#2}}
+\newcommand{\dd}[2]{\dfrac{d^2#1}{d#2^2}}
+\newcommand{\ypp}{y^{\prime\prime}}
+\newcommand{\yp}{y^{\prime}}
+\newcommand{\tr}{\text{tr}}
+\renewcommand\thesection{2.5}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{lipsum}% Used for dummy text.
+\usepackage{enumerate}
+\DeclareMathOperator{\dimension}{dim}
+\DeclareMathOperator{\ran}{ran}
+\DeclareMathOperator{\nullspc}{null}
+
+% Here's where you edit the Class, Exam, Date, etc.
+\newcommand{\class}{MATH3210}
+\newcommand{\term}{Spring 2017}
+\newcommand{\examnum}{Exam 2}
+\newcommand{\examdate}{Due: 2/20/17}
+
+
+% For an exam, single spacing is most appropriate
+\singlespacing
+% \onehalfspacing
+% \doublespacing
+
+% For an exam, we generally want to turn off paragraph indentation
+\parindent 0ex
+
+\begin{document} 
+
+% These commands set up the running header on the top of the exam pages
+\pagestyle{head}
+\firstpageheader{}{}{}
+\runningheader{\class}{\examnum\ - Page \thepage\ of \numpages}{\examdate}
+\runningheadrule
+ {\bf \class} \\
+\ \\
+ {\bf \examnum} \\\
+
+\rule[1ex]{\textwidth}{.1pt}
+\ \\
+The following rules apply:\\
+
+\begin{itemize}
+\item \textbf{Exam must be typed}. Please organize your proofs in a reasonably neat and coherent way. Write in complete sentences.  
+
+\item \textbf{Mysterious or unsupported claims will not receive full
+credit}.  Unreasonably large gaps in logic or an argument will receive little credit. You may quote theorems from class or the book.
+
+\item \textbf{Your solutions must be your own.} You may use outside sources but your submitted solution must be in your own words. 
+\end{itemize}
+
+\newpage % End of cover page
+
+
+\begin{questions}
+\question Show that the determinant of a matrix is the product of its eigenvalues.\vspace{-.1in}\\
+
+{\bf Hint: }You can use Corollary 6 in the determinant notes. 
+\vfill
+\question For $u\in V$, let $\varphi_u$ denote the linear functional on the inner product space $V$ defined by 
+\[\varphi_u(v)=\langle v,u\rangle\] 
+for $v\in V$. 
+\begin{enumerate}[(a)]
+\item Show that if $\mathbb{F}=\mathbb{R}$ then the map $\Phi: V(\mathbb{R})\rightarrow V(\mathbb{R})^\prime$ defined by 
+\[\Phi(u)=\varphi_u\]
+is a linear map. 
+\item Show that if $\mathbb{F}=\mathbb{C}$ and $V(\mathbb{C})\neq \{0\}$, then $\Phi$ is not linear. 
+\item Suppose that $\mathbb{F}=\mathbb{R}$ and $V(\mathbb{R})$ is finite dimensional. Show $\Phi$ is an isomorphism. 
+\end{enumerate}
+\vfill
+\question Let $P(\mathbb{R})$ be the vector space of polynomials and $\mathbb{R}^\infty$ be the vector space of sequences of real numbers (page 13). Show that $P(\mathbb{R})^\prime$ and $\mathbb{R}^\infty$ are isomorphic. \vspace{-.1in}\\
+
+{\bf Hint: }Construct an explicit isomorphism between $P_n(\mathbb{R})^\prime$ and $\mathbb{R}^n$ and extend this in the natural way to $P(\mathbb{R})$ and $\mathbb{R}^\infty$. 
+\vfill
+\question Consider the space $\mathbb{C}^\infty$. Let $B:\mathbb{C}^\infty\rightarrow \mathbb{C}^\infty$ be defined by the following:
+\[B(x_1, x_2, x_3,\ldots) =(0, x_1, x_2, \ldots).\]
+Does $B$ have eigenvalues? Rectify your answer with Theorem 5.21 (page 145).
+\vfill
+\question Let $M_{2\times 2}(\mathbb{R})$ denote the vector space of $2\times 2$ matrices with real entries.  Define the trace of a matrix $A$  as the sum of the diagonal entries, i.e. 
+\[\tr(A)=a_{1,1}+a_{2,2}\]
+Show that 
+\[\langle A, B\rangle=\tr(B^\top A)\]
+is an inner product on this space. 
+\vfill
+\question Show via Cauchy-Schwarz that 
+\[\left(\frac{a_1+\ldots +a_n}{n}\right)^2\leq \frac{a_1^2+\ldots+a_n^2}{n}\]
+i.e. the square of an average is less than or equal to the average of the squares. 
+\question Suppose that $V$ is finite dimensional and $U$ is a subspace of $V$. Show that 
+\[P_{U^\bot}=I-P_U,\]
+where $I$ is the identity operator on $V$. 
+\vfill
+\end{questions}
+
+\end{document}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Basic question
+\addpoints
+\question[10] Differentiate $f(x)=x^2$ with respect to $x$.
+
+% Question with parts
+\newpage
+\addpoints
+\question Consider the function $f(x)=x^2$.
+\begin{parts}
+\part[5] Find $f'(x)$ using the limit definition of derivative.
+\vfill
+\part[5] Find the line tangent to the graph of $y=f(x)$ at the point where $x=2$.
+\vfill
+\end{parts}
+
+% If you want the total number of points for a question displayed at the top,
+% as well as the number of points for each part, then you must turn off the point-counter
+% or they will be double counted.
+\newpage
+\addpoints
+\question[10] Consider the function $f(x)=x^3$.
+\noaddpoints % If you remove this line, the grading table will show 20 points for this problem.
+\begin{parts}
+\part[5] Find $f'(x)$ using the limit definition of derivative.
+\vspace{4.5in}
+\part[5] Find the line tangent to the graph of $y=f(x)$ at the point where $x=2$.
+\end{parts}
