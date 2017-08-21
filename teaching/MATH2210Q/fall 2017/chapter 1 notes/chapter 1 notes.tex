@@ -1,0 +1,491 @@
+\documentclass[12pt,letterpaper]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{amsmath}
+\usepackage{enumerate}
+
+%Here are some user-defined notations
+\newcommand{\RR}{\mathbf R}  %bold R
+\newcommand{\CC}{\mathbf C}  %bold C
+\newcommand{\ZZ}{\mathbf Z}   %bold Z
+\newcommand{\QQ}{\mathbf Q}   %bold Q
+\newcommand{\rr}{\mathbb R}     %blackboard bold R
+\newcommand{\cc}{\mathbb C}    %blackboard bold R
+\newcommand{\zz}{\mathbb Z}    %blackboard bold R
+\newcommand{\qq}{\mathbb Q}   %blackboard bold Q
+\newcommand{\calM}{\mathcal M}  %calligraphic M
+\newcommand{\sm}{\setminus} 
+\newcommand{\bfa}{\mathbf a}
+\newcommand{\bfb}{\mathbf b}
+\newcommand{\bfc}{\mathbf c}
+\renewcommand{\v}{{\bf v}}
+\newcommand{\x}{{\bf x}}
+\renewcommand{\b}{{\bf b}}
+\renewcommand{\u}{{\bf u}}
+\newcommand{\0}{{\bf 0}}
+\renewcommand{\a}{{\bf a}}
+%Here are some user-defined operators
+\newcommand{\re}{\operatorname {Re}}
+\newcommand{\im}{\operatorname {Im}}
+
+
+%These commands deal with theorem-like environments (i.e., italic)
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{conjecture}[theorem]{Conjecture}
+\newtheorem{prop}[theorem]{Proposition}
+
+%These deal with definition-like environments (i.e., non-italic)
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}
+\newtheorem{example}{Example}
+\newtheorem{remark}{Remark}
+
+%your name and date in the header.
+\usepackage[us]{datetime} 
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\lhead{}
+\chead{Chapter 1\\ Notes}
+\rhead{}
+\lfoot{}
+\cfoot{}
+\rfoot{\thepage}
+\renewcommand{\headrulewidth}{0 pt}
+\renewcommand{\footrulewidth}{0 pt}
+\usepackage{arydshln}
+\makeatletter
+  \renewcommand*\env@matrix[1][*\c@MaxMatrixCols c]{%
+    \hskip -\arraycolsep
+    \let\@ifnextchar\new@ifnextchar
+  \array{#1}}
+\makeatother
+\begin{document}
+\section{Definitions}
+\begin{definition}
+A \emph{linear equation}  in the variables $x_1,x_2,\ldots x_n$ is an equation that can be written in the form 
+\[a_1x_1+a_2x_2+\ldots a_nx_n=b\]
+Where $b, a_1, a_2, \ldots a_n$ are real or complex numbers. We call $a_1, a_2, \ldots a_n$ the \emph{coefficients}.
+\end{definition}
+\begin{definition}
+ A \emph{system of linear equations} (or linear system) is a collection of one or more linear equations involving the same variables. 
+\end{definition}
+\begin{definition}
+A \emph{solution} of a system is a list $(s_1, s_2, \ldots,  s_n)$ of numbers that make each equation true when $s_1, s_2, \ldots, s_n$ is substituted for $x_1, x_2, \ldots, x_n$. 
+\end{definition}
+\begin{definition}
+The set of all possible solutions is called the \emph{solution set} of a linear system. Two systems are \emph{equivalent} if they have the same solution set. 
+\end{definition}
+\begin{definition} A system is said to be \emph{consistent} if it has solutions and \emph{inconsistent} if it has no solutions. 
+\end{definition}
+\begin{definition}
+Elementary Row Operations 
+\begin{enumerate}[(i)]
+\item Replace - replace one row with the sum of itself and a multiple of another. 
+\item Interchange - switch the position of two rows. 
+\item Scale - multiply all terms of a row by a non-zero constant. 
+\end{enumerate}
+\end{definition}
+\begin{definition}Two matrices are called \emph{row equivalent} if there is a sequence of elementary row operations that transform one matrix into the other. 
+\end{definition}
+\begin{definition} If a matrix $A$ is row equivalent to a matrix $U$ in row echelon form we call $U$ an \emph{echelon form} of $A$. If a matrix $A$ is row equivalent to a matrix $U$ in reduced row echelon form we call $U$ the \emph{reduced row echelon form} of $A$. 
+\end{definition}
+\begin{definition}
+A row (or column) is \emph{non-zero} if there is one non-zero entry
+\end{definition}
+\begin{definition}
+A \emph{leading entry} of a row is the leftmost non-zero entry (in a non-zero row). 
+\end{definition}
+
+\begin{definition}
+A rectangular matrix is in \emph{row echelon form }(REF) if it has the following three properties
+\begin{enumerate}[(i)]
+\item All non-zero rows are above rows of all zero's.
+\item  Each leading entries of a row is in a column to the right of the leading entry of the row above it. 
+\item All entries in a column \underline{below} a leading entry are zeros
+\end{enumerate}
+If a REF matrix satisfies the following it is in \emph{reduced row echelon form} (RREF)
+\begin{enumerate}[(i)]
+\item The leading entry in each non-zero row is a $1$.
+\item Eaching leading $1$ is the \underline{only} non-zero entry in its column.
+\end{enumerate}
+\end{definition}
+\begin{example} 
+$\square$- nonzero entry, $\ast$- any real number
+\[\begin{bmatrix}
+0 & \square & \ast & \ast & \ast & \ast & \ast & \ast & \ast & \ast \\
+0 & 0& 0 & \square & \ast & \ast & \ast & \ast & \ast & \ast \\
+0& 0& 0& 0& \square & \ast & \ast & \ast & \ast & \ast \\
+0 & 0 & 0 & 0& 0& \square & \ast & \ast & \ast & \ast \\
+0 &0 &0 &0 &0 &0 &0 &0 &\square & \ast 
+\end{bmatrix}\ \ \text{ (Row Echelon Form) }\] 
+\[\ \ \ \ \ \ \ \ \begin{bmatrix}
+0 & 1 & \ast & 0 & 0 & 0 & \ast & \ast & 0 & \ast \\
+0 & 0& 0 & 1 & 0 & 0 & \ast & \ast & 0 & \ast \\
+0& 0& 0& 0& 1 & 0 & \ast & \ast & 0 & \ast \\
+0 & 0 & 0 & 0& 0& 1 & \ast & \ast & 0 & \ast \\
+0 &0 &0 &0 &0 &0 &0 &0 &1 & \ast 
+\end{bmatrix}\ \ \text{ (Reduced Row Echelon Form) }\]
+\end{example}
+\begin{definition}
+A \emph{pivot position} in a matrix $A$ is a location in $A$ that corresponds to a leading $1$ in the RREF of $A$. 
+\end{definition}
+\begin{definition}
+A \emph{pivot column} in a matrix $A$ is the column that contains the pivot position.
+\end{definition}
+\begin{definition}
+A \emph{pivot} is a non-zero entry used to make 0's via row operations. 
+\end{definition}
+
+\begin{definition} A \emph{basic variable} is a variable corresponding to a pivot column. All other variables are \emph{free variables}
+\end{definition}
+
+\begin{definition} Given vectors $\v_1,\v_2\ldots,  \v_p$ in $\mathbb{R}^n$ and given scalars $c_1,\ldots,c_p$, the vector $y$ defined by 
+\[y=c_1\v_1+c_2\v_2+\ldots+c_p\v_p\]
+is called a \emph{linear combination} of $\v_1,\ldots,\v_p$ with \emph{weights} $c_1,\ldots c_p$. 
+\end{definition}
+\begin{definition} If $\v_1, \ldots, \v_p$ are in $\mathbb{R}^n$, then the set of all linear combination of vectors $\v_1, \ldots, \v_p$ is called the \emph{span} of the set of vectors and denoted $\text{span}\{\v_1,\ldots, \v_p\}$.
+\end{definition}
+\begin{definition}
+A system of linear equations is said to be \emph{homogeneous} if it can be written in the form $A\x={\bf 0}$, where $A$ is an $m\times n$ matrix and ${\bf 0}$ is the zero vector in $\mathbb{R}^m$. The equation $A\x={\bf 0} $ always has at least one solution $\x={\bf 0}$ called the \emph{trivial solution}. A \emph{non-trivial solution} is a non-zero vector $\x$ such that $A\x={\bf 0}$.
+\end{definition}
+\begin{definition} An indexed set of vectors $\{\v_1,\ldots \v_p\}$ in $\mathbb{R}^n$ is said to be \emph{linearly independent} of the vector equation 
+\[x_1\v_1+\ldots +x_p\v_p=0\]
+has only the trivial solution $x_1=x_2=\ldots =x_p=0$. The set $\{\v_1,\ldots, \v_p\}$ is said to be \emph{linearly dependent} of there are weights $c_1, \ldots, c_p$ not all zero such that 
+\begin{equation}\label{lindepeq}c_1\v_1+\ldots +c_p\v_p=0 \end{equation}
+Equation (\ref{lindepeq}) is called a \emph{linear dependence relation} among $\v_1, \ldots, \v_p$. 
+\end{definition}
+\begin{definition} A \emph{transformation} $T$ from $\mathbb{R}^n$ to $\mathbb{R}^m$ is a rule that assigns each vector $\x$ in $\mathbb{R}^n$ a vector $T(\x)$ in $\mathbb{R}^m$. The set $\rr^n$ is called the \emph{domain} of $T$ and $\rr^m$ is called the \emph{codomain} of $T$. The set of images $T(\x)$ is called the \emph{range} of $T$ and is a subset of the codomain.
+\end{definition}
+\begin{definition} A transformation $T$ is called \emph{linear} if:
+\begin{enumerate}[(i)]
+\item $T(\u+\v)=T(\u)+T(\v)$ for all vectors $\u,\v$ in the domain of $T$
+\item $T(c\u)=cT(\u)$ for all scalars $c$ and all $\u$ in the domain of $T$.
+\end{enumerate}
+
+\end{definition}
+\begin{definition}A mapping $T:\mathbb{R}^n\rightarrow \rr^m$ is said to be \emph{onto} $\rr^m$ if each $\b$ in $\rr^m$ is the image of atleast one $\x$ in $\rr^n$.
+\end{definition}
+\begin{definition}A mapping $T:\mathbb{R}^n\rightarrow \rr^m$ is said to be \emph{one to one} if each $\b$ in $\rr^m$ is the image of at most one $\x$ in $\rr^n$ (could be none).
+\end{definition}
+\section{Propositions and Theorems}
+\begin{prop} In general a system of linear equations has 
+\begin{enumerate}[1)]
+\item No solutions
+\item Exactly one solution
+\item infinitely many solutions. 
+\end{enumerate}
+\end{prop}
+\begin{prop} If the augmented matrices of two linear systems are row equivalent they have the same solution set. 
+\end{prop}
+\begin{theorem} Each matrix is row equivalent to one and only one reduced row echelon matrix.
+\end{theorem}
+\begin{theorem} A linear system is consistent if and only if the rightmost columns of the augmented matrix is \underline{not} a pivot column, i.e. if and only if an echelon form of the matrix has no row of the form
+\[ [ 0,\ldots , 0, b]\]
+If a linear system is consistent then the solution set contains either 
+\begin{enumerate}[(i)]
+\item a unique solution (no free variables) 
+\item infinite solutions (at least $1$ free variable)
+\end{enumerate}
+\end{theorem}
+\begin{prop} A vector equation 
+\[x_1{\bf a}_1+x_2{\bf a}_2+\ldots x_n{\bf a}_n=\b\]
+has the same solution set as the linear system whose augmented matrix is 
+\begin{equation}\label{augmat}[{\bf a}_1\ {\bf a}_2\ \dots \ {\bf a}_n\ \b].\end{equation}
+In particular $\b$ can be generated by a linear combination of ${\bf a}_1, \ldots {\bf a}_n$ if and only if there exists a solution to the system with matrix (\ref{augmat})
+\end{prop}
+\begin{theorem}If $A$ is an $m\times n$ matrix, with columns $\a_1, \ldots \a_n$ and if $\b$ is in $\rr^m$, the matrix equation 
+\[A\x=\b\] has the same solution set as the vector equation 
+\[x_1\a_1+\ldots x_n\a_n=\b\]
+which in turn has the same solution set as the system of linear equations with augmented matrix
+\[[\a_1\ \dots\ \a_n\ b]\]
+\end{theorem}
+\begin{prop} The equation $A\x=\b$ has a solution if and only if $\b$ is a linear combination of the columns of the matrix $A$. 
+\end{prop}
+\begin{theorem}\label{span/onto}Let $A$ be an $m\times n$ matrix. The following statements are logically equivalent. 
+\begin{enumerate}[(a)]
+\item For each $\b$ in $\rr^m$, the equation $A\x=\b$ has a solution.
+\item Each $\b$ in $\rr^m$ is a linear combination of the columns of $A$.
+\item The columns of $A$ span $\rr^m$. 
+\item A has a pivot position in every row.
+\end{enumerate}
+\end{theorem}
+\begin{prop}\label{trivial/1to1}The homogeneous equation $A\x=0$ has a non-trivial solution if and only if the equation has atleast one free variable.
+\end{prop}
+\begin{theorem}
+Suppose the equation $A\x=\b$ is consistent for a given $\b$, and let ${\bf p}$ be a solution. The the solution set of $A\x=\b$ is the set of all vectors of the form 
+\[{\bf w}={\bf p}+\v_h\]
+where $v_h$ is any solution of the homogeneous equation $A\x=\0$. 
+\end{theorem}
+\begin{prop}The columns of a matrix $A$ are linearly independent if and only if the equation $A\x=\0$ has {\bf only} the trivial solution. 
+\end{prop}
+\begin{theorem}An indexed set $S=\{\v_1,\ldots \v_p\}$ of two or more vectors is linearly dependent if and only if one of the vectors in $S$ is a linear combination of the others. In fact, if $S$ is linearly dependent and $\v_1\neq \0$ then some $\v_j$ with $j>1$ is a linear combination of the preceding vectors $\v_1,\ldots, \v_{j-1}$
+\end{theorem}
+\begin{theorem}If a set contains more vectors than there are entries in each vector, then the set is linearly dependent. That is, any set $\{\v_1 \ldots \v_p\}$ in $\mathbb{R}^n$ is linearly independent if $p>n$. 
+\end{theorem}
+\begin{theorem} If a set $S=\{\v_1,\ldots, \v_p\}$ in $\mathbb{R}^n$ contains the zero vector, then the set is linearly dependent.
+\end{theorem}
+\begin{theorem}
+Let $T:\rr^n\rightarrow \rr^m$ be a linear transformation. There there exists a unique matrix $A$ such that 
+\[T(\x)=A\x \text{ for all }\x\text{ in }\rr^n.\]
+In fact, $A$ is the $m\times n$ matrix whose $j$th column is the vector $T({\bf e_{j}})$ where ${\bf e}_j$ is the jth column of the identity matrix in $\rr^n$.
+\[A=[T({\bf e}_1)\ \dots \ T({\bf e}_n)]\]
+We call $A$ the {\bf standard matrix} for $T$. 
+\end{theorem}
+\begin{theorem} Let $T:\rr^n\rightarrow \rr^m$ be a linear transformation. Then $T$ is one to one if and only if the the equation $T(\x)=\0$ has only the trivial solution 
+\end{theorem}
+\begin{theorem} Let $T:\rr^n\rightarrow \rr^m$ be a linear transformation with $A$ as its standard matrix. Then:
+\begin{enumerate}[(a)]
+\item T maps $\rr^n$ onto $\rr^m$ if and only if the columns of $A$ span $\rr^m$.
+\item T is one to one if and only if the columns of $A$ are linearly independent. 
+\end{enumerate}
+\end{theorem}
+\section{Solving Equations}
+Here's an example on how to write a linear system in several equivalent ways.
+\[\begin{array}{rl}
+\begin{array}{lrcrcrl}
+&x_1& -&2x_2&+&x_3&=0\\
+ &\ & \  &2x_2&-&8x_3&=8\\
+&-4x_1& +&5x_2& +&9x_3&=-9
+\end{array}
+
+&\Longleftrightarrow
+\begin{bmatrix}[rrr:r]
+1& -2 & 1 &0\\
+0& -1 & -8&8\\
+-4 & 5 & 9 &-9
+\end{bmatrix} \text{(Augmented matrix)}\\
+\ \\
+&\Longleftrightarrow
+\begin{bmatrix}
+1& -2 & 1\\
+0& -1 & -8\\
+-4 & 5 & 9
+\end{bmatrix}\cdot\begin{bmatrix}x_1\\x_2\\x_3\end{bmatrix}=\begin{bmatrix}0\\8\\-9\end{bmatrix}\text{(Matrix equation)}\\
+\ \\
+&\Longleftrightarrow
+x_1\begin{bmatrix}1 \\ 0 \\-4
+\end{bmatrix}
++x_2\begin{bmatrix}-2 \\ -1\\-5
+\end{bmatrix}
++x_3\begin{bmatrix}1 \\ -8 \\9
+\end{bmatrix}=
+\begin{bmatrix}0 \\ 8 \\ -9\end{bmatrix}\text{(Vector Equation)}
+\end{array}\]
+
+\noindent \setlength{\fboxsep}{4pt}\setlength{\fboxrule}{1pt}\framebox{\parbox[c][3.95in][c]{\textwidth}{
+\vspace{.05in}
+{\bf \noindent \Large Row Reduction Algorithm:}
+\ \\
+\ \\
+{\hphantom{aal}\bf \indent Forward phase:}
+\begin{enumerate}[1)]
+
+\item Begin with the left most non-zero column. This is a pivot column. The pivot position is at the top. 
+\item Select a non-zero entry in the pivot column as a pivot. If necessary, interchange rows to move this entry into the pivot position. 
+\item Use row replacement operators to create zeros in all positions below the pivot
+\item Ignore the row containing the pivot and cover all rows (if any) above it. Apply steps 1-3 on the remaining submatrix. Repeat the process untill there are no more non-zero rows to modify.\\
+\ \\
+{\bf  Backwards phase:}
+\item Beginning with the rightmost pivot an working upward and to the left, create zeros above each pivot. If a pivot is not a $1$, make it $1$ by scaling. 
+\end{enumerate}
+}}
+
+\noindent \setlength{\fboxsep}{4pt}\setlength{\fboxrule}{1pt}\framebox{\parbox[c][2.25in][c]{\textwidth}{
+\vspace{.05in}
+{\bf \noindent \Large Solving a Linear system:}
+
+\begin{enumerate}[1)]
+\item Write the augmented matrix.
+\item Use row reduction to reduce to row echelon form. Decide if system is consistent. 
+\item Go onto reduced row echelon form.
+\item Write system for RREF. 
+\item Rewrite in parametric description.
+\end{enumerate}
+}}
+\section{Examples}
+\begin{example}
+Let's solve this system 
+\[
+\begin{array}{lrcrcrl}
+&x_1& +&2x_2&+&3x_3&=9\\
+ &2x_1& -  &x_2&+&x_3&=8\\
+&3x_1& \ &\ & -&x_3&=3
+\end{array}
+\]
+It is equivalent to the following augmented matrix 
+\[\begin{bmatrix}[rrr:r]
+1& 2 & 3 &9\\
+2& -1 & 1&8\\
+3 & 0 & -1 &3
+\end{bmatrix} \]
+We do the forward phase of row reduction 
+\begin{align*}
+\begin{bmatrix}[rrr:r]
+1& 2 & 3 &9\\
+2& -1 & 1&8\\
+3 & 0 & -1 &3
+\end{bmatrix}
+&\sim \begin{bmatrix}[rrr:r]
+1& 2 & 3 &9\\
+0& -5 & -5&-10\\
+0 & -6 & -10 &-24
+\end{bmatrix}\\
+\ \\
+&\sim \begin{bmatrix}[rrr:r]
+1& 2 & 3 &9\\
+0& 1& 1&2\\
+0 & -6 & -10 &-24
+\end{bmatrix}
+\\
+\ \\
+&\sim\begin{bmatrix}[rrr:r]
+1& 2 & 3 &9\\
+0& 1& 1&2\\
+0 & 0 & -4 &-12
+\end{bmatrix}\\
+\ \\
+&\sim\begin{bmatrix}[rrr:r]
+1& 2 & 3 &9\\
+0& 1& 1&2\\
+0 & 0 & 1 &3
+\end{bmatrix}
+\end{align*}
+At this point if we convert back into a linear system we can see the system is consistent. 
+\[
+\begin{array}{lrcrcrl}
+&x_1& +&2x_2&+&3x_3&=9\\
+ &\ &\  &x_2&+&x_3&=2\\
+&\ &\ &\ & \ &x_3&=3
+\end{array}
+\]
+At this point we can see that we have a solution and that we have no free variables. We can go further and use the backwards phase of row reduction to get the reduced row echelon form. 
+\[\begin{bmatrix}[rrr:r]
+1& 2 & 3 &9\\
+0& 1& 1&2\\
+0 & 0 & 1 &3
+\end{bmatrix}\sim \begin{bmatrix}[rrr:r]
+1& 2 & 3 &9\\
+0& 1& 0&-1\\
+0 & 0 & 1 &3
+\end{bmatrix}
+\sim \begin{bmatrix}[rrr:r]
+1& 0 & 0 &2\\
+0& 1& 0&-1\\
+0 & 0 & 1 &3
+\end{bmatrix}\]
+The system now reduces to 
+\[\begin{array}{lrcrcrl}
+&x_1&\ &\ &\ &\ &=2\\
+ &\ &\  &x_2&\ &\ &=-1\\
+&\ &\ &\ & \ &x_3&=3
+\end{array}
+\]
+This is the only solution since there are no free variables.
+We also have the solution for the corresponding matrix and vector equation. 
+\[
+\begin{bmatrix}
+1& 2 & 3 \\
+2& -1 & 1\\
+3 & 0 & -1
+\end{bmatrix}\cdot\begin{bmatrix}x_1\\x_2\\x_3\end{bmatrix}=\begin{bmatrix}9\\8\\3\end{bmatrix}\text{ has solution }\begin{bmatrix}x_1\\x_2\\x_3\end{bmatrix}=\begin{bmatrix}2\\-1\\3\end{bmatrix}
+\]
+
+That is,
+\[ 
+\begin{bmatrix}
+1& 2 & 3 \\
+2& -1 & 1\\
+3 & 0 & -1
+\end{bmatrix}\cdot\begin{bmatrix}2\\-1\\3\end{bmatrix}=\begin{bmatrix}9\\8\\3\end{bmatrix}
+\]
+
+\[
+x_1\begin{bmatrix}1 \\ 2 \\3
+\end{bmatrix}
++x_2\begin{bmatrix}2 \\ -1\\1
+\end{bmatrix}
++x_3\begin{bmatrix}3 \\ 1 \\-1
+\end{bmatrix}=
+\begin{bmatrix}9 \\ 8 \\ 3\end{bmatrix} \text{ has solution }(x_1,x_2,x_3)=(2, -1 , 3)
+\]
+That is, 
+\[
+2\begin{bmatrix}1 \\ 2 \\3
+\end{bmatrix}
+-1\begin{bmatrix}2 \\ -1\\1
+\end{bmatrix}
++3\begin{bmatrix}3 \\ 1 \\-1
+\end{bmatrix}=
+\begin{bmatrix}9 \\ 8 \\ 3\end{bmatrix}
+\]
+\end{example}
+\begin{example}
+More generally, we consider the matrix equation
+\[
+\begin{bmatrix}
+1& 2 & 3 \\
+2& -1 & 1\\
+3 & 0 & -1
+\end{bmatrix}\cdot\begin{bmatrix}x_1\\x_2\\x_3\end{bmatrix}=\begin{bmatrix}b_1\\b_2\\b_3\end{bmatrix}
+\]
+Since 
+\[A=\begin{bmatrix}
+1& 2 & 3 \\
+2& -1 & 1\\
+3 & 0 & -1
+\end{bmatrix}\sim \begin{bmatrix}
+1& 2 & 3 \\
+0 & 1 & 1\\
+0 & 0 & 1
+\end{bmatrix}
+\]
+We know by Theorem \ref{span/onto} that the matrix equation has a solution for every possible vector $\b$. 
+\end{example}
+\begin{example}
+Consider the homogeneous equation, 
+\[
+\begin{bmatrix}
+1& 2 & 3 \\
+2& -1 & 1\\
+3 & 0 & -1
+\end{bmatrix}\cdot\begin{bmatrix}x_1\\x_2\\x_3\end{bmatrix}=\begin{bmatrix}0\\0\\0\end{bmatrix}
+\]
+Since 
+\[\begin{bmatrix}[rrr:r]
+1& 2 & 3 &0\\
+2& -1& 1&0\\
+3 & 0 & 1 &0
+\end{bmatrix}\sim
+\begin{bmatrix}[rrr:r]
+1& 0 & 0 &0\\
+0& 1& 0&0\\
+0 & 0 & 1 &0
+\end{bmatrix}
+\]
+then the homogeneous equation has only the trivial solution by Theorem \ref{trivial/1to1}. 
+\end{example}
+
+
+\begin{example}
+Consider the following linear transformation. 
+\[T(\x)=A\x=\begin{bmatrix}
+1& 2 & 3 \\
+2& -1 & 1\\
+3 & 0 & -1
+\end{bmatrix}\cdot\x\]
+We know this transformation is one to one and onto by the use of Theorems 7, 8, 9, 10, 11, and 17.
+\end{example}
+\end{document}
+
+
+
+
+
+
+
+
