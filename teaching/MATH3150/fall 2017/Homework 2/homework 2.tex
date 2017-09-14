@@ -1,0 +1,87 @@
+\documentclass[12pt,letterpaper]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{amsmath}
+\usepackage{enumerate}
+
+%Here are some user-defined notations
+\newcommand{\RR}{\mathbf R}  %bold R
+\newcommand{\CC}{\mathbf C}  %bold C
+\newcommand{\ZZ}{\mathbf Z}   %bold Z
+\newcommand{\QQ}{\mathbf Q}   %bold Q
+\newcommand{\rr}{\mathbb R}     %blackboard bold R
+\newcommand{\cc}{\mathbb C}    %blackboard bold R
+\newcommand{\zz}{\mathbb Z}    %blackboard bold R
+\newcommand{\qq}{\mathbb Q}   %blackboard bold Q
+\newcommand{\calM}{\mathcal M}  %calligraphic M
+\newcommand{\sm}{\setminus} 
+\newcommand{\bfa}{\mathbf a}
+\newcommand{\bfb}{\mathbf b}
+\newcommand{\bfc}{\mathbf c}
+
+
+
+
+%Here are some user-defined operators
+\newcommand{\re}{\operatorname {Re}}
+\newcommand{\im}{\operatorname {Im}}
+
+
+%These commands deal with theorem-like environments (i.e., italic)
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{conjecture}[theorem]{Conjecture}
+
+%These deal with definition-like environments (i.e., non-italic)
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{remark}[theorem]{Remark}
+
+%your name and date in the header.
+\usepackage[us]{datetime} 
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\lhead{}
+\chead{MATH 3150\\ Homework 2}
+\rhead{ Your name \\ \today}
+\lfoot{}
+\cfoot{}
+\rfoot{\thepage}
+\renewcommand{\headrulewidth}{0 pt}
+\renewcommand{\footrulewidth}{0 pt}
+\begin{document}
+\begin{enumerate}[1.]
+\item Suppose that $(X, d_X)$ and $(Y,d_Y)$ are metric spaces. Define $d:(X\times Y)\times (X\times Y)\rightarrow \mathbb{R}$ by 
+\[d((x,y),(a,b))=d_X(x,a)+d_Y(y,b).\]
+Prove $(X\times Y, d)$ is a metric space. 
+\item Let $X$ be a set with the following metric: 
+\[\rho(x,x)=0\]
+\[\rho(x,y)=1, \quad x\neq y\]
+Show that in $(X,\rho)$ every subset is open. 
+\item Let $a_1=\sqrt{2}$,  and $a_{n+1}=\sqrt{2a_n}$ for $n\geq 1$. Show that this sequence converges. \\
+\ \\
+{\bf Hint: } Show that this sequence is bounded above by 2 and increasing via induction. 
+\item Find the limits and show by arguing directly from the definitions that the following sequences converge.
+\begin{enumerate}[a)]
+\item $a_n=\dfrac{2n-3}{n+5}$, $n\geq 0$. 
+\item $b_n=\dfrac{n+5}{n^2-n-1}$, $n\geq 2$. 
+\end{enumerate}
+\item Suppose $(a_n)$, $(b_n)$ and $(c_n)$ are sequences of real numbers. Show if $a_n\leq b_n\leq c_n$ for all $n$ and both $(a_n)$ and $(c_n)$ converge to $L$ then $(b_n)$ converges to $L$.
+\item Prove that a set is closed if and only if $S$ contains all its limit points. As a reminder:
+ \begin{definition} Let $S$ be a subset of a metric space $X$. A point $y\in X$ is a limit point of $S$ if and only if for every $\varepsilon>0$ there exists a point $s\in S$ such that $s\neq y$ and $d(s,y)<\varepsilon$ (i.e. $N_\varepsilon(y)\cap (S\setminus \{y\})\neq \emptyset$).
+\end{definition}
+\end{enumerate}
+\end{document}
+
+
+
+
+
+
+
+
