@@ -1,0 +1,76 @@
+\documentclass[12pt,letterpaper]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{amsmath}
+\usepackage{enumerate}
+
+%Here are some user-defined notations
+\newcommand{\RR}{\mathbf R}  %bold R
+\newcommand{\CC}{\mathbf C}  %bold C
+\newcommand{\ZZ}{\mathbf Z}   %bold Z
+\newcommand{\QQ}{\mathbf Q}   %bold Q
+\newcommand{\rr}{\mathbb R}     %blackboard bold R
+\newcommand{\cc}{\mathbb C}    %blackboard bold R
+\newcommand{\zz}{\mathbb Z}    %blackboard bold R
+\newcommand{\qq}{\mathbb Q}   %blackboard bold Q
+\newcommand{\calM}{\mathcal M}  %calligraphic M
+\newcommand{\sm}{\setminus} 
+\newcommand{\bfa}{\mathbf a}
+\newcommand{\bfb}{\mathbf b}
+\newcommand{\bfc}{\mathbf c}
+
+
+
+
+%Here are some user-defined operators
+\newcommand{\re}{\operatorname {Re}}
+\newcommand{\im}{\operatorname {Im}}
+
+
+%These commands deal with theorem-like environments (i.e., italic)
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{conjecture}[theorem]{Conjecture}
+
+%These deal with definition-like environments (i.e., non-italic)
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{remark}[theorem]{Remark}
+
+%your name and date in the header.
+\usepackage[us]{datetime} 
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\lhead{}
+\chead{MATH 3150\\ Exam 1}
+\rhead{ Your name \\ \today}
+\lfoot{}
+\cfoot{}
+\rfoot{\thepage}
+\renewcommand{\headrulewidth}{0 pt}
+\renewcommand{\footrulewidth}{0 pt}
+\begin{document}
+\begin{enumerate}[1.]
+ \item Let $p_n=a_m n^m + a_{m-1}n^{m-1}+\ldots +a_1 n +a_0$ and $q_n=b_m n^m + b_{m-1}n^{m-1}+\ldots +b_1 n +b_0$ for $n>0$. Prove that 
+ \[\lim_{n\rightarrow \infty} \frac{p_n}{q_n}= \frac{a_m}{b_m}.\]
+ \item Suppose that $y$ is a limit point of a metric space $X$. Show that $Y=X\setminus\{y\}$ is not complete. 
+ \item Let $(X,d_X)$ and $(Y,d_Y)$ be complete metric spaces. Let $(X\times Y, d)$ be the metric space defined by the metric 
+ \[d:(X\times Y)\times (X\times Y)\rightarrow \mathbb{R};\quad \quad d((x,y),(a,b))=d_X(x,a)+d_Y(y,b)\]
+ is a complete metric space. 
+ \item Let $S$ be a bounded subset of $\mathbb{R}$. Show that \[\inf(S)=-\sup(-S)\] where $-S=\{-s\ :\ s\in S\}$. 
+ \item A  metric space $(X,d)$ is called sequentially compact if every sequence has a convergent subsequence. Show that $X$ is sequentially compact if and only if every infinite subset has a limit point in $X$. 
+\end{enumerate}
+\end{document}
+
+
+
+
+
+
+
+
