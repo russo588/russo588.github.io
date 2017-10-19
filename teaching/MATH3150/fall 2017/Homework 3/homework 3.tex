@@ -1,0 +1,87 @@
+\documentclass[12pt,letterpaper]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{amsmath}
+\usepackage{enumerate}
+
+%Here are some user-defined notations
+\newcommand{\RR}{\mathbf R}  %bold R
+\newcommand{\CC}{\mathbf C}  %bold C
+\newcommand{\ZZ}{\mathbf Z}   %bold Z
+\newcommand{\QQ}{\mathbf Q}   %bold Q
+\newcommand{\rr}{\mathbb R}     %blackboard bold R
+\newcommand{\cc}{\mathbb C}    %blackboard bold R
+\newcommand{\zz}{\mathbb Z}    %blackboard bold R
+\newcommand{\qq}{\mathbb Q}   %blackboard bold Q
+\newcommand{\calM}{\mathcal M}  %calligraphic M
+\newcommand{\sm}{\setminus} 
+\newcommand{\bfa}{\mathbf a}
+\newcommand{\bfb}{\mathbf b}
+\newcommand{\bfc}{\mathbf c}
+
+
+
+
+%Here are some user-defined operators
+\newcommand{\re}{\operatorname {Re}}
+\newcommand{\im}{\operatorname {Im}}
+
+
+%These commands deal with theorem-like environments (i.e., italic)
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{conjecture}[theorem]{Conjecture}
+
+%These deal with definition-like environments (i.e., non-italic)
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{remark}[theorem]{Remark}
+
+%your name and date in the header.
+\usepackage[us]{datetime} 
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\lhead{}
+\chead{MATH 3150\\ Homework 3}
+\rhead{ Your name \\ \today}
+\lfoot{}
+\cfoot{}
+\rfoot{\thepage}
+\renewcommand{\headrulewidth}{0 pt}
+\renewcommand{\footrulewidth}{0 pt}
+\begin{document}
+\begin{enumerate}[1.]
+\item Assuming the elementary properties of the trigonometric functions show on the interval $(0,\pi/2)$ that the function $\tan(x)-x$ is strictly increasing and $\frac{\sin(x)}{x}$ is strictly decreasing. 
+\item We first define limits at infinity.  
+\begin{definition}
+Given a metric space $Y$, a point $L\in Y$ and $f:[0,\infty)\rightarrow Y$ \emph{has limit }$L\in Y$ \emph{at infinity}, written 
+\[\lim_{x\rightarrow \infty}f(x)=L,\]
+if for every $\varepsilon>0$ there is a $C>0$ such that if $x>C$ then $d_Y(f(x),L)<\varepsilon$. 
+\end{definition}
+{\bf Warning:} This is now a definition you will be expected to know\\
+
+Show that if $f:[0,\infty)\rightarrow Y$ is continuous and has a limit at infinity then $f$ is uniformly continuous.  
+
+\item Let $f:[0,1]\rightarrow [0,1]$ be a continuous function. Show that $f$ has a fixed point, i.e. there is a point $x\in [0,1]$ such that $f(x)=x$. 
+\item Formulate and prove a squeeze theorem for functions. 
+\item We start with the following definition
+\begin{definition}Let $X$ and $Y$ be metric spaces.  We call a function $f:X\rightarrow Y $ \emph{Lipschitz continuous} if there exists a $K>0$ such that 
+\[d_{Y}(f(p),f(q))\leq K d_X(p,q)\]
+ for all $p,q\in X$. 
+\end{definition}
+ Let $U$ be an open interval of $\mathbb{R}$. Prove that if $f$ is differentiable and $f\prime :U\rightarrow \mathbb{R}$ is bounded, then $f$ is Lipschitz continuous. 
+\end{enumerate}
+\end{document}
+
+
+
+
+
+
+
+
