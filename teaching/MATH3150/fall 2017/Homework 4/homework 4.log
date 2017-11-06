@@ -1,10 +1,10 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  6 NOV 2017 11:54
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  6 NOV 2017 11:50
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**"homework 3.tex"
-(./homework 3.tex
+**"homework 4.tex"
+(./homework 4.tex
 LaTeX2e <2015/01/01>
 Babel <3.9l> and hyphenation patterns for 79 languages loaded.
 (/usr/local/texlive/2015/texmf-dist/tex/latex/base/article.cls
@@ -221,8 +221,8 @@ LaTeX Info: Redefining \today on input line 736.
 \f@ncyO@olf=\skip56
 \f@ncyO@orf=\skip57
 )
-(./homework 3.aux)
-\openout1 = `"homework 3.aux"'.
+(./homework 4.aux)
+\openout1 = `"homework 4.aux"'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 57.
 LaTeX Font Info:    ... okay on input line 57.
@@ -280,10 +280,6 @@ LaTeX Font Info:    Try loading font information for U+msb on input line 59.
 (/usr/local/texlive/2015/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-Underfull \hbox (badness 10000) in paragraph at lines 66--67
-
- []
-
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 27.05003pt.
@@ -293,29 +289,28 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
 [1{/usr/local/texlive/2015/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
 
 ]
-(./homework 3.aux) ) 
+(./homework 4.aux) ) 
 Here is how much of TeX's memory you used:
- 3101 strings out of 493089
- 39974 string characters out of 6134842
+ 3097 strings out of 493089
+ 39932 string characters out of 6134842
  119492 words of memory out of 5000000
- 6559 multiletter control sequences out of 15000+600000
- 8939 words of font info for 34 fonts, out of 8000000 for 9000
+ 6557 multiletter control sequences out of 15000+600000
+ 8285 words of font info for 32 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  35i,10n,43p,1015b,210s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsf
-onts/cm/cmbx12.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfo
+onts/cm/cmex10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfo
 nts/cm/cmmi12.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfon
 ts/cm/cmmi8.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts
 /cm/cmr12.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/c
 m/cmr8.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/c
 msy10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cm
-sy8.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmti
-12.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/symbols/
-msbm10.pfb>
-Output written on "homework 3.pdf" (1 page, 86735 bytes).
+sy8.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/symbols
+/msbm10.pfb>
+Output written on "homework 4.pdf" (1 page, 70650 bytes).
 PDF statistics:
- 44 PDF objects out of 1000 (max. 8388607)
- 31 compressed objects within 1 object stream
+ 40 PDF objects out of 1000 (max. 8388607)
+ 28 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
