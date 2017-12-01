@@ -1,0 +1,89 @@
+\documentclass[12pt,letterpaper]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{amsmath}
+\usepackage{enumerate}
+
+%Here are some user-defined notations
+\newcommand{\RR}{\mathbf R}  %bold R
+\newcommand{\CC}{\mathbf C}  %bold C
+\newcommand{\ZZ}{\mathbf Z}   %bold Z
+\newcommand{\QQ}{\mathbf Q}   %bold Q
+\newcommand{\rr}{\mathbb R}     %blackboard bold R
+\newcommand{\cc}{\mathbb C}    %blackboard bold R
+\newcommand{\zz}{\mathbb Z}    %blackboard bold R
+\newcommand{\qq}{\mathbb Q}   %blackboard bold Q
+\newcommand{\calM}{\mathcal M}  %calligraphic M
+\newcommand{\sm}{\setminus} 
+\newcommand{\bfa}{\mathbf a}
+\newcommand{\bfb}{\mathbf b}
+\newcommand{\bfc}{\mathbf c}
+
+
+
+
+%Here are some user-defined operators
+\newcommand{\re}{\operatorname {Re}}
+\newcommand{\im}{\operatorname {Im}}
+
+
+%These commands deal with theorem-like environments (i.e., italic)
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{conjecture}[theorem]{Conjecture}
+
+%These deal with definition-like environments (i.e., non-italic)
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{remark}[theorem]{Remark}
+
+%your name and date in the header.
+\usepackage[us]{datetime} 
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\lhead{}
+\chead{MATH 3150\\ Exam 2}
+\rhead{ Your name \\ \today}
+\lfoot{}
+\cfoot{}
+\rfoot{\thepage}
+\renewcommand{\headrulewidth}{0 pt}
+\renewcommand{\footrulewidth}{0 pt}
+\begin{document}
+\begin{enumerate}[1.]
+\item We define the following:
+\begin{definition}
+Let $I=(c,d)$ be an interval and suppose $a\in I$. Let $E$ denote either $I$ or $I\setminus\{a\}$ and suppose $f:E\rightarrow \mathbb{R}$. We say $f$ has a limit as $x$ approaches $a$ from the right if the function $f|_{(a,d)}:(a,d)\rightarrow \mathbb{R}$ has a limit at $a$. The limit if it exists is denoted 
+\[\lim_{x\rightarrow a^+}f(x)=\lim_{a<x\rightarrow a}f(x).\] The limit from the left is defined similarly. 
+\end{definition}
+Show $f$ has a limit at $a$ if and only if both the limit from the right and the limit from the left exist and are equal. 
+\item We will start with a definition. 
+\begin{definition}
+ Let $(f_n)$ be a sequence of functions in $C(X)$ where $X$ is a compact set. We say the sequence $(f_n)$ is \emph{equicontinuous} if given an $\varepsilon>0$ there is a $\delta>0$ such that, for every $n$, if $d(x,y)<\delta$ we have that $d(f_n(x), f_n(y))<\varepsilon$. 
+ \end{definition}
+Show that if $(f_n)$ converges to $f$ (in the sense of the uniform metric) then $(f_n)$ is equicontinuous. 
+\item A simple pendulum consists of a mass $m$ hanging from a string of length $L$. When displaced to an initial angle and released the pendulum will have the following equation of motion:
+\[\dfrac{d^2\theta}{dt^2}+\dfrac{g}{L}\sin \theta=0,\]
+where $\theta$ is the displacement angle and $g$ is the acceleration due to gravity. To solve this equation a physicist will employ the small angle approximation
+\[\sin \theta \approx \theta \] for small $\theta$. The equation of motion then becomes simplified:
+\[\dfrac{d^2\theta}{dt^2}+\dfrac{g}{L}\theta=0.\]
+Show this step is justified by showing that 
+\[|\sin \theta -\theta|\leq \frac{1}{6}|\theta|^{3}\]
+via Taylor's theorem. 
+\item Show that if $f:\mathbb{R}\rightarrow \mathbb{R}$ is differentiable then between any two zeros of $f$ there is a zero of $f^\prime$. Use this result to show via induction that any polynomial of degree $n$ can have \emph{at most} $n$ distinct real roots. (You may not use the Fundamental Theorem of Algebra to do this problem.)
+\item Let $f(x)=\log(x)$. Given $a>0$, let $g(x)=f(ax)$. Prove $g^\prime(x)=f^\prime(x)$ and thus there exists a $c$ such that $g(x)=f(x)+c$. Prove, $c=\log(a)$ and thus $\log(ax)=\log(x)+\log(a)$. (Use the integral definition of logarithms.)
+\end{enumerate}
+\end{document}
+
+
+
+
+
+
+
+
