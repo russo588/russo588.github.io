@@ -1,0 +1,82 @@
+\documentclass[12pt,letterpaper]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{amsmath}
+\usepackage{enumerate}
+
+%Here are some user-defined notations
+\newcommand{\RR}{\mathbf R}  %bold R
+\newcommand{\CC}{\mathbf C}  %bold C
+\newcommand{\ZZ}{\mathbf Z}   %bold Z
+\newcommand{\QQ}{\mathbf Q}   %bold Q
+\newcommand{\rr}{\mathbb R}     %blackboard bold R
+\newcommand{\cc}{\mathbb C}    %blackboard bold R
+\newcommand{\zz}{\mathbb Z}    %blackboard bold R
+\newcommand{\qq}{\mathbb Q}   %blackboard bold Q
+\newcommand{\calM}{\mathcal M}  %calligraphic M
+\newcommand{\sm}{\setminus} 
+\newcommand{\bfa}{\mathbf a}
+\newcommand{\bfb}{\mathbf b}
+\newcommand{\bfc}{\mathbf c}
+
+
+
+
+%Here are some user-defined operators
+\newcommand{\re}{\operatorname {Re}}
+\newcommand{\im}{\operatorname {Im}}
+
+
+%These commands deal with theorem-like environments (i.e., italic)
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{conjecture}[theorem]{Conjecture}
+
+%These deal with definition-like environments (i.e., non-italic)
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{remark}[theorem]{Remark}
+
+%your name and date in the header.
+\usepackage[us]{datetime} 
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\lhead{}
+\chead{MATH 3150\\ Homework 5}
+\rhead{ Your name \\ \today}
+\lfoot{}
+\cfoot{}
+\rfoot{\thepage}
+\renewcommand{\headrulewidth}{0 pt}
+\renewcommand{\footrulewidth}{0 pt}
+\begin{document}
+\begin{enumerate}[1.]
+\item Determine if the following series converges or diverges. If it converges find its sum. Fully justify your answer. 
+\[\sum_{n=0}^\infty \dfrac{1}{n^2+5n+6}.\]
+\item Suppose $f:(-R, R)\rightarrow \mathbb{R}$ is infinitely differentiable and for each $j$ there is an $M_j$ such that $|f^{(j)}(t)|\leq M_j$ for each $t\in (-R, R)$. Show if 
+\[\sum_{j=0}^\infty M_j \frac{R^j}{j!} \]
+converges, then the Taylor series for $f$ converges to $f$ uniformly on $(-R, R)$.  
+\item Determine if the following series converge.
+\begin{enumerate}[a)]
+\item $\sum_{n=2}^\infty \frac{1}{n(\log(n))^p}$
+\item $\sum_{n=1}^\infty 9^{-n+2}4^{n+1}$
+\end{enumerate}
+\item Show if $(a_n)$ is a sequence of non-zero real numbers and 
+\[\lim_{n\rightarrow\infty}\left|\frac{a_{n+1}}{a_n}\right|\] converges to limit $L$ then the radius of convergence of $\sum a_j x^j$ is $R=\frac{1}{L}$.
+
+
+\end{enumerate}
+\end{document}
+
+
+
+
+
+
+
+
