@@ -5,6 +5,7 @@
 \usepackage{xcolor}
 \usepackage{graphicx}
 \usepackage{enumerate}
+\usepackage{lipsum}
 %These commands deal with theorem-like environments (i.e., italic)
 %\newtheorem{name}[counter]{display}
 \theoremstyle{plain}
@@ -48,147 +49,34 @@
 %Title page ends here
 \restoregeometry % restores the geometry
 \section{Introduction}
-The Fej\'{e}r-Riesz theorem gives the form of a Laurent polynomial that is nonnegative on the unit circle. We let $\mathbb{D}$ be the open unit disc and let $\mathbb{T}$ be the unit circle in the complex plane.
-\begin{theorem}[Fej\'{e}r-Riesz]
-A Laurent polynomial $q(z)=\sum_{k=-m}^m q_k z^k$ which has complex coefficients and satisfies $q(\zeta)\geq 0$ for all $\zeta \in \mathbb{T}$  can be written 
-\[q(\zeta)=|p(\zeta)|^2, \ \zeta\in \mathbb{T}\]
-for some polynomial $p(z)=p_0+p_1z+ \cdots +p_m z^m$, and $p(z)$ can be chosen to have no zeros in $\mathbb{D}$. 
+\lipsum[1-2]% exposition
+Here is a citation \cite{Paulsen}. This was taken from MATHSCINET.
+\begin{definition} 
+This is a definition.This is a definition.This is a definition.This is a definition.
+\end{definition}
+\section{Math Stuff Goes here}
+\lipsum[3-4]
+\begin{theorem}
+This is a theorem.This is a theorem.This is a theorem.This is a theorem.
 \end{theorem}
-The Fej\'{e}r-Riesz Theorem shows up naturally in spectral theory, the theory of orthogonal polynomials, and control theory.
-In this essay we will discuss the rather elementary proof of the Fej\'{e}r-Riesz theorem and then show an application in the proof of Von Neumann's inequality \cite{Paulsen}. There is also a natural generalization to an operator theoretic version whose proof in full generality was due to Rosenblum. We will also discuss its proof as presented in \cite{Dritschel}. The theorem even has generalizations to a multivariable version and a noncommutative function theory version. The non-commutative version will be discussed but its proof will be absent. 
-\section{The Scalar Fej\'{e}r-Riesz Theorem}We present the proof of Fej\'{e}r Riesz as it appears in \cite{Paulsen}. 
-\begin{proof}%[Scalar Fej\'{e}r Riesz]
-First note that since $q$ is real valued, then $q_{-k}=\bar{q}_k$ and $q_0$ is real (easy to see if you set $q=\bar{q}$). We may assume that $q_{-m}\neq 0$. We set $g(z)=\sum_{k=-m}^mq_kz^{k+m}$, so that $g$ is a polynomial of degree $2m$ with $g(0)\neq 0 $. We have that $g(e^{i\theta})=q(e^{i\theta})\cdot e^{im\theta}\neq0$.
-Notice that 
-\[\overline{g(1/\bar{z})}=z^{-2m}g(z).\]
-This means the $2m$ zeros of $g$ may be written as $z_1,\ldots ,z_m$ and $1/\bar{z}_{1},\ldots ,1/\bar{z}_{m}.$ Let \[w(z)=(z-z_1)\cdot\ldots\cdot(z-z_m)\text{ and }h(z)=(z-1/\bar{z}_1)\cdot\ldots\cdot(z-1/\bar{z}_m).\] We have that 
-\[g(z)=q_mw(z)h(z),\]
-with 
-\[\overline{h(z)}=\frac{(-1)^m\bar{z}^mw(1/\bar{z})}{z_1\cdot\ldots\cdot z_m}.\]
-Thus
-\begin{align*}
-q(e^{i\theta})&=e^{-im\theta}g(e^{i\theta})=|g(e^{i\theta})|=|q_m|\cdot |w(e^{i\theta})|\cdot|\overline{h(e^{i\theta})}|\\
-&=\left|\frac{q_m}{z_1\ldots z_m}\right| \cdot |w(e^{i\theta})|^2,
-\end{align*}
-so that $q(e^{i\theta})=|p(e^{i\theta})|^2$, where $p(z)=\left|\frac{q_m}{z_1\ldots z_m}\right|^{1/2} \cdot w(z)$.
+\lipsum[4]%Some exposition
+ A displayed equation is to follow. Here is some more random text. 
+\[e^{in\theta}=\cos(\theta)+\i \sin(\theta)\]
+\lipsum[5]
+\begin{proof}
+A proof is here!A proof is here!A proof is here!A proof is here!A proof is here!
+A proof is here!A proof is here!A proof is here!A proof is here!
+A proof is here!A proof is here!A proof is here!A proof is here!A proof is here!
 \end{proof}
-If we do not bog ourselves down with details we can give a quick application of the Fej\'{e}r-Riesz theorem to the theory of positive maps and operator algebras. A {\bf C$^*$-algebra} $A$ is a Banach algebra with a map $*:A\rightarrow A$ called an {\bf involution} with the following properties
-\begin{enumerate}[1)]
-\item $x^{**}=(x^*)^*=x$
-\item $x^*+y^*=(x+y)^*$
-\item$(xy)^*=y^*x^*$
-\item $\|x^*x\|=\|x\|^2 $ \ \  (C$^*$ identity).
-\end{enumerate}
-Examples include bounded operators on a Hilbert space and complex functions on the unit circle. Let $A$ be a unital C$^*$ algebra and let $S$ be a subset, then we set 
-\[S^*=\{a: a^*\in S\}.\]
-We call $S$ self adjoint when $S=S^*$. If $S$ also contains the identity, then we call $S$ an operator system. Let $\phi:S\rightarrow B$ where $B$ is a C$^*$ algebra; we call $\phi$ positive if it sends positive elements to positive elements. For instance, we can take both $S$ and $B$ to be the bounded operators. We say that an operator $T$ in a Hilbert space $H$ is {\bf positive} if $\ip{Tx}{x}\geq 0$ for all $x\in H$. For future reference we note that operators of the form $T=P^*P$ are positive operators.
-We can apply Fej\'{e}r-Riesz in proving the following theorem.
-\begin{theorem}
-Let $T$ be an operator on a Hilbert space $H$ with $\|T\|\leq 1$, and let $S\subset C(\mathbb{T})$ be the operator system defined by 
-\[S=\{p(e^{i\theta})+\overline{q(e^{i\theta})}: p, q polynomials\}.\]
-Then the map $\phi : S\rightarrow B(H)$ defined by $\phi(p+\bar{q})=p(T)+q(T)^*$ is positive. 
-\end{theorem}
-We note that $S\subset C(\mathbb{T})$ is dense. It is a standard theorem that positive maps on operator systems are bounded and so the map $\phi$ can be extended (by continuity) to $\hat{\phi}:C(\mathbb{T})\rightarrow B(H)$; $\hat{\phi}$ is also a positive map itself. We state that positive maps on $C(\mathbb{T})$ i.e. $\hat{\phi}$ automatically have the property $\|\hat{\phi}\|=\|\hat{\phi}(1)\|$. Keeping all of this in mind, the proof of the next theorem is more or less obvious.
-\begin{theorem}
-Let $T$ be an operator on a Hilbert space with $\|T\|\leq 1$. Then for any polynomial $p$ 
-\[\|p(T)\|\leq \|p\|,\]
-where $\|p\|=\sup_\theta |p(e^{i\theta})|$.
-\end{theorem}
-\section{The Operator Fej\'{e}r-Riesz Theorem}
-We now state the extension of Fej\'{e}r-Riesz to operators. 
-\begin{theorem}
-Let $Q(z)=\sum_{k=-m}^m Q_kz^k$ be a Laurent polynomial with coefficients in $B(G)$ for some Hilbert space $G$. If $Q(\zeta)\geq 0$ for all $\zeta\in \mathbb{T}$, then 
-\[Q(\zeta)=P(\zeta)^* P(\zeta), \ \ \ \zeta\in \mathbb{T}\]
-for some polynomial $P(z)=P_0+P_1z+\cdots +P_mz^m$ with coefficients in $B(G)$. The polynomial $P(z)$ can be chosen to be outer. 
-\end{theorem}
-Here the inner-product for the space is given by
-\[\int_{\mathbb{T}}\ip{Q(\zeta)f(\zeta)}{g(\zeta)}_G\ d\sigma(\zeta),\]
-where $\sigma$ is the standard normalized Lebesgue measure on $\mathbb{T}$.
-The proof relies heavily on the use of Toeplitz, analytic and shift operators. We will need a few definitions to get us started. 
-\begin{definition}
-An operator $S$ in $B(H)$ is a shift operator if $S$ is an isometry and $S^{*n}\rightarrow 0$ strongly, that is $\|S^{*n}f\|\rightarrow 0$ for all $f\in H$. 
-\end{definition}
-We also have another characterization of shift operators. 
-\begin{definition}
-A shift operator is an isometry $S$ on $H$ such that the unitary component of its Wold decomposition is trivial. 
-\end{definition}
-This seems even more abstract than the previous definition. So without delving into Wold decompositions, we will say that with some natural identifications we can write $H=G\oplus G\oplus G\oplus G\cdots $ for some Hilbert space $G$, and 
-\[S(h_0,h_1,h_2,\ldots)=(0,h_0,h_1,h_2,\ldots)\]
-when the elements of $h$ are written in sequence form.
-\begin{definition}
-We say that $T$ is an S-{\bf Toeplitz} operator or Toeplitz if $S^*TS=T$. 
-\end{definition}
-\begin{definition}
-We say that $A$ is S-{\bf analytic} or analytic if $AS=SA$. An analytic operator $A$ is said to be {\bf outer} if $\overline{\ran}(A)$ is a subspace of $H$ of the form $F\oplus F\oplus F\oplus \cdots $ for some closed subspace $F$ of $G$. 
-\end{definition}
-To be a bit more concrete we can consider the block matrix form of the operators 
-\begin{equation}\label{eq:blockmatrix}T=\begin{pmatrix}T_0 &T_{-1} &T_{-2 }& \cdots \\  T_1 & T_0 & T_{-1}& \ddots \\ T_2 & T_1 & T_0 & \ddots \\ \vdots & \ddots & \ddots  & \ddots\end{pmatrix}
-\ \ \ A=\begin{pmatrix}A_0 &0 &0& \cdots \\  A_1 & A_0 & 0& \ddots \\ A_2 & A_1 & A_0 & \ddots \\ \vdots & \ddots & \ddots  & \ddots\end{pmatrix}.\end{equation}
-Here we define 
-\begin{equation}\label{eq:Toeplitzenty}T_j=\left\{ \begin{array}{lr} E^*_0 S^{*j}TE_0|_{G}& j\geq 0\\  E^*_0 TS^{|j|}E_0|_{G}& j<0\end{array}\right.;\ \ \ \ \ \ A_j=E_0S^{*j}AE_0\end{equation} 
-and 
-\[E_0g=(g,0, 0, \ldots ).\]
-Given the polynomials  $Q(z)=\sum_{k=-m}^m Q_kz^k$ and $P(z)=P_0+P_1z+\cdots +P_mz^m$  with bounded operator coefficients, consider the following block matrices. Set $Q_j=0$ for $|j|>m$ and $P_j=0$ for $j>m$ and let
-\begin{equation}\label{eq:QPmats}
-T_Q=\begin{pmatrix}Q_0 &Q_{-1} &Q_{-2 }& \cdots \\  Q_1 & Q_0 & Q_{-1}& \ddots \\ Q_2 & Q_1 & Q_0 & \ddots \\ \vdots & \ddots & \ddots  & \ddots\end{pmatrix}
-\ \ \ T_P=\begin{pmatrix}P_0 &0 &0& \cdots \\  P_1 & P_0 & 0& \ddots \\ P_2 & P_1 & P_0 & \ddots \\ \vdots & \ddots & \ddots  & \ddots\end{pmatrix}.
-\end{equation} 
-We have the following identity,
-\begin{equation}\label{eq: innerprod}\int_{\mathbb{T}}\ip{Q(\zeta)f(\zeta)}{g(\zeta)}\ d\sigma(\zeta)=\sum_{j,k=0}^m\ip{Q_{j-k}f_k}{g_j}_G,\end{equation}
-where $f(\zeta)=f_0+f_1\zeta +f_2\zeta^2+\cdots$  and $g(\zeta)=g_0+g_1\zeta +g_2\zeta^2+\cdots$ with coefficients in $G$, and all but finitely many are non-zero.
-The operators $T_Q$ and $T_P$ are clearly Toeplitz and analytic respectively. They are bounded by use of (\ref{eq: innerprod}) and a density argument. More importantly, we have $Q(\zeta)\geq0$ for all $\zeta\in \mathbb{T}$ if and only if $T_Q\geq 0$ and $Q(\zeta)=P^*(\zeta)P(\zeta)$ for all $\zeta\in \mathbb{T}$ if and only if $T_Q=T_P^*T_P$. Harking back to the statement of the the theorem we will say $P(z)$ is {\bf outer} if and only if $A=T_P$ is outer. So we see that we can encode our problem into a problem about Toeplitz and analytic block matrix operators. More specifically, if given a positive Toeplitz operator we want to write it in the form $T=A^*A$ for $A$ analytic. The other half of the statement of the theorem is if $T=T_Q$, then we want to show we can pick an $A=T_P$ such that $A$ is outer i.e. $P(z)$ is outer. We reduce this problem further by using a couple of lemmas. 
-\begin{lemma}[Lowdenslager's Criterion]\label{Lowdenslagers_Crit}
-Let $H$ be a Hilbert space and let $S\in B(H)$ be a shift operator. Let $T\in B(H)$ be S-Toeplitz and suppose that $T\geq 0$. Let $H_T$ be the closure of the range of $T^{1/2}$ in the inner product of $H$. Then there is an isometry $S_T$ mapping $H_T$ into itself such that 
-\[S_TT^{1/2}f=T^{1/2}Sf \ \ \ \ f\in H.\]
-In order for $T=A^*A$ for some operator $A\in B(H)$, it is necessary and sufficient that $S_T$ be a shift operator. In this case $A$ can be chosen to be outer. 
-\end{lemma}
-The existence of the isometry $S_T$ is not difficult to see. Given the identity $S^*TS=T,$ we can see that 
-\[T=S^*TS=S^*T^{*1/2}T^{1/2}S=(T^{1/2}S)^*(T^{1/2}S),\]
-and thus
-\[\|T^{1/2}\|^2=\|T^{*1/2}T^{1/2}\|=\|(T^{1/2}S)^*(T^{1/2}S)\|=\|T^{1/2}S\|^2.\]
-So $T^{1/2}S$ and $T^{1/2}$ have the same norm. The rest of the proof is fairly simple (pardoning some perhaps difficult details). If $S_T$ is a shift operator it allows you to define some isometry $W:H_T\rightarrow H$ such and we defined $Af=WT^{1/2}f$. Conversely, if $T=A^*A$, then we define the isometry by again letting $WT^{1/2}f=Af$.  We can then show $WS_T=SW$ and thus $S_T^{*n}=W^*S^{*n}W$ converges strongly to 0 since $S$ is a shift operator. The next lemma shows that if our Toeplits operator is of the form $T_Q$ for some Laurent polynomial $Q$, then our needed operator $A$ is of the form $T_P$ for some polynomial $P$. 
-\begin{lemma}
-In Lemma(\ref{Lowdenslagers_Crit}), let $T=T_Q$ be given by (\ref{eq:QPmats}) for a Laurent polynomial of degree $m$. If $T=A^*A$, where $A\in B(H)$ is analytic and outer, then $A=T_P$ for some outer analytic polynomial $P(z)$ of degree $m$.
-\end{lemma}
-\noindent This proof consists mostly of showing the lower triangular entries have the correct form. \\
-We are now prepared to prove the main theorem. The previous two lemmas reduce the problem to showing that $S_T$ is a shift operator. We make the following claim.
-\begin{claim}
-If $f=T^{1/2}fh$ where $h\in H$ has the form $h=(h_0, h_1, \ldots , h_r, 0 ,\ldots)$, then $S_T^{*n}$ converges strongly to $0$. 
-\end{claim}
-For if $u\in H$ and $n$ is any positive integer, then 
-\[\ip{S_T^{*n}f}{T^{1/2}u}_{H_T}=\ip{f}{S_T^{n}T^{1/2}u}_{H_T}=\ip{T^{1/2}h}{T^{1/2}S^nu}_H=\ip{Th}{S^nu}_H.\]
-By definition of $T=T_Q$, $Th$ has only a finite number of nonzero entries (depending on $m$ and $r$), and the first $n$ entries of $S^nu$ are zero (independent of $u$). The claim then follows by the arbitrariness of $u$. By the claim, $\|S_T^{*n}f\|\rightarrow 0$ for all $f$ in a dense subset of $H_T=\overline{\ran}(T^{1/2})$, and thus holds on the entire space.
-\section{Non-Commutative Fej\'{e}r-Riesz} We will discuss the statement of the non-commutative version of Fej\'{e}r-Riesz, a theorem due to Scott McCullough as stated in \cite{Dritschel}. Let $S$ be the free semigroup with generators $a_1, \ldots a_d$ with the binary operation of concatonation. Let $G$ be a free group over a finite number of generators, i.e. words in $a_1,\ldots,a_d$ and $a_1^{-1},\ldots, a_d^{-1}$ with the binary operation of concatenation. Words in $G$ of the form $h=v^{-1}w$  with $v, w\in S$ will be called {\bf hereditary words}. Notice that a hereditary word $h$ can have many representations $h=v^{-1}w$ with $v,w\in S$. Let $S_m$ be the words of length at most $m$, and let $H_m$ be the set of hereditary words $h$ which have at least one representation in the form $h=v^{-1}w$ with $v,w\in S_m$. In a formal algebraic manner, we build our non-commutative analogues of Laurent polynomials and analytic polynomials. A hereditary polynomial is a formal expression of the form
-\[Q=\sum_{h\in H_m}h\otimes Q_h,\]
-where $Q_h\in B(G)$, i.e. is a bounded operator over a Hilbert space $G$ for all $h$. Analytic polynomials are hereditary polynomials of the form
-\[P=\sum_{w\in H_m}w\otimes P_w,\]
-where $P_w\in B(G)$ for all of $w$. The identity 
-\[Q=P^*P\] 
-is defined to mean 
-\[Q_h=\sum_{\substack{v,w\in S_m\\ h=v^{-1}w}}P_v^*P_w.\]
-Let $U=(U_1, \ldots,U_d)$ be a $d$-tuple of unitary operators on a Hilbert space $H$. Define $U^w$ for any $w\in S$ by writting $w$ in the form 
-\[w=a_{j_1}\cdots a_{j_k},\ \ \ \ \ j_1,\ldots ,j_k\in \{1,\ldots ,d\},\ \ \ \ \  k=0,1,2,\ldots\] and setting 
-\[U^w=U_{j_1}\cdots U_{j_k},\]
-where for the empty word $e$ we set 
-\[U^e=I.\]
-If $h$ is a hereditary word, set 
-\[U^h=(U^v)^*U^w\] for any representation $h=v^{-1}w$ with $v,w\in S$ (this does not depend on choice of representation). Finally define $Q(U)$ and $P(U) \in B(H\otimes G)$ by
-\[Q(U)=\sum_{h\in H_m}U^h\otimes Q_h\ \text{and}\ P(U)=\sum_{w\in S_m}U^w\otimes P_w .\]
-\begin{theorem}
-Let 
-\[Q=\sum_{h\in H_m}h\otimes Q_h\]
-be a hereditary polynomial with coefficients in $B(G)$ for some Hilbert space $G$ such that $Q(U)\geq 0$ for every tuple $U=(U_1,\ldots , U_d)$ of unitary operators  in some Hilbert space $H$. Then for some $\ell\leq \ell_m$ there exists analytic polynomials 
-\[P_j=\sum_{w\in S_m}w\otimes P_{j,w}, \ \ \ \ \ j=1,\ldots \ell,\]
-with coefficients in $B(G)$ such that 
-\[Q=P_1^*P_1+\ldots +P_\ell^*P_\ell.\]
-Moreover, for any tuple $U=(U_1, \ldots U_d$) of unitary operators on $H$, 
-\[Q(U)=P_1(U)^*P_1(U)+\ldots +P_{\ell}(U)^*P_{\ell}(U).\]
-In these statements when $G$ is infinite dimensional, we can choose $\ell=1$. 
-\end{theorem}
-When $d=1$, from this theorem we can deduce (after a bit of work) the original version of the operator Fej\'{e}r-Riesz.
-
-
+\lipsum[5-9]
+\begin{example}
+Here is an example. Here is an example. Here is an example. Here is an example. Here is an example. 
+\end{example}
+Blah blah blah blah another citation \cite{Dritschel}, I got these from MATHSCINET. 
+\lipsum[4-5]
+\section{Another Section}
+References after this section.  \lipsum[6]. 
 \newpage
-\bibliographystyle{plain}
-\bibliography{bibilography}
+\bibliographystyle{plain}% sets style 
+\bibliography{bibilography} % calls your bib file. 
 \end{document} 
