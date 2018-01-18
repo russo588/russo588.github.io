@@ -1,0 +1,94 @@
+\documentclass[12pt,letterpaper]{amsart}
+\setlength{\oddsidemargin}{.0in}
+\setlength{\evensidemargin}{.0in}
+\setlength{\textwidth}{6.5in}
+\setlength{\topmargin}{-.3in}
+\setlength{\headsep}{.20in}
+\setlength{\textheight}{9.in}
+\usepackage[leqno]{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage[all]{xy}
+\usepackage{graphicx}
+
+
+%Here are some user-defined notations
+\newcommand{\RR}{\mathbf R}  %bold R
+\newcommand{\CC}{\mathbf C}  %bold C
+\newcommand{\ZZ}{\mathbf Z}   %bold Z
+\newcommand{\QQ}{\mathbf Q}   %bold Q
+\newcommand{\rr}{\mathbb R}     %blackboard bold R
+\newcommand{\cc}{\mathbb C}    %blackboard bold R
+\newcommand{\zz}{\mathbb Z}    %blackboard bold R
+\newcommand{\qq}{\mathbb Q}   %blackboard bold Q
+\newcommand{\ZZn}[1]{\ZZ/{#1}\ZZ}
+\newcommand{\zzn}[1]{\zz/{#1}\zz}
+\newcommand{\calM}{\mathcal M}  %calligraphic M
+\newcommand{\sm}{\setminus} 
+\newcommand{\bfa}{\mathbf a}
+\newcommand{\bfb}{\mathbf b}
+\newcommand{\bfc}{\mathbf c}
+
+
+%improving spacing in tables (space above and below characters in a row)
+\newcommand{\tfix}{\rule{0pt}{2.6ex}}
+\newcommand{\bfix}{\rule[-1.2ex]{0pt}{0pt}}
+
+
+%Here are commands with variable inputs 
+\newcommand{\intf}[1]{\int_a^b{#1}\,dx}
+\newcommand{\intfb}[3]{\int_{#1}^{#2}{#3}\,dx}
+\newcommand{\pln}[1]{$\sm${\tt #1}}
+\newcommand{\bgn}[1]{$\tt {\sm}begin\{#1\}$}
+\newcommand{\nd}[1]{$\tt {\sm}end\{#1\}$}
+\newcommand{\marginalfootnote}[1]{%
+        \footnote{#1}
+        \marginpar[\hfill{\sf\thefootnote}]{{\sf\thefootnote}}}
+\newcommand{\edit}[1]{\marginalfootnote{#1}}
+
+
+%Here are some user-defined operators
+\newcommand{\Tr}{\operatorname {Tr}}
+\newcommand{\GL}{\operatorname {GL}}
+\newcommand{\SL}{\operatorname {SL}}
+\newcommand{\Prob}{\operatorname {Prob}}
+\newcommand{\re}{\operatorname {Re}}   %new definition of "real part" operator
+\newcommand{\im}{\operatorname {Im}}   %new definition of "imaginary part" operator
+
+
+%These commands deal with theorem-like environments (i.e., italic)
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{conjecture}[theorem]{Conjecture}
+
+%These deal with definition-like environments (i.e., non-italic)
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{remark}[theorem]{Remark}
+
+%This numbers equations by section
+\numberwithin{equation}{section}
+
+
+%This is for hypertext references
+\usepackage{color}
+\usepackage{hyperref}
+
+
+\begin{document}
+stuff
+
+\end{document}
+
+
+
+
+
+
+
+
