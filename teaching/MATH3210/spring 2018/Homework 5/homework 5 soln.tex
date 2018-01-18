@@ -1,0 +1,162 @@
+\documentclass[12pt,letterpaper]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{amsmath}
+\usepackage{enumerate}
+
+%Here are some user-defined notations
+\newcommand{\RR}{\mathbf R}  %bold R
+\newcommand{\CC}{\mathbf C}  %bold C
+\newcommand{\ZZ}{\mathbf Z}   %bold Z
+\newcommand{\QQ}{\mathbf Q}   %bold Q
+\newcommand{\rr}{\mathbb R}     %blackboard bold R
+\newcommand{\cc}{\mathbb C}    %blackboard bold R
+\newcommand{\zz}{\mathbb Z}    %blackboard bold R
+\newcommand{\qq}{\mathbb Q}   %blackboard bold Q
+\newcommand{\calM}{\mathcal M}  %calligraphic M
+\newcommand{\sm}{\setminus} 
+\newcommand{\bfa}{\mathbf a}
+\newcommand{\bfb}{\mathbf b}
+\newcommand{\bfc}{\mathbf c}
+
+
+
+
+%Here are some user-defined operators
+\newcommand{\re}{\operatorname {Re}}
+\newcommand{\im}{\operatorname {Im}}
+
+
+%These commands deal with theorem-like environments (i.e., italic)
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{conjecture}[theorem]{Conjecture}
+
+%These deal with definition-like environments (i.e., non-italic)
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{remark}[theorem]{Remark}
+
+%your name and date in the header.
+\usepackage[us]{datetime} 
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\lhead{}
+\chead{MATH 3210\\ Homework 5}
+\rhead{ Your name \\ date}
+\lfoot{}
+\cfoot{}
+\rfoot{\thepage}
+\renewcommand{\headrulewidth}{0 pt}
+\renewcommand{\footrulewidth}{0 pt}
+\begin{document}
+\begin{enumerate}[1.]
+\item (\S 5.A \#3) Suppose $S,T\in \mathcal{L}(V)$ are such that $ST=TS$. Prove that $\text{ran}(S)$ is invariant under $T$. 
+\begin{proof} If $v\in \text{ran}(S)$ then $v=S(u)$ for some $u\in V$. We apply $T$ to $v$. Hence we have that 
+\[T(v)=TS(u)=ST(u).\]
+Thus $T(v)=S(T(u))$ and is in the range of $S$. 
+\end{proof}
+\item (\S5.B \#1) Suppose that $T\in \mathcal{L}(V)$ and there exists a positive integer $n$ such that $T^n=0$. Prove that $(I-T)$ is invertible and that 
+\[(I-T)^{-1}=I+T+\cdots +T^{n-1}\]
+\begin{proof} We proceed by computation. 
+\[(I-T)(I+T+\cdots+T^{n-1})=I+T+\cdots+T^{n-1}-(T+T^2+\cdots+T^n)=I+T^n=I.\]
+Since $I$ commutes with $T$ and $T$ commutes with itself we have that 
+\[(I+T+\cdots+T^{n-1})(I-T)=I.\]
+\end{proof}
+\item Suppose that $S,T\in \mathcal{L}(V)$ and $S$ is invertible. Suppose that $p\in \mathcal{P}(\mathbb{F})$ is a polynomial. Prove that 
+\[p(STS^{-1})=Sp(T)S^{-1}.\]
+\begin{lemma}
+\[(STS^{-1})^n=ST^nS^{-1}\]
+for all $n\in \mathbb{N}$.
+\end{lemma}
+\begin{proof} We proceed by induction on $n$\\
+\ \\
+{\bf Base Case: }$n=1$\\
+\ \\
+This case is clear. \\
+\ \\
+{\bf Induction Hypothesis: }For $n=k-1$ we have $(STS^{-1})^{k-1}=ST^{k-1}S^{-1}$.\\
+\ \\
+Now for $n=k$ we have that 
+\[(STS^{-1})^k=(STS^{-1})^{k-1}(STS^{-1})=ST^{k-1}S^{-1}STS^{-1}=ST^{k}S^{-1}\]
+by our induction hypothesis.
+\end{proof} 
+We now prove our main result.
+\begin{proof}Suppose $p(z)=a_0+a_1z+\ldots+a_nz^n$. We then have that 
+\begin{align*}
+p(STS^{-1})&=a_0I+a_1(STS^{-1})+a_2(STS^{-1})^2+\ldots +a_n(STS^{-1})^n\\
+&=a_0SS^{-1}+a_1STS^{-1}+a_2ST^2S^{-1}+\ldots +a_nST^nS^{-1}\\
+&=Sp(T)S^{-1}
+\end{align*}
+by a repeated application of our lemma.
+\end{proof}
+\item (\S 5.C \# 16) The Fibonacci sequence $F_1, F_2, \ldots$ is defined by 
+\[F_1=1, F_2=1, \quad \text{ and }\quad F_n=F_{n-2}+F_{n-1} \text{ for }n\geq 3\]
+Define $T\in \mathcal{L}(\mathbb{R}^2)$ by 
+\[T \left( \left[\begin{array}{c}x\\y\end{array}\right]\right)=\left[\begin{array}{cc}y\\ x+y\end{array}\right].\]
+\begin{enumerate}[(a)]
+\item Show that $T^n\left(\left[\begin{array}{c}0\\1\end{array}\right]\right)=\left[\begin{array}{c}F_n\\F_{n+1}\end{array}\right]$
+\item Find the eigenvalues of $T$.
+\item Find a basis of $\mathbb{R}^2$ consisting of eigenvectors of $T$. 
+\item Use the solution to part (c) to compute $T^n\left(\left[\begin{array}{c}0\\1\end{array}\right]\right)$. Conclude that 
+\[F_n=\frac{1}{\sqrt{5}}\left[\left(\frac{1+\sqrt{5}}{2}\right)^n-\left(\frac{1-\sqrt{5}}{2}\right)^n\right]\]
+for each positive integer $n$. 
+\end{enumerate}
+\begin{proof}
+\ \\
+\begin{enumerate}[(a)]
+\item We proceed by induction on $n$. \\
+\ \\
+{\bf Base case: }n=1\\
+ \ \\
+ Note that $T\left(\left[\begin{array}{c}0\\1\end{array}\right]\right)=\left[\begin{array}{c}F_1\\F_{2}\end{array}\right]$.\\
+\ \\
+ {\bf Induction Hypothesis: }Suppose for $n=k-1$ we have that 
+ \[T^{k-1}\left(\left[\begin{array}{c}0\\1\end{array}\right]\right)=\left[\begin{array}{c}F_{k-1}\\F_{k}\end{array}\right]\]
+ Now we apply $T$ to $T^{k-1}$ and we have that 
+ \[T^{k}\left(\left[\begin{array}{c}0\\1\end{array}\right]\right)=T\left(\left[\begin{array}{c}F_{k-1}\\F_{k}\end{array}\right]\right)=\left[\begin{array}{c}F_{k}\\F_{k-1}+F_k\end{array}\right]=\left[\begin{array}{c}F_{k}\\F_{k+1}\end{array}\right]\]
+by application of the recurrence relation and induction hypothesis.
+\item The eigenvector equation 
+\[T \left( \left[\begin{array}{c}x\\y\end{array}\right]\right)=\lambda\left[\begin{array}{cc}x\\ y\end{array}\right]\]
+is equivalent to the system 
+\[y=\lambda x \quad \text{ and }\quad x+y=\lambda y.\]
+By substitution we have that 
+\[x+\lambda x=\lambda^2x.\]
+We note that $x\neq 0$ since this would imply $y=0$ by the system of equations and the zero vector is not a candidate for an eigenvector. Hence we can dived both sides by $x$ and get that 
+\[\lambda^2-\lambda -1=0.\]
+The only solutions to this equation are 
+\[\lambda=\frac{1\pm \sqrt{5}}{2}.\]
+
+\item We find the eigenvectors corresponding to the above eigenvectors. Substituting $\lambda=\frac{1\pm \sqrt{5}}{2}$ into the above system and solving for $x$ and $y$ shows that the eigenvectors are 
+\[\left[\begin{array}{cc}1\\ \frac{1+\sqrt{5}}{2}\end{array}\right].\quad\text{ and }\quad\left[\begin{array}{cc}1\\ \frac{1-\sqrt{5}}{2}\end{array}\right].\] 
+These vectors are clearly linearly independent and thus form a basis.
+\item Note that 
+\[\left[\begin{array}{c}0\\ 1\end{array}\right]=\frac{1}{\sqrt{5}}\left[\begin{array}{cc}1\\ \frac{1+\sqrt{5}}{2}\end{array}\right]-\frac{1}{\sqrt{5}}\left[\begin{array}{c}1\\ \frac{1-\sqrt{5}}{2}\end{array}\right].\]
+Hence,
+\[T^n\left(\left[\begin{array}{c}0\\ 1\end{array}\right]\right)=\frac{1}{\sqrt{5}}T^n\left(\left[\begin{array}{c}1\\ \frac{1+\sqrt{5}}{2}\end{array}\right]\right)-\frac{1}{\sqrt{5}}T^n\left(\left[\begin{array}{c}1\\ \frac{1-\sqrt{5}}{2}\end{array}\right]\right).\]
+By our eigenvalue relation ship we have that 
+\[T^n\left(\left[\begin{array}{c}0\\ 1\end{array}\right]\right)=\frac{1}{\sqrt{5}}\left(\frac{1+\sqrt{5}}{2}\right)^n\left[\begin{array}{c}1\\ \frac{1+\sqrt{5}}{2}\end{array}\right]-\frac{1}{\sqrt{5}}\left(\frac{1-\sqrt{5}}{2}\right)^n\left[\begin{array}{c}1\\ \frac{1-\sqrt{5}}{2}\end{array}\right].\]
+By part (a) we have 
+\[F_n=\frac{1}{\sqrt{5}}\left[\left(\frac{1+\sqrt{5}}{2}\right)^n-\left(\frac{1-\sqrt{5}}{2}\right)^n\right]\]
+for each positive integer $n$. 
+
+\end{enumerate}
+
+\end{proof}
+\end{enumerate}
+
+
+\end{document}
+
+
+
+
+
+
+
+

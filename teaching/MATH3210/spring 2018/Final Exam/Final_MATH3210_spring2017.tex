@@ -1,0 +1,140 @@
+\documentclass[11pt]{exam}
+\RequirePackage{amssymb, amsfonts, amsmath, latexsym, verbatim, xspace, setspace}
+\RequirePackage{tikz, pgflibraryplotmarks}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath, amsthm, amssymb}
+\newtheorem*{thm}{{\bf Theorem}}
+\newtheorem{lemma}{{\bf Lemma}}
+\newcommand{\A}{\mathfrak{A}}
+\theoremstyle{definition}
+\newtheorem{define}{Definition}
+\newtheorem{claim}{Claim}
+\newtheorem*{method}{Method}
+\newtheorem{ex}{Example}
+\newcommand{\dydx}{\dfrac{dy}{dx}}
+\newcommand{\dydt}{\dfrac{dy}{dt}}
+\newcommand{\dxdt}{\dfrac{dx}{dt}}
+\newcommand{\dxdy}{\dfrac{dx}{dy}}
+\newcommand{\pp}{\prime\prime}
+\newcommand{\p}{\prime}
+\renewcommand{\d}[2]{\dfrac{d#1}{d#2}}
+\newcommand{\dd}[2]{\dfrac{d^2#1}{d#2^2}}
+\newcommand{\ypp}{y^{\prime\prime}}
+\newcommand{\yp}{y^{\prime}}
+\newcommand{\tr}{\text{tr}}
+\renewcommand\thesection{2.5}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{lipsum}% Used for dummy text.
+\usepackage{enumerate}
+\DeclareMathOperator{\dimension}{dim}
+\DeclareMathOperator{\ran}{ran}
+\DeclareMathOperator{\nullspc}{null}
+
+% Here's where you edit the Class, Exam, Date, etc.
+\newcommand{\class}{MATH3210}
+\newcommand{\term}{Spring 2017}
+\newcommand{\examnum}{Final Exam}
+\newcommand{\examdate}{Due: 5/1/17}
+
+
+% For an exam, single spacing is most appropriate
+\singlespacing
+% \onehalfspacing
+% \doublespacing
+
+% For an exam, we generally want to turn off paragraph indentation
+\parindent 0ex
+
+\begin{document} 
+
+% These commands set up the running header on the top of the exam pages
+\pagestyle{head}
+\firstpageheader{}{}{}
+\runningheader{\class}{\examnum\ - Page \thepage\ of \numpages}{\examdate}
+\runningheadrule
+ {\bf \class} \\
+\ \\
+ {\bf \examnum} \\\
+
+\rule[1ex]{\textwidth}{.1pt}
+\ \\
+The following rules apply:\\
+
+\begin{itemize}
+\item \textbf{Exam must be typed}. Please organize your proofs in a reasonably neat and coherent way. Write in complete sentences.  
+
+\item \textbf{Mysterious or unsupported claims will not receive full
+credit}.  Unreasonably large gaps in logic or an argument will receive little credit. You may quote theorems from class or the book.
+
+\item \textbf{Your solutions must be your own.} You may use outside sources but your submitted solution must be in your own words. 
+\end{itemize}
+
+\newpage % End of cover page
+
+
+\begin{questions}
+\question Let $\mathcal{A}(\mathbb{R})$ be the set of real analytic functions over $\mathbb{R}$, this is a real vector space with the usual operations of function addition and scalar multiplication.  
+\[\mathcal{A}(\mathbb{R})=\left\{f:\mathbb{R}\rightarrow \mathbb{R} \ \left|\  f(x)=\sum_{n=0}^\infty a_nx^n\right.\right\}\]
+Consider the following operator on $\mathcal{A}(\mathbb{R})$; 
+\[B:\mathcal{A}(\mathbb{R})\rightarrow \mathcal{A}(\mathbb{R})\]
+\[Bf(x)=xf(x).\]
+Show that this operator has no eigenvalues. Note that two analytic functions $f(x)=\sum_{n=0}^\infty a_nx^n$ and $g(x)=\sum_{n=0}^\infty b_nx^n$ are equal if and only if $a_n=b_n$ for all $n$. 
+\vfill
+\question Let $V$ be a finite dimensional complex vector space.  A linear map $\Gamma:\mathcal{L}(V)\rightarrow \mathcal{L}(V)$ is called positive if it takes positive operators to positive operators i.e. if $A$ is positive then $\Gamma(A)$ is positive. Let, $\Psi:\mathcal{L}(V)\rightarrow \mathcal{L}(V)$ denote the following map, 
+\[\Psi(A)=\sum_{i=0}^n B_i^* A B_i\]
+where each $B_i\in \mathcal{L}(V)$. Show $\Psi$ is a positive map. 
+\vfill
+\question Suppose $T$ is a positive operator on $V$. Prove that $T$ is invertible if and only if 
+\[\langle Tv,v\rangle >0 \]
+for every $v\in V$ with $v\neq 0$. 
+\vfill
+\item Suppose $V$ and $W$ are finite dimensional and $U$ is a subspace of $V$. Prove there exists a $T\in \mathcal{L}(V,W)$ such that $\text{null}(T)=U$ if and only if $\text{dim}(U)\geq \text{dim}(V)-\text{dim}(W)$.
+\vfill
+\question Suppose $V$ is a complex finite dimensional vector space and $T\in \mathcal{L}(V)$. Let $p\in \mathcal{P}(\mathbb{C})$ be a polynomial and $\alpha\in \mathbb{C}$. Prove that $\alpha$ is an eigenvalue of $p(T)$ if and only if $\alpha=p(\lambda)$ for some eigenvalue $\lambda$ of $T$.
+\vfill
+\question Show that every self adjoint operator on a complex vector space has a cube root, i.e. if $T$ is self adjoint then there exists an operator $S$ such that $S^3=T$. 
+\vfill
+\question Let $V$ and $W$ be vector spaces over some field $\mathbb{F}$ and let
+\[V\times W=\{(v,w)\ |\ v\in V, w\in W\}.\]
+$V\times W$ is a vector space with the following operations 
+\[(v_1,w_1)+(v_2, w_2)=(v_1+v_2, w_1 +w_2)\]
+and 
+\[c(v,w)=(cv, cw)\]
+where $c\in \mathbb{F}$, $v, v_1, v_2\in V$ and $w, w_1, w_2\in W$. 
+Let $T:V\rightarrow W$ be a map. The graph of $T$ is the subset of $V\times W$ defined by 
+\[\text{graph}(T)=\{(v,Tv)\in V\times W : v\in V\}.\] Show that $T$ is a linear map if and only if $\text{graph}(T)$ is a subspace of $V\times W$. 
+
+\end{questions}
+
+\end{document}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Basic question
+\addpoints
+\question[10] Differentiate $f(x)=x^2$ with respect to $x$.
+
+% Question with parts
+\newpage
+\addpoints
+\question Consider the function $f(x)=x^2$.
+\begin{parts}
+\part[5] Find $f'(x)$ using the limit definition of derivative.
+\vfill
+\part[5] Find the line tangent to the graph of $y=f(x)$ at the point where $x=2$.
+\vfill
+\end{parts}
+
+% If you want the total number of points for a question displayed at the top,
+% as well as the number of points for each part, then you must turn off the point-counter
+% or they will be double counted.
+\newpage
+\addpoints
+\question[10] Consider the function $f(x)=x^3$.
+\noaddpoints % If you remove this line, the grading table will show 20 points for this problem.
+\begin{parts}
+\part[5] Find $f'(x)$ using the limit definition of derivative.
+\vspace{4.5in}
+\part[5] Find the line tangent to the graph of $y=f(x)$ at the point where $x=2$.
+\end{parts}

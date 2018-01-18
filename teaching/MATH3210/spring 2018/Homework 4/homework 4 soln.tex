@@ -1,0 +1,180 @@
+\documentclass[12pt,letterpaper]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{amsmath}
+\usepackage{enumerate}
+
+%Here are some user-defined notations
+\newcommand{\RR}{\mathbf R}  %bold R
+\newcommand{\CC}{\mathbf C}  %bold C
+\newcommand{\ZZ}{\mathbf Z}   %bold Z
+\newcommand{\QQ}{\mathbf Q}   %bold Q
+\newcommand{\rr}{\mathbb R}     %blackboard bold R
+\newcommand{\cc}{\mathbb C}    %blackboard bold R
+\newcommand{\zz}{\mathbb Z}    %blackboard bold R
+\newcommand{\qq}{\mathbb Q}   %blackboard bold Q
+\newcommand{\calM}{\mathcal M}  %calligraphic M
+\newcommand{\sm}{\setminus} 
+\newcommand{\bfa}{\mathbf a}
+\newcommand{\bfb}{\mathbf b}
+\newcommand{\bfc}{\mathbf c}
+
+
+
+
+%Here are some user-defined operators
+\newcommand{\re}{\operatorname {Re}}
+\newcommand{\im}{\operatorname {Im}}
+
+
+%These commands deal with theorem-like environments (i.e., italic)
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem*{theorem*}{Theorem}
+\newtheorem*{claim}{Claim}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{conjecture}[theorem]{Conjecture}
+
+%These deal with definition-like environments (i.e., non-italic)
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{remark}[theorem]{Remark}
+
+%your name and date in the header.
+\usepackage[us]{datetime} 
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\lhead{}
+\chead{MATH 3210\\ Homework 4}
+\rhead{ Your name \\ date}
+\lfoot{}
+\cfoot{}
+\rfoot{\thepage}
+\renewcommand{\headrulewidth}{0 pt}
+\renewcommand{\footrulewidth}{0 pt}
+\begin{document}
+\begin{enumerate}[1.]
+\item Suppose that $A$ and $B$ are monoids and that $\phi:A\rightarrow B$ is a monoid homomorphism. Show that $\phi$ sends the invertible elements of $A$ to the invertible elements of $B$. Use this to show that the determinant of an invertible matrix is non-zero. \\
+\begin{proof}
+Suppose that $a\in A$ is invertible. There exists an element $\hat{a}\in A$ such that 
+\[a\hat{a}=\hat{a}a=1_A.\]
+Let $\phi:A\rightarrow B$ be a monoid homomorphim. The 
+\[\phi(a)\phi(\hat{a})=\phi(a\hat{a})=1_B=\phi(\hat{a}a)=\phi(\hat{a})\phi(a).\]
+By definition $\phi(a)$ is invertible. \\
+We apply the above to determinants. As seen, $\det:M_n(\mathbb{F})\rightarrow \mathbb{F}$ is a monoid homomorphism and must take invertible matrices to invertible elements (i.e. non-zero elements) in the underlying field. 
+\end{proof}
+\ \\
+\item Show by induction that the determinant of an upper triangular matrix is the product of the diagonal entries. \\
+\begin{proof} We proceed by induction on the size of the matrix.\\
+\ \\
+{\bf Base Case: }For a $1\times 1$ matrix the result is obvious. \\
+\ \\
+{\bf Induction Hypothesis: }Suppose that every upper triangular matrix of size $n\times n$ has determinant equal to the product of its diagonal, i.e. if $A$ is $n\times n$ then 
+\[\det(A)=\prod_{i=1}^n a_{ii}\]
+Now suppose that $A$ is a $(n+1)\times (n+1)$ upper triangular matrix. We compute the determinant of $A$ by cofactor expansion along the first column. 
+Hence,
+\[\det(A)=a_{1,1}\det(\hat{A}_{1,1})\]
+We note that since $A$ is upper triangular then $\hat{A}_{1,1}$ is upper triangular of size $n\times n$. By the induction hypothesis we have that 
+\[\det(A)=a_{1,1}\prod_{i=2}^{n+1}a_{i,i}=\prod_{i=1}^{n+1}a_{i,i}\]
+\end{proof}
+\ \\
+\item Call a matrix $A$ nilpotent if $A^k=0$ for some positive integer $k$. Show that every square nilpotent matrix has determinant zero. \\
+\begin{proof}
+Suppose that $A$ is nilpotent and that $A^k=0$ for some $k\in \mathbb{N}$. I will break the proof into two versions. In one version, the field should be either $\mathbb{C}$ or $\mathbb{R}$. In the second version, any field will work. I will accept either version as correct.  \\
+\ \\
+{\bf Version 1: }If $A^k=0$ then $\det(A^k)=\det(0)=0$. By the multiplicative property we have that 
+\[\det(A)^k=0\] and hence 
+\[\det(A)=0\]
+by taking $k$-th roots. \\
+\ \\
+{\bf Version 2: }Suppose that $A$ is nilpotent but has a non-zero determinant. By the question above and the question below we have that $A$ must be invertible. Let $A^{-1}$ denote its inverse. Let $k$ be the smallest positive integer such that $A^k=0$.  
+\[I=A^{-1}A\]
+\[A^{k-1}=IA^{k-1}=A^{-1}AA^{k-1}=A^{-1}A^{k}=A^{-1}0=0\]
+Which is a contradiction on the condition we put on $k$. 
+\end{proof}
+\ \\
+\item Suppose $A$ is square non-invertible. Note that there exists a sequence of elementry row operations $e_1,\ldots ,e_n$ such that 
+$B$ the matrix resulting from applying $e_1,\ldots, e_n$ to $A$ is upper triangular and contains a $0$ along the diagonal. Use this to prove that the determinant of a square non-invertible matrix is zero. \\
+\begin{proof} We note by Question 2 that the determinant of $B$ is automatically zero since $B$ contains zeros along the diagonal. We will use this to show that $\det(A)=0$ as well. However this is easy since by Lemma 17 in the determinant notes there exists a $\alpha\in \mathbb{F}$ such that 
+\[\alpha\det(B)=\det(A)\]
+Since $\det(B)=0$ we have the result we want. 
+\end{proof}
+\ \\
+\item Use concepts in Example 3.104 on page 105 of your text to prove Theorem $3.106$.\\
+\ \\
+For reference, Theorem 3.106 is the following:
+\begin{theorem*} Suppose that $V$ is finite dimensional and $U$ is a subspace of $V$. Then 
+\[\text{dim}(U)+\text{dim}(U^0)=\text{dim})(V)\]
+\end{theorem*}
+\begin{proof}Let $\{u_1, \ldots u_p\}$ be a basis for $U$ and extend it to a basis $\{u_1, \ldots, u_p, v_1, \ldots v_m\}$ for $V$. For convenience we will relabel the basis vectors as $\{b_1, \ldots, b_n\}$ where $n=p+m$ and $\{b_1, \ldots, b_p\}$ is a basis for $U$. Let $\{\varphi_1, \ldots, \varphi_n\}$ be the dual basis for $V^\prime$ associated to $\{b_1, \ldots, b_n\}$. We make the following claim:
+\ \\
+\hrule
+\begin{claim} \[U^0=\text{span}\{\varphi_{p+1}, \ldots, \varphi_n\}.\]
+\end{claim}
+\hrule
+\ \\
+Under our relabeling we have that $\text{dim}(U)=p$ and $\text{dim}(U^0)=m$ this will imply our wanted result. We note that if $v\in V$ then $v=\alpha_1b_1+\ldots + \alpha_nb_n$ and  
+\[\varphi_j(v)=\varphi_j(\alpha_1b_1+\ldots +\alpha_jb_j+\ldots +\alpha_nb_n)=\alpha_j.\] Suppose $\varphi\in \text{span}\{\varphi_{p+1}, \ldots, \varphi_n\}$ then 
+\[\varphi=c_{p+1}\varphi_{p+1}+\ldots +c_n\varphi_{n}\] for some scalars $c_{p+1}, \ldots, c_n\in \mathbb{F}$. If $u\in U$ then 
+\[u=\alpha_1b_1+\ldots+\alpha_pb_p+0b_{p+1}+\ldots+0b_n.\]
+If we apply $\varphi$ then $\varphi(u)=0$ and hence $\varphi\in U^0$. 
+
+Now suppose that $\varphi\in U^0$. There exists scalars $c_1, \ldots, c_n$ such that 
+\[\varphi=c_1\varphi_1+\ldots+c_n\varphi_n.\] Since $\{b_1, \ldots, b_p\}$ is a basis for $U$ and $\varphi \in U^0$ we have that for $1\leq j\leq p$ 
+\[0=\varphi(b_j)=(c_1\varphi_1+\ldots +c_j\varphi_j+\ldots+c_n\varphi_n)(b_j)=c_j.\]
+Hence 
+\[U^0\ni \varphi=c_{p+1}\varphi_{p+1}+\ldots c_n\varphi_n\]
+and $U^0\subset \text{span}\{\varphi_{p+1}, \ldots, \varphi_n\}$
+\end{proof}
+\ \\
+\newpage
+\item (\S 3.F \# 12) Show that the dual map of the identity map on $V$ is the identity map on $V^\prime$. \\
+\begin{proof} Let $I$ denote the identity map on $V$. For $\varphi\in V^\prime$ we have 
+\[I^\prime(\varphi)=\varphi\circ I=\varphi.\]
+This gives us our wanted result. 
+\end{proof}
+\ \\
+\item (\S 3.F \# 34) The \emph{double dual} of $V$ denoted $V^{\prime\prime}$, is defined to be the dual space of $V^\prime$. In other words $V^{\prime}=(V^\prime)^\prime$. Define $\Lambda:V\rightarrow V^{\prime\prime}$ by 
+\[(\Lambda v) (\varphi)=\varphi(v)\]
+for $v\in V$ and $\varphi \in V^\prime$. 
+\begin{enumerate}[(a)]
+\item Show that $\Lambda$ is a linear map from $V$ to $V^{\prime\prime}$. 
+\item Show that if $T\in \mathcal{L}(V)$ then $T^{\prime\prime}\circ \Lambda=\Lambda\circ T$ where $T^{\prime\prime}=(T^\prime)^\prime$. 
+\item Show that if $V$ is finite dimensional, then $\Lambda$ is an isomorphism from $V$ onto $V^{\prime\prime}$.
+\end{enumerate}
+\end{enumerate}
+\vspace{.15in}
+\begin{enumerate}[(a)]
+\item \begin{proof} 
+\[(\Lambda(cv+u))(\varphi)=\varphi(cv+u)=c\varphi(v)+\varphi(u)=c(\Lambda(v))(\varphi)+(\Lambda (u))(\varphi)\]
+         \end{proof}
+\item \begin{proof}
+Suppose $T\in \mathcal{L}(V)$. Suppose $v\in V$ and $\varphi\in V^\prime$. We have 
+\begin{align*}
+((T^{\prime\prime}\circ \Lambda)(v))(\varphi)&=(T^{\prime\prime}(\Lambda v))(\varphi)\\
+&=(\Lambda v\circ T^\prime)(\varphi)\\
+&=(\Lambda v)(T^\prime(\varphi))\\
+& = (\Lambda v)(\varphi \circ T)\\
+& = (\varphi \circ T)(v)\\
+& =\varphi(Tv)\\
+&=(\Lambda(Tv))(\varphi)\\
+&=((\Lambda\circ T)(v))(\varphi)
+\end{align*}
+	\end{proof}
+\item \begin{proof} As seen in the hints we need only show that the map is injective. Part (a) shows linearity of the map and once we have that the map is injective we know that the map is automatically surjective by the argument in the hint. So suppose that $v\in V$ and $\Lambda v=0$. Thus we have that $\varphi(v)=0$ for all $\varphi \in V^\prime$. However, by Lemma 0.1 in the hints we see as long as $\hat{v}\neq 0$ there exists some $\varphi \in V^\prime$ such that $\varphi(\hat{v})=1$. The only possibility is that $v=0$. Hence $\text{null}(\Lambda)=\{0\}$ and we have that $\Lambda$ is injective and thus an isomorphism. 
+
+	\end{proof}
+\end{enumerate}
+\end{document}
+
+
+
+
+
+
+
+

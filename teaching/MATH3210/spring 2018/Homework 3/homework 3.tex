@@ -1,0 +1,81 @@
+\documentclass[12pt,letterpaper]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{amsmath}
+\usepackage{enumerate}
+
+%Here are some user-defined notations
+\newcommand{\RR}{\mathbf R}  %bold R
+\newcommand{\CC}{\mathbf C}  %bold C
+\newcommand{\ZZ}{\mathbf Z}   %bold Z
+\newcommand{\QQ}{\mathbf Q}   %bold Q
+\newcommand{\rr}{\mathbb R}     %blackboard bold R
+\newcommand{\cc}{\mathbb C}    %blackboard bold R
+\newcommand{\zz}{\mathbb Z}    %blackboard bold R
+\newcommand{\qq}{\mathbb Q}   %blackboard bold Q
+\newcommand{\calM}{\mathcal M}  %calligraphic M
+\newcommand{\sm}{\setminus} 
+\newcommand{\bfa}{\mathbf a}
+\newcommand{\bfb}{\mathbf b}
+\newcommand{\bfc}{\mathbf c}
+
+
+
+
+%Here are some user-defined operators
+\newcommand{\re}{\operatorname {Re}}
+\newcommand{\im}{\operatorname {Im}}
+
+
+%These commands deal with theorem-like environments (i.e., italic)
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{conjecture}[theorem]{Conjecture}
+
+%These deal with definition-like environments (i.e., non-italic)
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{remark}[theorem]{Remark}
+
+%your name and date in the header.
+\usepackage[us]{datetime} 
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\lhead{}
+\chead{MATH 3210\\ Homework 3}
+\rhead{ Your name \\ date}
+\lfoot{}
+\cfoot{}
+\rfoot{\thepage}
+\renewcommand{\headrulewidth}{0 pt}
+\renewcommand{\footrulewidth}{0 pt}
+\begin{document}
+\begin{enumerate}[1.]
+\item (\S 3.A \#7) Show that every linear map from a 1-dimensional vector space to itself is multiplication by some scalar. More precisely, prove that if $\text{dim}(V)=1$ and $T\in \mathcal{L}(V)$, then there exists a $\lambda \in \mathbb{F}$ such that $Tv=\lambda v$ for all $v\in V$.\\
+\ \\
+\item (\S 3.B \# 9) Suppose that $T\in \mathcal{L}(V,W)$ is injective and $v_1, \ldots ,v_n$ is linearly independent in $V$. Prove that $Tv_1,\ldots, Tv_n$ is linearly independent in $W$. \\
+\ \\
+\item (\S 3.B \# 10) Suppose that $v_1, \ldots, v_n$ spans $V$ and $T\in \mathcal{L}(V,W)$. Prove that $Tv_1, \ldots ,Tv_n$ spans $\text{ran}(T)$. \\
+\ \\
+\item (\S 3.B \#12) Suppose that $V$ is finite dimensional and that $T\in \mathcal{L}(V,W)$. Prove that there exists a subspace $U$ of $V$ such that $U\cap \text{null}(T)=\{0\}$ and $\text{ran}(T)=\{Tu : u\in U\}$.\\
+\ \\
+\item (\S 3.D \# 8) Suppose $V$ is finite dimensional and $T:V\rightarrow W$ is a surjective linear map of $V$ onto $W$. Prove that there is a subspace $U$ of $V$ such that $T\mid_U$ is an isomorphism of $U$ onto $W$. (Here $T\mid_U$ means the function $T$ restricted to $U$. In other words, $T\mid_U$ is the function whose domain is $U$, with $T\mid_U$ defined by $T\mid_U(u)=T(u)$ for every $u\in U$.)\\
+\ \\
+\item (\S 3.D \# 18) Show that $V$ and $\mathcal{L}(\mathbb{F},V)$ are isomorphic vector spaces. 
+\end{enumerate}
+
+
+\end{document}
+
+
+
+
+
+
+
+

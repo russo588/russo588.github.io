@@ -1,0 +1,91 @@
+\documentclass[12pt,letterpaper]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{amsmath}
+\usepackage{enumerate}
+
+%Here are some user-defined notations
+\newcommand{\RR}{\mathbf R}  %bold R
+\newcommand{\CC}{\mathbf C}  %bold C
+\newcommand{\ZZ}{\mathbf Z}   %bold Z
+\newcommand{\QQ}{\mathbf Q}   %bold Q
+\newcommand{\rr}{\mathbb R}     %blackboard bold R
+\newcommand{\cc}{\mathbb C}    %blackboard bold R
+\newcommand{\zz}{\mathbb Z}    %blackboard bold R
+\newcommand{\qq}{\mathbb Q}   %blackboard bold Q
+\newcommand{\calM}{\mathcal M}  %calligraphic M
+\newcommand{\sm}{\setminus} 
+\newcommand{\bfa}{\mathbf a}
+\newcommand{\bfb}{\mathbf b}
+\newcommand{\bfc}{\mathbf c}
+
+
+
+
+%Here are some user-defined operators
+\newcommand{\re}{\operatorname {Re}}
+\newcommand{\im}{\operatorname {Im}}
+
+
+%These commands deal with theorem-like environments (i.e., italic)
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{conjecture}[theorem]{Conjecture}
+
+%These deal with definition-like environments (i.e., non-italic)
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{remark}[theorem]{Remark}
+
+%your name and date in the header.
+\usepackage[us]{datetime} 
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\lhead{}
+\chead{MATH 3210\\ Homework 4}
+\rhead{ Your name \\ date}
+\lfoot{}
+\cfoot{}
+\rfoot{\thepage}
+\renewcommand{\headrulewidth}{0 pt}
+\renewcommand{\footrulewidth}{0 pt}
+\begin{document}
+\begin{enumerate}[1.]
+\item Suppose that $A$ and $B$ are monoids and that $\phi:A\rightarrow B$ is a monoid homomorphism. Show that $\phi$ sends the invertible elements of $A$ to the invertible elements of $B$. Use this to show that the determinant of an invertible matrix is non-zero. \\
+\ \\
+\item Show by induction that the determinant of an upper triangular matrix is the product of the diagonal entries. \\
+\ \\
+\item Call a matrix $A$ nilpotent if $A^k=0$ for some positive integer $k$. Show that every square nilpotent matrix has determinant zero. \\
+\ \\
+\item Suppose $A$ is square non-invertible. Note that there exists a sequence of elementry row operations $e_1,\ldots ,e_n$ such that 
+$B$ the matrix resulting from applying $e_1,\ldots, e_n$ to $A$ is upper triangular and contains a $0$ along the diagonal. Use this to prove that the determinant of a square non-invertible matrix is zero. 
+\ \\
+\item Use concepts in Example 3.104 on page 105 of your text to prove Theorem $3.106$.\\
+\ \\
+\item (\S 3.F \# 12) Show that the dual map of the identity map on $V$ is the identity map on $V^\prime$. \\
+\ \\
+\item (\S 3.F \# 34) The \emph{double dual} of $V$ denoted $V^{\prime\prime}$, is defined to be the dual space of $V^\prime$. In other words $V^{\prime}=(V^\prime)^\prime$. Define $\Lambda:V\rightarrow V^{\prime\prime}$ by 
+\[(\Lambda v) (\varphi)=\varphi(v)\]
+for $v\in V$ and $\varphi \in V^\prime$. 
+\begin{enumerate}[(a)]
+\item Show that $\Lambda$ is a linear map from $V$ to $V^{\prime\prime}$. 
+\item Show that if $T\in \mathcal{L}(V)$ then $T^{\prime\prime}\circ \Lambda=\Lambda\circ T$ where $T^{\prime\prime}=(T^\prime)^\prime$. 
+\item Show that if $V$ is finite dimensional, then $\Lambda$ is an isomorphism from $V$ onto $V^{\prime\prime}$.
+\end{enumerate}
+\end{enumerate}
+
+
+\end{document}
+
+
+
+
+
+
+
+
