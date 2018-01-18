@@ -12,6 +12,7 @@
 \usepackage{amssymb}
 \usepackage[all]{xy}
 \usepackage{graphicx}
+\usepackage{enumerate}
 
 
 %Here are some user-defined notations
@@ -61,6 +62,7 @@
 %These commands deal with theorem-like environments (i.e., italic)
 \theoremstyle{plain}
 \newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}{Proposition}[section]
 \newtheorem{corollary}[theorem]{Corollary}
 \newtheorem{lemma}[theorem]{Lemma}
 \newtheorem{conjecture}[theorem]{Conjecture}
@@ -81,7 +83,91 @@
 
 
 \begin{document}
-stuff
+\section{Basic Notions}
+\begin{definition} A binary operation on a set $S$ is a function $f:S\times S\rightarrow S$. 
+\end{definition}
+\begin{definition} A \emph{field} is a set $\mathbb{F}$ together with two binary operations $+$, and $\cdot$ called addition and multiplication (respectively) such that 
+\ \\
+\begin{enumerate}[1.]
+\setlength{\itemsep}{5pt}
+\item For all $a,b,c\in \mathbb{F}$ we have 
+\[a+(b+c)=(a+b)+c\]
+and 
+\[a\cdot(b\cdot c)=(a\cdot b)\cdot c.\]
+\item For all $a,b\in \mathbb{F}$ we have 
+\[a+b=b+a\]
+and 
+\[a\cdot b=b\cdot a.\]
+\item There exists an element $0\in \mathbb{F}$, called an additive identity,  such that for all $a\in \mathbb{F}$ we have $a+0=a$. 
+\item There exists an element $1\in \mathbb{F}$, called a multiplicative identity, such that for all $a\in \mathbb{F}$ we have $a\cdot 1=a$.
+\item For all $a\in \mathbb{F}$ there exists an element $b\in \mathbb{F}$, called an additive inverse, such that $a+b=0.$ 
+\item For all $a\in \mathbb{F}$ such that $a\neq 0$ there exists an element $c\in \mathbb{F}$, called a multiplicative inverse, such that $a\cdot c=1$.
+\item  For all $a,b,c\in \mathbb{F}$ 
+\[a\cdot (b+c)=(a\cdot b)+ (a\cdot c)\]
+
+\end{enumerate}
+\end{definition}
+\ \\
+{\bf \noindent Note:} Fields have a unique additive and multiplicative identity denoted 0 and 1 respectively. Moreover, when the additive and multiplicative inverses exist they are unique.\\
+\ \\
+{\bf \noindent Some examples:} All of the following examples are with their standard operations. 
+\begin{enumerate}[1.]
+\setlength{\itemsep}{5pt}
+\item $\mathbb{Q}$ (rational numbers)
+\item $\mathbb{R}$ (real numbers)
+\item $\mathbb{C}$ (complex numbers)
+\item $\mathbb{Z}/p\mathbb{Z}$ for $p$ prime (Integers modulo p)
+\end{enumerate}
+\ \\
+{\bf Non example: }$\mathbb{Z}$ is not a field, it lacks multiplicative inverses. 
+\ \\
+\begin{definition} A \emph{vector space} $V$ over a field $\mathbb{F}$ is a set $V$ with two operations called \emph{vector addition} and \emph{scalar multiplication} where vector addition is a function $+:V\times V\rightarrow V$ and scalar multiplication is a function $\cdot: \mathbb{F}\times V\rightarrow \mathbb{V}$ such that 
+\\\
+\begin{enumerate}[1.] 
+\setlength{\itemsep}{5pt}
+\item For all $u,v\in V$ we have 
+\[u+v=v+u\]
+\item For all $u,v,w\in V$ and for all $a,b\in\mathbb{F}$ we have 
+\[(u+v)+w=u+(v+w)\]
+and 
+\[(ab)\cdot v=a\cdot(b\cdot v)\]
+\item There exists a vector $0\in V$, called an additive identity, such that for all $v\in V$ we have
+\[v+0=v\]
+
+\item For all $v\in V$ we have a vector $w\in V$, called an additive inverse, such that 
+\[v+w=0\]
+\item For all $v\in V$ we have 
+\[1\cdot v=v\]
+\item For all $a,b \in \mathbb{F}$ and for all $u,v\in V$ we have
+\[a\cdot(u+v)=a\cdot u+a\cdot v\] 
+\end{enumerate}
+\end{definition}
+\ \\
+{\bf \noindent Some examples:} All of the following examples are with their standard operations. 
+\begin{enumerate}[1.]
+\setlength{\itemsep}{5pt}
+\item $\mathbb{F}^n=\left\{\begin{bmatrix}a_1\\ \vdots \\ a_n\end{bmatrix}: a_i\in \mathbb{F}\right\}$ where $\mathbb{F}$ is a field. 
+\item Polynomials with coefficients in a field $\mathbb{F}$.
+\item Polynomials ( with coefficients in a field $\mathbb{F}$) of degree $\leq n$
+\item Continuous functions $f:X\rightarrow Y$, $C(X,Y)$, where $X$ and $Y$ are fields. 
+\item Functions from a field $X$ into a field $Y$. 
+\item $\mathbb{F}^\infty=\{(a_1, a_2, a_3, \ldots): a_i\in \mathbb{F}\}$. 
+\end{enumerate}
+\ \\
+\begin{proposition}Every vector space $V$ has a unique additive identity. The unique additive identity is denoted $0$. 
+\end{proposition}
+
+\begin{proposition}Every element $v\in V$ has a unique additive inverse. For all $v\in V$ its unique additive inverse is denoted $-v$. 
+\end{proposition}
+
+\begin{proposition}For all $v\in V$ we have $0\cdot v=0$. 
+\end{proposition}
+
+\begin{proposition}For all $a\in \mathbb{F}$ and $0\in V$ we have $a\cdot 0=0$.
+\end{proposition}
+
+\begin{proposition}For every $v\in V$ we have $(-1)\cdot v=-v$
+\end{proposition}
 
 \end{document}
 
