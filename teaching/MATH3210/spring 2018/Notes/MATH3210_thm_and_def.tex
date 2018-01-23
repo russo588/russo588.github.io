@@ -121,8 +121,8 @@ and
 \ \\
 {\bf Non example: }$\mathbb{Z}$ is not a field, it lacks multiplicative inverses. 
 \ \\
-\begin{definition} A \emph{vector space} $V$ over a field $\mathbb{F}$ is a set $V$ with two operations called \emph{vector addition} and \emph{scalar multiplication} where vector addition is a function $+:V\times V\rightarrow V$ and scalar multiplication is a function $\cdot: \mathbb{F}\times V\rightarrow \mathbb{V}$ such that 
-\\\
+\begin{definition} A \emph{vector space} $V$ over a field $\mathbb{F}$ is a set $V$ with two operations called \emph{vector addition} and \emph{scalar multiplication} where vector addition is a function $+:V\times V\rightarrow V$ and scalar multiplication is a function $\cdot: \mathbb{F}\times V\rightarrow V$ such that 
+\\
 \begin{enumerate}[1.] 
 \setlength{\itemsep}{5pt}
 \item For all $u,v\in V$ we have 
@@ -168,7 +168,38 @@ and
 
 \begin{proposition}For every $v\in V$ we have $(-1)\cdot v=-v$
 \end{proposition}
+\newpage
+\section{Basis for a Vector Space}
 
+\begin{definition} A \emph{linear combination} of a list of vectors $v_1,\ldots, v_m$ in $V$ is a vector of the form 
+\[a_1v_1+\ldots+a_mv_m\]
+where $a_1,\ldots, a_m\in \mathbb{F}$. 
+\end{definition}
+
+\begin{definition} The set of all linear combinations of a list of vectors $v_1, \ldots, v_m$ in $V$ is called the \emph{span} of $v_1, \ldots,v_m$ denoted by 
+$\text{span}\{v_1,\ldots,v_m\}$.
+\[\text{span}\{v_1,\ldots,v_m\}=\{a_1v_1+\ldots+a_mv_m\mid a_i\in \mathbb{F}\}\]
+\end{definition}
+
+\begin{definition} If $V$ is a vector space and $V=\text{span}\{v_1,\ldots,v_m\}$ then we say that $v_1, \ldots, v_m$ span $V$. 
+\end{definition}
+
+\begin{definition} We say that a vectors space is \emph{finite dimensional} if there exists a finite list of vectors $v_1,\ldots, v_m$ such that 
+\[\text{span}\{v_1,\ldots v_m\}=V\] 
+Otherwise we say that $V$ is \emph{infinite dimensional}.
+\end{definition}
+
+
+\begin{definition} A list of vectors $v_1,\ldots, v_m$ in $V$ is called \emph{linearly independent} if the only choice of $a_1, \ldots, a_m\in \mathbb{F}$ such that 
+\[a_1v_1+\ldots+a_mv_m=0\] is $a_1=a_2=\ldots =a_m$. A list is called \emph{linearly dependent} if it is not linearly independent.
+\end{definition}
+
+\begin{lemma} Suppose that $v_1,\ldots, v_m$ is a linearly dependent list in $V$. There exists a $j\in\{1,\ldots, m\}$ such that \\
+\begin{enumerate}[1)]
+\item $v_j\in \text{span}\{v_1,\ldots v_{j-1}\}$
+\item $\text{span}\{v_1,\ldots, v_{j-1},v_j,v_{j+1},\ldots v_m\}=\text{span}\{v_1,\ldots, v_{j-1},v_{j+1},\ldots v_m\}$
+\end{enumerate}
+\end{lemma}
 \end{document}
 
 
