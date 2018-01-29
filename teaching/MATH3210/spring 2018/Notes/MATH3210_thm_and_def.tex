@@ -200,6 +200,50 @@ Otherwise we say that $V$ is \emph{infinite dimensional}.
 \item $\text{span}\{v_1,\ldots, v_{j-1},v_j,v_{j+1},\ldots v_m\}=\text{span}\{v_1,\ldots, v_{j-1},v_{j+1},\ldots v_m\}$
 \end{enumerate}
 \end{lemma}
+
+\begin{proposition} In a finite dimensional vector space the length of every linearly independent list of vectors is less than or equal to the length of every spanning list of vectors. 
+\end{proposition}
+
+
+\begin{definition} A basis for a vector space $V$ is a list of vectors $\{v_1, \ldots, v_n\}$ such that 
+\begin{enumerate}[1.]
+\item $\{v_1, \ldots, v_n\}$ is linearly independent
+\item $\text{span}\{v_1, \ldots, v_n\}=V$. 
+\end{enumerate}
+\end{definition}
+\begin{proposition} A list of vectors $\{v_1, \ldots, v_n\}$ in $V$ is a basis for $V$ if and only if every vector $v\in V$ can be written \emph{uniquely} in the form
+\[v=a_1v_1+\ldots+a_nv_n\]
+for some $a_1, \ldots, a_n\in \mathbb{F}$. 
+\end{proposition}
+\begin{proposition} Every spanning list of vectors in $V$ can be reduced down to a basis. 
+\end{proposition}
+
+\begin{proposition} Every linearly independent list of vectors in $V$ can be extended to a basis.  
+\end{proposition}
+
+\begin{proposition} Any two basis of a finite dimensional vector space $V$ have the same length. 
+\end{proposition}
+
+\begin{definition} The dimension of a finite dimensional vector space is the length of any basis of the vector space. Denoted $\text{dim}(V)$. 
+\end{definition}
+
+\begin{proposition} Suppose $V$ is finite dimensional. Every list of linearly independent vectors whose length is equal to the dimension of $V$ is a basis. 
+\end{proposition}
+
+\begin{proposition} Suppose $V$ is finite dimensional. Every spanning list vectors whose length is equal to the dimension of $V$ is a basis. 
+\end{proposition}
+
+\section{Subspaces}
+\begin{definition} A subspace of a vector space $V$ is a subset $H$ such that $H$ is a vector space under the same binary relations and field as $V$. 
+\end{definition}
+
+\begin{proposition}[Subspace Test] A subset $H$ is a subspace of $V$ if and only if 
+\begin{enumerate}[1.] 
+\item $0\in H$. 
+\item For all $u,v\in H$ we have $u+v\in H$
+\item For all $u\in H$ and $a\in \mathbb{F}$ we have $au\in H$.
+\end{enumerate}
+\end{proposition}
 \end{document}
 
 

@@ -1,0 +1,143 @@
+\documentclass[12pt,letterpaper]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{amsmath}
+\usepackage{enumerate}
+
+%Here are some user-defined notations
+\newcommand{\RR}{\mathbf R}  %bold R
+\newcommand{\CC}{\mathbf C}  %bold C
+\newcommand{\ZZ}{\mathbf Z}   %bold Z
+\newcommand{\QQ}{\mathbf Q}   %bold Q
+\newcommand{\rr}{\mathbb R}     %blackboard bold R
+\newcommand{\cc}{\mathbb C}    %blackboard bold R
+\newcommand{\zz}{\mathbb Z}    %blackboard bold R
+\newcommand{\qq}{\mathbb Q}   %blackboard bold Q
+\newcommand{\calM}{\mathcal M}  %calligraphic M
+\newcommand{\sm}{\setminus} 
+\newcommand{\bfa}{\mathbf a}
+\newcommand{\bfb}{\mathbf b}
+\newcommand{\bfc}{\mathbf c}
+
+
+
+
+
+%Here are some user-defined operators
+\newcommand{\re}{\operatorname {Re}}
+\newcommand{\im}{\operatorname {Im}}
+
+
+%These commands deal with theorem-like environments (i.e., italic)
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{conjecture}[theorem]{Conjecture}
+
+%These deal with definition-like environments (i.e., non-italic)
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{remark}[theorem]{Remark}
+
+%your name and date in the header.
+\usepackage[us]{datetime} 
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\lhead{}
+\chead{MATH 3210\\ Homework 2}
+\rhead{ Your name \\ \today}
+\lfoot{}
+\cfoot{}
+\rfoot{\thepage}
+\renewcommand{\headrulewidth}{0 pt}
+\renewcommand{\footrulewidth}{0 pt}
+\begin{document}
+\begin{enumerate}[1.]
+\item Prove that the intersection of every collection of subspaces of $V$ is a subspace of $V$. The following definition maybe helpful.
+\begin{definition}Let $\Gamma$ be an arbitrary indexing set (possibly infinite and possibly uncountable). A collection of subspaces indexed by $\Gamma$ is $\{U_\gamma \mid \gamma\in \Gamma, U_\gamma\text{ is a subspace of } V\}$.\\
+\end{definition}
+\item Prove that the real vector space of all continuous real-valued functions on $[0,1]$ is infinite dimensional. \\
+\item This exercise will walk you through a basic scheme for polynomial interpolation.\\
+\ \\
+{\bf Polynomial Interpolation:}\\
+\ \\
+\noindent Given data
+\begin{center}
+\def\arraystretch{1.2}
+\begin{tabular}{|c|c|c|c|}
+\hline
+$x_1$& $x_2$& $\cdots$ & $x_n$\\ \hline
+$a_1$& $a_2$& $\cdots$ & $a_n$\\
+\hline
+\end{tabular}
+\end{center}
+We want to compute a \emph{interpolating polynomial} $p$, i.e. a polynomial of degree at most $n-1$ such that 
+\[p(x_i)=f_i\]
+
+Suppose you have a basis for the space of polynomials of $\text{deg}(p)\leq n-1$, $P_{n-1}(x)$, say $\{p_1, p_2, \ldots, p_n\}$. If our interpolating polynomial $p$ exists then 
+\[p(x)=c_1p_1(x)+c_2p_2(x)+\ldots+c_np_n(x)\]
+If $p$ interpolates the data, then 
+\[p(x_1)=c_1p(x_1)+c_2p(x_1)+\ldots+c_np(x_1)= a_1\]
+\[p(x_2)=c_1p(x_2)+c_2p(x_2)+\ldots+c_np(x_2)= a_2\]
+\[\vdots\]
+\[p(x_n)=c_1p(x_n)+c_2p(x_n)+\ldots+c_np(x_n)= a_n\]
+Thus we have to solve the linear system:
+\[\begin{pmatrix}
+p_1(x_1) & p_2(x_1) & \cdots & p_n(x_1)\\
+p_1(x_2) & p_2(x_2) & \cdots & p_n(x_2)\\
+\vdots & \vdots & \cdots & \vdots\\
+p_1(x_n) & p_2(x_n) & \cdots & p_n(x_n)\\
+\end{pmatrix}
+\begin{pmatrix}
+c_1\\
+c_2\\
+\vdots \\
+c_n
+\end{pmatrix}=
+\begin{pmatrix}
+a_1\\
+a_2\\
+\vdots \\
+a_n
+\end{pmatrix}
+\]
+\newpage
+{\noindent \bf Questions:}
+\begin{enumerate}[(a)]
+\item Find the matrix corresponding to the data points 
+\begin{center}
+\begin{tabular}{|c|c|c|c|}
+\hline
+$x_1=0$& $x_2=-1$& $x_3=1$\\ \hline
+$2$& $3$& $3$\\
+\hline
+\end{tabular}
+\end{center}
+and using the basis $\{p_1(x)=1,\, p_2(x)=x,\, p_3(x)=x^2\}$
+
+\item A more convenient basis for this problem is the Lagrange basis $\{L_1(x), \ldots, L_n(x)\}$ where the $i$-th Lagrange polynomial is given by 
+\[L_i(x)=\prod_{j=1, j\neq i}^n \frac{x-x_j}{x_i-x_j}\]
+
+\begin{enumerate}[b.1)]
+\item Find the Lagrange polynomials for the above data. Show that 
+\[L_i(x_k)=\left\{\begin{array}{cl}1 & \text{ if }k=i\\ 0 & \text{ if }k\neq i\end{array}\right..\]
+\item Use the above fact to show that the Lagrange polynomials are indeed a basis for $P_2(x)$. 
+\item Compute the corresponding matrix to the above data and using the Lagrange polynomials as a basis. 
+\end{enumerate}
+
+\end{enumerate}
+
+\end{enumerate}
+\end{document}
+
+
+
+
+
+
+
+
