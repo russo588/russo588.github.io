@@ -243,7 +243,60 @@ for some $a_1, \ldots, a_n\in \mathbb{F}$.
 \item For all $u,v\in H$ we have $u+v\in H$
 \item For all $u\in H$ and $a\in \mathbb{F}$ we have $au\in H$.
 \end{enumerate}
+
+\begin{proposition} If $U$ is a subspace of a finite dimensional vector space $V$ then $\text{dim}(U)\leq\text{dim}(V)$. Moreover, $\text{dim}(U)=\text{dim}(V)$ if and only if $V=U$. 
 \end{proposition}
+
+\end{proposition}
+\begin{definition} Suppose $U_1,\ldots, U_m$ are subsets of $V$. The \emph{sum} of $U_1, \ldots, U_m$ denoted $U_1+\ldots+U_m$ is the set of all possible sums i.e., 
+\[U_1+\ldots+U_m=\{u_1+\ldots+u_m\ |\ u_i\in U_i, i=1,\ldots, m\}\]
+\end{definition}
+
+\begin{proposition} If $U_1, \ldots, U_m$ are subspaces then so is $U_1+\ldots+U_m$. 
+\end{proposition}
+
+\begin{definition} Suppose $U_1,\ldots, U_m$ are subsspaces of $V$. The sum $U_1+\ldots+U_m$ is a \emph{direct sum} if each element of $U_1+\ldots+U_m$ can be written in only one way as a sum $u_1+\ldots +u_m$ where $u_i\in U_i$, $i=1,\ldots,m$. The direct sum is denoted $U_1\oplus \ldots \oplus U_m$. 
+\end{definition}
+
+\begin{proposition}  $U_1+\ldots+U_m$ is a direct sum if and only if the only way to write $0$ as a sum is by taking each $u_i$ where $i=1, \ldots, m$ to be $0$. 
+\end{proposition}
+
+\begin{proposition}  The sum of two subspaces $U$ and $W$ is a direct sum if and only if\\ $U\cap W=\emptyset$. 
+\end{proposition}
+
+\begin{proposition} If $V$ is a finite dimensional vector space and $U$ is a subspace of $V$ then there exists a $W$ which is a subspace of $V$ such that $V=U\oplus W$. 
+\end{proposition}
+
+\subsection{Quotient Spaces} 
+
+\begin{definition}Let $V$ be a vectors space and $U$ a subspace. For every $v\in V$ define 
+\[v+U=\{v+u\ \mid\  u\in U\}\]
+and 
+\[V/U=\{v+U\ \mid\  v\in V\}\]
+\end{definition}
+\begin{proposition}Let $V$ be a vectorspace, $U$ a subspace and $v,w\in V$.  The following are equivalent. 
+\begin{enumerate}[(a)]
+\item $v-w\in U$
+\item $v+U=w+U$
+\item $(v+U)\cap (w+U)\neq \emptyset$
+\end{enumerate}
+\end{proposition}
+
+\begin{proposition} Let $V$ be a vectorspace, $U$ a subspace, $\lambda\in \mathbb{F}$, and $v,w\in V$The set $V/U$ is a vector space with the following operations: 
+\[(v+U)+(w+U)=(v+w)+U\]
+\[\lambda(v+U)=(\lambda v)+U\]
+\end{proposition}
+
+
+\begin{proposition} Let $V$ be a finite dimensional vector space and $U$ be a subspace. 
+\[\text{dim}(V/U)=\text{dim}(V)-\text{dim}(U)\]
+\end{proposition}
+
+\section{Linear Maps}
+\begin{definition} A linear map from $V(\mathbb{F})$ to $W(\mathbb{F})$ is a function $T:V\rightarrow W$ such that 
+\[T(\lambda x+y)=\lambda T(x)+T(y)\]
+for every $x,y\in V$ and $\lambda\in \mathbb{F}$. Denote the set of all linear maps from $V$ to $W$ as $\mathcal{L}(V,W)$. 
+\end{definition}
 \end{document}
 
 
