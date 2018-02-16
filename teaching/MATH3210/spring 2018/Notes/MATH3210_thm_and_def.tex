@@ -13,6 +13,7 @@
 \usepackage[all]{xy}
 \usepackage{graphicx}
 \usepackage{enumerate}
+\usepackage{tikz-cd}
 
 
 %Here are some user-defined notations
@@ -80,9 +81,11 @@
 %This is for hypertext references
 \usepackage{color}
 \usepackage{hyperref}
-
+\usepackage{setspace}
 
 \begin{document}
+\onehalfspacing
+
 \section{Basic Notions}
 \begin{definition} A binary operation on a set $S$ is a function $f:S\times S\rightarrow S$. 
 \end{definition}
@@ -168,7 +171,7 @@ and
 
 \begin{proposition}For every $v\in V$ we have $(-1)\cdot v=-v$
 \end{proposition}
-\newpage
+
 \section{Basis for a Vector Space}
 
 \begin{definition} A \emph{linear combination} of a list of vectors $v_1,\ldots, v_m$ in $V$ is a vector of the form 
@@ -193,7 +196,7 @@ Otherwise we say that $V$ is \emph{infinite dimensional}.
 \begin{definition} A list of vectors $v_1,\ldots, v_m$ in $V$ is called \emph{linearly independent} if the only choice of $a_1, \ldots, a_m\in \mathbb{F}$ such that 
 \[a_1v_1+\ldots+a_mv_m=0\] is $a_1=a_2=\ldots =a_m$. A list is called \emph{linearly dependent} if it is not linearly independent.
 \end{definition}
-
+\newpage
 \begin{lemma} Suppose that $v_1,\ldots, v_m$ is a linearly dependent list in $V$. There exists a $j\in\{1,\ldots, m\}$ such that \\
 \begin{enumerate}[1)]
 \item $v_j\in \text{span}\{v_1,\ldots v_{j-1}\}$
@@ -297,6 +300,107 @@ and
 \[T(\lambda x+y)=\lambda T(x)+T(y)\]
 for every $x,y\in V$ and $\lambda\in \mathbb{F}$. Denote the set of all linear maps from $V$ to $W$ as $\mathcal{L}(V,W)$. 
 \end{definition}
+\begin{proposition} Suppose $\{v_1,\ldots, v_n\}$ is a basis of $V$ and $w_1,\ldots,w_n\in W$. There is a unique linear map $T:V\rightarrow W$ such that 
+\[T(v_j)=w_j\ \quad \ j=1,\ldots, n.\]
+\end{proposition}
+
+\begin{proposition} If $T:V\rightarrow W$ is linear then 
+\[T(0_V)=0_W.\]
+\end{proposition}
+
+\begin{definition} Suppose $S, T\in \mathcal{L}(V,W)$ and $\lambda \in \mathbb{F}$ define 
+\[(S+T)(v)=S(v)+T(v) \text{ for all }v\in V\]
+and
+\[(\lambda T)(v)=\lambda T(v) \text{ for all }v\in V.\]
+\end{definition}
+\begin{proposition} $\mathcal{L}(V,W)$ is a vector space with the above operations.
+\end{proposition}
+
+\begin{definition} For $T\in \mathcal{L}(V,W)$ define the \emph{null space} of $T$ (or kernel of T) to be 
+\[\text{null}(T)=\{v\in V\ \mid \  Tv=0\}\subseteq V\]
+and define the \emph{range} of $T$ to be 
+\[\text{ran}(T)=\{Tv\ \mid \  v\in V\}\subseteq W.\]
+\end{definition}
+
+\begin{theorem} For $T\in \mathcal{L}(V,W)$ both $\text{null}(T)$ and $\text{ran}(T)$ are subspaces. A linear transformation is injective if and only if 
+\[\text{null}(T)=\{0\}.\]
+A linear transformation is surjective if and only if $\text{ran}(T)=W$. 
+\end{theorem}
+\begin{definition} The \emph{rank} of a linear transformation is the dimension of its range. The \emph{nullity} of a transformation is the dimension of its null space. 
+\end{definition}
+
+\begin{definition} A vector space isomorphism from $V$ onto $W$ is a bijective linear map $T:V\rightarrow W$. If there is a vector space isomorphism from $V$ onto $W$ we say $V$ is isomorphic to $W$ and write $V\cong W$. 
+\end{definition}
+\begin{theorem} Let $V$ and $W$ be two finite dimensional vector spaces. $V$ is isomorphic to $W$ if and only if $\text{dim}(V)=\text{dim}(W)$.
+\end{theorem}
+\begin{definition} A linear map $T:V\rightarrow W$ is \emph{invertible} if there exists an map $S:W\rightarrow V$ such that 
+\[S\circ T=\text{Id}_{V}\]
+\[T\circ S=\text{Id}_{W}\]
+\end{definition}
+\begin{theorem} A map $T:V\rightarrow W$ is invertible if and only if its bijective. 
+\end{theorem}
+
+\begin{proposition} Suppose $T\in \mathcal{L}(V,W)$ and define 
+\[\tilde{T}:V/\text{null}(T)\rightarrow W\] 
+by
+\[\tilde{T}(v+\text{null}(T))=Tv.\]
+The following hold:
+\begin{enumerate}[a)]
+\item $\tilde{T}$ is linear
+\item $\tilde{T}$ is injective
+\item $\text{ran}(\tilde{T})=\text{ran}(T)$
+\item $V/\text{null}(T)\cong \text{ran}(T)$.
+\end{enumerate}
+
+\end{proposition}
+\begin{theorem}[Fundamental Theorem of Linear Maps/ Rank-Nullity]
+Suppose $V$ is a finite dimensional vector space and $T\in \mathcal{L}(V,W)$. We have $\text{ran}(T)$ is finite dimensional and 
+\[\text{dim}(V)=\text{dim}(\text{ran}(T))+\text{dim}(\text{null}(T)).\]
+\end{theorem}
+
+\begin{proposition} Suppose $V$ and $W$ are finite dimensional vector spaces. Let $T\in \mathcal{L}(V,W)$. 
+\begin{enumerate}[a)]
+\item If $\text{dim}(V)<\text{dim}(W)$ then $T$ is not surjective.
+\item If $\text{dim}(V)>\text{dim}(W)$ then $T$ is not injective.
+\end{enumerate}
+\end{proposition}
+
+\begin{definition} A linear map $T\in \mathcal{L}(V,V)$ is called an \emph{operator}. 
+\end{definition}
+\begin{theorem} Suppose $T$ is an operator over a vector space $V$. If $V$ is finite dimension the following are equivalent:
+\begin{enumerate}[a)]
+\item $T$ is injective
+\item $T$ is surjective
+\item $T$ is bijective
+\end{enumerate}
+\end{theorem}
+\newpage
+\subsection{The Matrix of a Linear Map and the Coordinate Transform}
+\begin{definition} Let $V$ be an $n$-dimensional vector space over the field $\mathbb{F}$. Let $\beta=\{v_1, \ldots, v_n\}$ be an \emph{ordered} basis for $V$. The coordinate transform $\varphi_\beta:V\rightarrow \mathbb{F}^n$ is defined by 
+\[v=a_1v_1+\ldots+a_nv_n\overset{\varphi_\beta}{\longmapsto} \begin{bmatrix}a_1\\ \vdots \\ a_n\end{bmatrix}\]
+Denote the column vector $\varphi_\beta(v)$ by $[v]_\beta$.
+\end{definition}
+\begin{proposition} The coordinate transform from $V$ onto $\mathbb{F}^n$ is a vector space isomorphism.
+\end{proposition}
+
+\begin{definition} Suppose $T:V\rightarrow W$ is a linear maps with $\beta=\{v_1,\ldots, v_n\}$ and $\gamma=\{w_1, \ldots, w_m\}$ as ordered basis for $V$ and $W$ respectively. Define the matrix of $T$, denoted by $[T]_\beta^\gamma$, by the following
+If 
+\[T(v_k)=a_{1,k}w_1+\ldots +a_{m,k}w_k\]
+then the $k$-th column of $[T]_\beta^\gamma$ is given by $\begin{bmatrix} a_{1,k}\\ \vdots \\ a_{m,k}\end{bmatrix}$. 
+\end{definition}
+
+\begin{theorem} The following diagram commutes\\
+\begin{center}
+\begin{tikzcd}
+V \arrow[r, "T"] \arrow[d,"\varphi_\beta" left]
+& W \arrow[d, "\varphi_\gamma" black] \\
+\mathbb{F}^n\arrow[r, black, "{[T]_{\beta}^\gamma}" below]
+& \mathbb{F}^m
+\end{tikzcd}
+\end{center}
+More specifically, 
+\[[T]_{\beta}^\gamma[v]_{\beta}=[T(v)]_{\gamma}.\]
+\end{theorem}
 \end{document}
 
 
