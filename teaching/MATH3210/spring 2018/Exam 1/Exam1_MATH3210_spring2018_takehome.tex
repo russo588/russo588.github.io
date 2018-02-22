@@ -1,0 +1,101 @@
+\documentclass[12pt,letterpaper]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{amsmath}
+\usepackage{enumerate}
+
+%Here are some user-defined notations
+\newcommand{\RR}{\mathbf R}  %bold R
+\newcommand{\CC}{\mathbf C}  %bold C
+\newcommand{\ZZ}{\mathbf Z}   %bold Z
+\newcommand{\QQ}{\mathbf Q}   %bold Q
+\newcommand{\rr}{\mathbb R}     %blackboard bold R
+\newcommand{\cc}{\mathbb C}    %blackboard bold R
+\newcommand{\zz}{\mathbb Z}    %blackboard bold R
+\newcommand{\qq}{\mathbb Q}   %blackboard bold Q
+\newcommand{\calM}{\mathcal M}  %calligraphic M
+\newcommand{\sm}{\setminus} 
+\newcommand{\bfa}{\mathbf a}
+\newcommand{\bfb}{\mathbf b}
+\newcommand{\bfc}{\mathbf c}
+
+
+
+
+
+%Here are some user-defined operators
+\newcommand{\re}{\operatorname {Re}}
+\newcommand{\im}{\operatorname {Im}}
+
+
+%These commands deal with theorem-like environments (i.e., italic)
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{conjecture}[theorem]{Conjecture}
+
+%These deal with definition-like environments (i.e., non-italic)
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{remark}[theorem]{Remark}
+
+%your name and date in the header.
+\usepackage[us]{datetime} 
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\lhead{}
+\chead{MATH 3210\\ Exam 1}
+\rhead{}
+\lfoot{}
+\cfoot{}
+\rfoot{\thepage}
+\renewcommand{\headrulewidth}{0 pt}
+\renewcommand{\footrulewidth}{0 pt}
+\begin{document}
+\begin{enumerate}[{\bf1.}]
+\item Let $\mathcal{F}:\mathbb{C}^N\rightarrow \mathbb{C}^N$ be the operator defined by 
+\[\begin{bmatrix}x_0\\ \vdots\\ x_{N-1}\end{bmatrix} \mapsto \begin{bmatrix}X_0\\ \vdots\\ X_{N-1}\end{bmatrix}\]
+where 
+\[X_k=\sum_{n=0}^{N-1}x_ne^{-i2\pi kn/ N}.\]
+This is the \emph{discrete Fourier transform}. Define the map $\mathcal{D}:\mathbb{C}^N\rightarrow \mathbb{C}^N$ given by
+\[\begin{bmatrix}X_0\\ \vdots\\ X_{N-1}\end{bmatrix}\mapsto \begin{bmatrix}x_0\\ \vdots\\ x_{N-1}\end{bmatrix}\]
+where 
+\[x_n=\frac{1}{N}\sum_{k=0}^{N-1}X_ke^{i2\pi kn/ N}.\]
+Construct the matrices with respect to the standard basis (for both the domain and codomain) for both $\mathcal{D}$ and $\mathcal{F}$ on $\mathbb{C}^4$ and use these matrices to show $\mathcal{F}$ is invertible and its inverse is $\mathcal{D}$. \\
+
+{\bf \noindent Hint: }$e^{i\theta}=\cos(\theta)+i\sin(\theta)$.\\
+
+\item Let $\mathcal{A}(\mathbb{R})$ be the space of ``formal" power-series over the reals i.e. 
+\[\mathcal{A}(\mathbb{R})=\left\{f(x)=\sum_{n=0}^\infty a_nx^n\ \middle| a_i\in\mathbb{R}\right\} \]
+with the usual operations of addition and scalar multiplication on powerseries. 
+Let $\frac{d}{dx}~:~\mathcal{A}(\mathbb{R})\rightarrow \mathcal{A}(\mathbb{R})$ be the linear map of  ``differentiation", i.e. 
+\[\frac{d}{dx}(f(x))=\sum_{n=1}^\infty na_nx^{n-1}.\]
+Let $\mathcal{A}_{n.c}(\mathbb{R})$ be the space of formal power series without a constant term, i.e. 
+\[\mathcal{A}_{n.c}(\mathbb{R})=\left\{f(x)=\sum_{n=1}^\infty a_nx^n\ \middle| a_i\in\mathbb{R}\right\} \]
+Show,
+\[\mathcal{A}(\mathbb{R})/\text{null}\left(d/dx\right)\cong \text{ran}(T)\]
+by constructing an explicit isomorphism $T:\mathcal{A}_{n.c}(\mathbb{R})\rightarrow\mathcal{A}(\mathbb{R})/\text{null}(\frac{d}{dx})$.\\
+
+\item Determine the dimension of $U=\left\{[a_1,\ldots,a_n]^\top \middle| \sum_{i=1}^n a_i=0\right\}$ as a subspace of $\mathbb{R}^n$. \\
+
+{\bf \noindent Hint: }Consider the linear map $S:\mathbb{R}^n\rightarrow \mathbb{R}$ given by $S([a_1,\ldots, a_n]^\top)=\sum_{i=1}^na_i$. \\
+
+\item Let $P_{n}(x)=\{p(x)=a_nx^n+\ldots+a_1x+a_0\ |\ a_i\in \mathbb{R},\ p:[0,1]\rightarrow \mathbb{R}\}$ be the space of polynomials of degree $\leq n$. Let $P_{\text{per}}(x)$ be the subspace of polynomials in $P_{n}(x)$ with periodic boundary conditions, i.e. 
+\[P_{\text{per}}(x)=\{p\in P_{n}(x)\ \mid\  p(0)=p(1)\}.\]
+Determine the dimension of $P_{\text{per}}(x)$ as a subspace of $P_n(x)$. \\
+
+{\bf \noindent Hint: }Try to construct a basis for $P_{\text{per}}(x)$ as a subspace of $P_{2}(x)$ and then generalize the argument for an arbitrary $n$. Alternatively, reduce to the above problem. 
+\end{enumerate}
+\end{document}
+
+
+
+
+
+
+
+
