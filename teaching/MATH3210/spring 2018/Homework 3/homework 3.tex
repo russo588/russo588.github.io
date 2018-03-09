@@ -1,0 +1,87 @@
+\documentclass[12pt,letterpaper]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{amsmath}
+\usepackage{enumerate}
+
+%Here are some user-defined notations
+\newcommand{\RR}{\mathbf R}  %bold R
+\newcommand{\CC}{\mathbf C}  %bold C
+\newcommand{\ZZ}{\mathbf Z}   %bold Z
+\newcommand{\QQ}{\mathbf Q}   %bold Q
+\newcommand{\rr}{\mathbb R}     %blackboard bold R
+\newcommand{\cc}{\mathbb C}    %blackboard bold R
+\newcommand{\zz}{\mathbb Z}    %blackboard bold R
+\newcommand{\qq}{\mathbb Q}   %blackboard bold Q
+\newcommand{\calM}{\mathcal M}  %calligraphic M
+\newcommand{\sm}{\setminus} 
+\newcommand{\bfa}{\mathbf a}
+\newcommand{\bfb}{\mathbf b}
+\newcommand{\bfc}{\mathbf c}
+
+
+
+
+%Here are some user-defined operators
+\newcommand{\re}{\operatorname {Re}}
+\newcommand{\im}{\operatorname {Im}}
+
+
+%These commands deal with theorem-like environments (i.e., italic)
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{conjecture}[theorem]{Conjecture}
+
+%These deal with definition-like environments (i.e., non-italic)
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{remark}[theorem]{Remark}
+
+%your name and date in the header.
+\usepackage[us]{datetime} 
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\lhead{}
+\chead{MATH 3210\\ Homework 3}
+\rhead{ Your name \\ date} 
+\lfoot{}
+\cfoot{}
+\rfoot{\thepage}
+\renewcommand{\headrulewidth}{0 pt}
+\renewcommand{\footrulewidth}{0 pt}
+\begin{document}
+\noindent For this homework assume all matrices are square and have entries from a field $\mathbb{F}$. 
+\begin{enumerate}[1.]
+
+\item Show by induction that the determinant of an upper triangular matrix is the product of the diagonal entries. \\
+\ \\
+\item Call a matrix $A$ nilpotent if $A^k=0$ for some positive integer $k$. Show that every square nilpotent matrix has determinant zero. \\
+\ \\
+\item Let $A$ be an $n\times n$ matrix. Show from the definition of determinants that \[\det(kA)=k^n \det(A)\] for $k\in \mathbb{F}$.
+
+\item Let $T:V\rightarrow V$ where $V$ is a finite dimensional vector space. Let $\beta=\{v_1, \ldots, v_n\}$ and $\gamma=\{v_1^\prime, \ldots, v_n^\prime\}$ be two ordered bases for $V$. Show there exists an invertible matrix $P$ such that 
+\[[T]_\beta=P^{-1}[T]_\gamma P\]
+{\bf Hint:} Construct a linear transformation that switches out the basis and figure out how it relates to the matrix construction. 
+
+\item Define the determinant of a linear transformation $T:V\rightarrow V$ by 
+\[\det(T)=\det([T]_\beta)\]
+where $[T]_\beta$ is a matrix of $T$ with respect to an ordered basis. Does this definition rely on the choice of basis ?
+
+
+\end{enumerate}
+
+
+\end{document}
+
+
+
+
+
+
+
+
