@@ -1,19 +1,19 @@
-\documentclass[12pt,letterpaper]{amsart}
-\setlength{\oddsidemargin}{.0in}
-\setlength{\evensidemargin}{.0in}
-\setlength{\textwidth}{6.5in}
-\setlength{\topmargin}{-.3in}
-\setlength{\headsep}{.20in}
-\setlength{\textheight}{9.in}
+\documentclass[12pt,letterpaper]{article}
+%\setlength{\oddsidemargin}{.0in}
+%\setlength{\evensidemargin}{.0in}
+%\setlength{\textwidth}{6.5in}
+%\setlength{\topmargin}{-.3in}
+%\setlength{\headsep}{.20in}
+%\setlength{\textheight}{9.in}
+\usepackage[margin=1in]{geometry}
 \usepackage[leqno]{amsmath}
 \usepackage{amsfonts}
 \usepackage{amssymb}
-\usepackage{amsthm}
+\usepackage{amsthm, amscd}
 \usepackage{amssymb}
 \usepackage[all]{xy}
 \usepackage{graphicx}
 \usepackage{enumerate}
-\usepackage{tikz-cd}
 
 
 %Here are some user-defined notations
@@ -81,10 +81,18 @@
 %This is for hypertext references
 \usepackage{color}
 \usepackage{hyperref}
+
+
+%spacing
 \usepackage{setspace}
+
+
+
 
 \begin{document}
 \onehalfspacing
+\tableofcontents
+\addtocontents{toc}{~\hfill\textbf{Page}\par}
 
 \section{Basic Notions}
 \begin{definition} A binary operation on a set $S$ is a function $f:S\times S\rightarrow S$. 
@@ -121,9 +129,9 @@ and
 \item $\mathbb{C}$ (complex numbers)
 \item $\mathbb{Z}/p\mathbb{Z}$ for $p$ prime (Integers modulo p)
 \end{enumerate}
-\ \\
-{\bf Non example: }$\mathbb{Z}$ is not a field, it lacks multiplicative inverses. 
-\ \\
+
+{\bf\noindent Non example: }$\mathbb{Z}$ is not a field, it lacks multiplicative inverses. 
+
 \begin{definition} A \emph{vector space} $V$ over a field $\mathbb{F}$ is a set $V$ with two operations called \emph{vector addition} and \emph{scalar multiplication} where vector addition is a function $+:V\times V\rightarrow V$ and scalar multiplication is a function $\cdot: \mathbb{F}\times V\rightarrow V$ such that 
 \\
 \begin{enumerate}[1.] 
@@ -156,7 +164,7 @@ and
 \item Functions from a field $X$ into a field $Y$. 
 \item $\mathbb{F}^\infty=\{(a_1, a_2, a_3, \ldots): a_i\in \mathbb{F}\}$. 
 \end{enumerate}
-\ \\
+
 \begin{proposition}Every vector space $V$ has a unique additive identity. The unique additive identity is denoted $0$. 
 \end{proposition}
 
@@ -196,7 +204,7 @@ Otherwise we say that $V$ is \emph{infinite dimensional}.
 \begin{definition} A list of vectors $v_1,\ldots, v_m$ in $V$ is called \emph{linearly independent} if the only choice of $a_1, \ldots, a_m\in \mathbb{F}$ such that 
 \[a_1v_1+\ldots+a_mv_m=0\] is $a_1=a_2=\ldots =a_m$. A list is called \emph{linearly dependent} if it is not linearly independent.
 \end{definition}
-\newpage
+
 \begin{lemma} Suppose that $v_1,\ldots, v_m$ is a linearly dependent list in $V$. There exists a $j\in\{1,\ldots, m\}$ such that \\
 \begin{enumerate}[1)]
 \item $v_j\in \text{span}\{v_1,\ldots v_{j-1}\}$
@@ -246,11 +254,12 @@ for some $a_1, \ldots, a_n\in \mathbb{F}$.
 \item For all $u,v\in H$ we have $u+v\in H$
 \item For all $u\in H$ and $a\in \mathbb{F}$ we have $au\in H$.
 \end{enumerate}
+\end{proposition}
 
 \begin{proposition} If $U$ is a subspace of a finite dimensional vector space $V$ then $\text{dim}(U)\leq\text{dim}(V)$. Moreover, $\text{dim}(U)=\text{dim}(V)$ if and only if $V=U$. 
 \end{proposition}
 
-\end{proposition}
+\subsection{Direct Sums}
 \begin{definition} Suppose $U_1,\ldots, U_m$ are subsets of $V$. The \emph{sum} of $U_1, \ldots, U_m$ denoted $U_1+\ldots+U_m$ is the set of all possible sums i.e., 
 \[U_1+\ldots+U_m=\{u_1+\ldots+u_m\ |\ u_i\in U_i, i=1,\ldots, m\}\]
 \end{definition}
@@ -315,7 +324,7 @@ and
 \end{definition}
 \begin{proposition} $\mathcal{L}(V,W)$ is a vector space with the above operations.
 \end{proposition}
-
+\subsection{One to One, Onto, Invertibility, and Isomorphisms}
 \begin{definition} For $T\in \mathcal{L}(V,W)$ define the \emph{null space} of $T$ (or kernel of T) to be 
 \[\text{null}(T)=\{v\in V\ \mid \  Tv=0\}\subseteq V\]
 and define the \emph{range} of $T$ to be 
@@ -339,7 +348,7 @@ A linear transformation is surjective if and only if $\text{ran}(T)=W$.
 \end{definition}
 \begin{theorem} A map $T:V\rightarrow W$ is invertible if and only if its bijective. 
 \end{theorem}
-
+\subsection{Fundamental Theorem of Linear Maps}
 \begin{proposition} Suppose $T\in \mathcal{L}(V,W)$ and define 
 \[\tilde{T}:V/\text{null}(T)\rightarrow W\] 
 by
@@ -374,7 +383,7 @@ Suppose $V$ is a finite dimensional vector space and $T\in \mathcal{L}(V,W)$. We
 \item $T$ is bijective
 \end{enumerate}
 \end{theorem}
-\newpage
+
 \subsection{The Matrix of a Linear Map and the Coordinate Transform}
 \begin{definition} Let $V$ be an $n$-dimensional vector space over the field $\mathbb{F}$. Let $\beta=\{v_1, \ldots, v_n\}$ be an \emph{ordered} basis for $V$. The coordinate transform $\varphi_\beta:V\rightarrow \mathbb{F}^n$ is defined by 
 \[v=a_1v_1+\ldots+a_nv_n\overset{\varphi_\beta}{\longmapsto} \begin{bmatrix}a_1\\ \vdots \\ a_n\end{bmatrix}\]
@@ -390,17 +399,228 @@ then the $k$-th column of $[T]_\beta^\gamma$ is given by $\begin{bmatrix} a_{1,k
 \end{definition}
 
 \begin{theorem} The following diagram commutes\\
-\begin{center}
-\begin{tikzcd}
-V \arrow[r, "T"] \arrow[d,"\varphi_\beta" left]
-& W \arrow[d, "\varphi_\gamma" black] \\
-\mathbb{F}^n\arrow[r, black, "{[T]_{\beta}^\gamma}" below]
-& \mathbb{F}^m
-\end{tikzcd}
-\end{center}
+\[
+\begin{CD}
+V @>T>> W\\
+@V\phi_{\beta}VV @AA\phi_\gamma^{-1} A\\
+\mathbb{F}^n @>[T]_{\beta}^\gamma>> \mathbb{F}^m
+\end{CD}
+\]
 More specifically, 
 \[[T]_{\beta}^\gamma[v]_{\beta}=[T(v)]_{\gamma}.\]
 \end{theorem}
+\section{Determinants}
+\begin{definition} Let $\hat{A}_{i,j}$ be the $(n-1)\times (n-1)$ matrix that results from $A$ by removing the $i$th row and $j$th column and let $a_{i,j}$ be the entry in the $i$th row and $j$th column.  Consider the set of $n\times n$ matrices over $\mathbb{F}$.  
+Define \[\det([a])=a\]
+and
+\[\det(A)=\sum_{i=1}^n(-1)^{i+1}a_{i,1}\det(\hat{A}_{i,1})\]
+\end{definition}
+\subsection{Multilinear and Alternating}\label{Multilinear and Alternating}
+
+\begin{definition} Let $V_1, \ldots V_n$ be vector spaces over a field $\mathbb{F}$. The product $V_1\times \ldots \times V_n$ is defined by 
+\[V_1\times \ldots \times V_n=\{(v_1,\ldots v_n)\ \mid \ v_1\in V_1, \ldots v_n\in V_n\}\] 
+\end{definition}
+Of course, with the appropriate operations $V_1\times \ldots \times V_n$ is a vector space. 
+\begin{proposition} $V_1\times \ldots \times V_n$ is a vector space over $\mathbb{F}$ with the following operations:
+\[(v_1,\ldots, v_n)+(u_1, \ldots, u_n)=(v_1+u_1, \ldots, v_n+u_n)\]
+\[c(v_1, \ldots, v_n)=(cv_1, \ldots, cv_n).\]
+\end{proposition}
+The proof of the above proposition is standard, we will omit it. 
+\begin{definition} Let $V_1, \ldots ,V_n, W$ be vector spaces over a field $\mathbb{F}$. 
+A map $\varphi:V_1\times\ldots \times V_n\rightarrow W$ is called \emph{multilinear} if for each fixed $i$ and fixed elements $v_j\in V_j$, $j\neq i$, the map
+\[V_i\rightarrow W\quad \text{ defined by }\quad x\mapsto \varphi(v_1, \ldots, v_{i-1}, x, v_{i+1}, \ldots ,v_n)\]
+is linear. If each $V_i=V$, $i=1,2,\ldots n$ then $\varphi$ is called a $n$-multilinear function on $V$. If $W$ is a field, then $\varphi$ is called a multilinear form on $V$. 
+
+The function $\det:M_{n\times n}(\mathbb{F})\rightarrow \mathbb{F}$ is viewed as a multilinear map by viewing the columns of a matrix as column vectors and making the following identification. 
+\[M_{n\times n}(\mathbb{F})\ni A=[v_1,\ldots, v_n]\mapsto (v_1, \ldots, v_n)\in \mathbb{F}^n\times \ldots \times \mathbb{F}^n.\]
+\end{definition}
+
+\begin{proposition}$\det:M_{n\times n}(\mathbb{F})\rightarrow \mathbb{F}$ is a multilinear function (viewing each matrix as a tuple of column vectors in $\mathbb{F}^n\times \ldots \times \mathbb{F}^n$).
+\end{proposition}
+
+\begin{definition}An $n$-multilinear function $\varphi$ on $V$ is called alternating if $\varphi$ is zero whenever two consecutive arguments are equal, i.e. if $v_i=v_{i+1}$ for some $i\in\{1,\ldots, n-1\}$, then $\varphi(v_1, \ldots ,v_n)=0$. 
+\end{definition}
+
+
+\begin{lemma}Let $B\in M_{n\times n}(\mathbb{F})$, where $n\geq 2$. If the column $j$ of $B$ equals 
+\[e_k=\left[\begin{array}{c}0\\\vdots\\ 1\\\vdots\\ 0\end{array}\right] - \text{ k}\small{th} \text{ spot}\] for some $k$ $(1\leq k\leq n)$, then 
+\[\det(B)=(-1)^{j+k}\det(\hat{B}_{k,j})\]
+\end{lemma}
+
+\begin{theorem} The determinant of a square matrix can be evaluated by cofactor expansion along any column or row, i.e. 
+\[\det(A)=\sum_{i=1}^n (-1)^{i+j}a_{i,j} \det(\hat{A}_{i,j})\]
+or 
+\[\det(A)=\sum_{j=1}^n (-1)^{i+j}a_{i,j} \det(\hat{A}_{i,j})\]
+\end{theorem}
+
+
+\begin{proposition}
+The determinant function $\det:M_{n\times n}(\mathbb{F})\rightarrow \mathbb{F}$ is an alternating function.
+\end{proposition}
+
+\begin{theorem}\label{unique}
+The determinant $\det:M_{n\times n}(\mathbb{F})\rightarrow \mathbb{F}$ is the \emph{unique} multilinear alternating map taking the identity matrix to the mulitiplicative identity element in $\mathbb{F}$
+\end{theorem}
+
+
+\subsection{The Multiplicative Property}
+
+
+\begin{definition}[Elementary Row Operations]
+An elementary row operation is any one of the following operations performed on a matrix. 
+\begin{enumerate}[$\bullet$]
+\item Switching the position of two rows.
+\item Multiplying the entries of a row by a scalar.
+\item Replacing a row with its addition of a scalar multiple of another row. 
+\end{enumerate}
+\end{definition} 
+\begin{lemma}\label{ele prod}
+Let $A$ and $B$ be matrices such that $C=AB$ is defined. Suppose $e_1, \ldots e_n$ be a sequence of elementary row operations. Let $A^\prime$ be the matrix resulting from performing $e_1,\ldots, e_n$ on $A$ and $C^\prime$ be the matrix resulting from performing $e_1, \ldots, e_n$ on $C$. Then 
+\[C^\prime=A^\prime B\]
+\end{lemma}
+
+\begin{lemma}\label{det ele}
+ Suppose $e_1, \ldots e_n$ be a sequence of elementary row operations. Let $A^\prime$ be the matrix resulting from performing $e_1,\ldots, e_n$ on $A$. We have that 
+ \[\alpha\det(A^\prime)= \det{A}\]
+ for some $\alpha\in \mathbb{F}$ depending only on $e_1,\ldots, e_n$. 
+\end{lemma}
+
+\begin{definition}
+Let $A$ be a matrix. Define its transpose, denoted $A^\top$, by
+\[(A^\top)_{i,j}=A_{j,i}\]
+\end{definition}
+
+\begin{lemma}
+Let $A$ and $B$ be matrices such that $AB$ is defined. 
+\[(AB)^\top=B^\top A^\top\]
+\end{lemma}
+
+\begin{lemma}\label{det trans}
+For any square matrix $A$ 
+\[\det(A)=\det(A^\top)\]
+\end{lemma}
+
+
+\begin{definition} A lower triangular matrix is any matrix $L$ such that 
+\[L_{i,j}=0 \quad\text{ for }\quad j>i\]
+\end{definition}
+
+\begin{definition} An upper triangular matrix is any matrix $U$ such that 
+\[U_{i,j}=0 \quad\text{ for }\quad j<i\]
+\end{definition}
+
+\begin{lemma} The product of upper (lower) triangular matrices is an upper (lower) triangular matrix.
+\end{lemma}
+
+\begin{lemma}\label{det tri}
+Let $A$ be either an upper triangular matrix or lower triangular matrix. We have that 
+\[\det(A)=\prod a_{i,i}.\]
+\end{lemma}
+
+
+\begin{proposition}\label{multiplicativeid}
+\[\det(AB)=\det(A)\det(B)\]
+\end{proposition}
+
+\subsection{Invertibility of a Matrix}
+\begin{definition}A matrix $A\in M_{n\times n}(\mathbb{F})$ is said to be invertible if there exists a matrix $B\in M_{n\times n}(\mathbb{F})$ such that 
+\[AB=I\]
+\[BA=I\]
+where $I$ is the $n\times n$ identity matrix. 
+\end{definition}
+
+\begin{definition}
+Suppose $S$ is a set with a binary operation $\cdot :S\times S\rightarrow S$, then $S$ with $\cdot$ is a monoid if 
+\begin{enumerate}[(a)]
+\item For all $a, b$ and $c$ in $S$ 
+\[(a\cdot b)\cdot c=a\cdot (b\cdot c)\]
+\item There exists an identity element $1$ in $S$ such that for all $a\in S$
+\[a\cdot 1=1\cdot a=a.\]
+\end{enumerate}
+\end{definition}
+
+\begin{definition}
+Let $A$ be a monoid and $1$ its identity element. We say $a\in A$ is invertible if and only if there exists a $b\in A$ such that
+\[a\cdot b=b\cdot a=1\]
+\end{definition}
+
+\begin{definition}
+A monoid homomorphism between monoids $A$ and $B$ is a function $\phi:A\rightarrow B$ such that 
+\[\phi(a_1)\cdot \phi(a_2)=\phi(a_1\cdot a_2)\]
+for all $a_1, a_2\in A$ 
+and \[\phi(1_A)=1_B\] for the identity elements $1_A\in A$ and $1_B\in B$.
+\end{definition}
+
+\begin{theorem}
+Let $A$ and $B$ be two monoids and $\phi:A\rightarrow B$ a monoid homomorphism. If $a\in A$ is invertible then $\phi(a)$ is invertible. 
+\end{theorem}
+
+
+\begin{theorem}\label{matinv}
+Let $T\in \mathcal{L}(V,W)$ and let $\beta=\{v_1,\ldots v_n\}$, $\gamma=\{w_1, \ldots w_m\}$ be bases for $V$ and $W$ respectively. The transformation $T$ is invertible if and only if $[T]_\beta^\gamma$ is invertible.
+\end{theorem}
+
+\begin{definition}
+An elementary matrix is any matrix obtained from performing a single row operation on the identity matrix. 
+\end{definition}
+
+
+\begin{proposition} Let $A$ be a matrix and let $B$ be the matrix obtained from $A$ by performing a row operation with corresponding elementary matrix $E$. We have 
+\[EA=B\]
+\end{proposition}
+
+
+\begin{proposition}If $A$ is a matrix and $B$ is an upper triangular matrix obtained from $A$ via a finite sequence of row operations, then $A$ is invertible if and only if $B$ is invertible. Moreover, $B$ is invertible if and only if the entries on the diagonal are non-zero. 
+\end{proposition}
+
+
+\begin{theorem} A matrix $A$ is invertible if and only if $\det(A)\neq 0$. 
+\end{theorem}
+
+\subsection{Properties and Facts}
+\begin{enumerate}[$\bullet$]
+\item If $A$ is a triangular matrix then $\det(A)$ is the product of the entries on the main diagonal.
+\item If a multiple of one row of $A$ is added to another row to produce $B$ then $\det(A)=\det(B)$.
+\item If two rows of $A$ are interchanged to produce $B$ then $\det(A)=-\det(B)$. 
+\item If one row of $A$ is multiplied by $k$ to produce $B$ then $\det(B)=k\cdot \det(A)$. 
+\item A square matrix is invertible if and only if $\det(A)\neq 0$.
+\item $\det(A^\top)=\det(A)$. 
+\item $\det(AB)=\det(A)\det(B)$.
+\item $\det(I)=1$.
+\end{enumerate}
+\section{Eigenvalues and Eigenvectors}
+\begin{definition} Suppose $T\in \mathcal{L}(V)$. A subspace $U$ of $V$ is called \emph{invariant under} $T$ if $u\in U$ implies that $Tu\in U$. 
+\end{definition}
+\begin{definition}Suppose $T\in \mathcal{L}(V)$. A scalar $\lambda\in \mathbb{F}$ is an \emph{eigenvalue} of $T$ if there exists a $v\in V$ such that $v\neq 0$ and $Tv=\lambda v$. The vector $v$ is called an \emph{eigenvector}.
+\end{definition}
+\begin{proposition}$T\in \mathcal{L}(V)$ has a one dimensional subspace if and only if $T$ has an eigenvalue. 
+\end{proposition}
+
+\begin{theorem}Suppose $V$ is a finite dimensional vector space and $T\in \mathcal{L}(V)$. The following are equivalent:
+\begin{enumerate}[(a)]
+\item $\lambda\in \mathbb{F}$ is an eigenvalue.
+\item $T-\lambda I$ is not injective.
+\item $T-\lambda I$ is not surjective.
+\item $T-\lambda I$ is not invertible.
+\end{enumerate}
+\end{theorem}
+
+\begin{proposition} Suppose  $T\in \mathcal{L}(V)$. If $\lambda_1, \ldots, \lambda_m$ are distinct eigenvalues of $T$ and $v_1, \ldots, v_m$ are corresponding eigenvectors then $\{v_1, \ldots, v_m\}$ is a linearly independent set. 
+\end{proposition}
+
+\begin{definition}Suppose  $T\in \mathcal{L}(V)$. Define for positive $m$
+\[T^m=\underbrace{T\circ\ldots\circ T}_{m\text{ times}}\]
+\[T^0=Id\]
+and if $T$ is invertible
+\[T^{-m}=\underbrace{T^{-1}\circ\ldots\circ T^{-1}}_{m\text{ times}}\]
+\end{definition}
+
+\begin{definition}Suppose  $T\in \mathcal{L}(V)$ and let $p(x)=a_nx^n+\ldots+a_1x+a_0$ be a polynomial over $\mathbb{F}$. Define
+\[p(T)=a_nT^n+\ldots+a_1T+a_0Id\]
+
+\end{definition}
+
+
 \end{document}
 
 
