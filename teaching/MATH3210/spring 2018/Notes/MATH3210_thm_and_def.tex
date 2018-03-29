@@ -42,6 +42,7 @@
 %Here are commands with variable inputs 
 \newcommand{\intf}[1]{\int_a^b{#1}\,dx}
 \newcommand{\intfb}[3]{\int_{#1}^{#2}{#3}\,dx}
+\newcommand{\ip}[2]{\left\langle {#1}, {#2}\right\rangle}
 \newcommand{\pln}[1]{$\sm${\tt #1}}
 \newcommand{\bgn}[1]{$\tt {\sm}begin\{#1\}$}
 \newcommand{\nd}[1]{$\tt {\sm}end\{#1\}$}
@@ -53,6 +54,9 @@
 
 %Here are some user-defined operators
 \newcommand{\Tr}{\operatorname {Tr}}
+\newcommand{\nul}{\operatorname {null}}
+\newcommand{\ran}{\operatorname {ran}}
+\renewcommand{\span}{\operatorname {span}}
 \newcommand{\GL}{\operatorname {GL}}
 \newcommand{\SL}{\operatorname {SL}}
 \newcommand{\Prob}{\operatorname {Prob}}
@@ -60,7 +64,7 @@
 \newcommand{\im}{\operatorname {Im}}   %new definition of "imaginary part" operator
 
 
-%These commands deal with theorem-like environments (i.e., italic)
+%These commands deal with theorem-like environments (i.e., italic)\nul
 \theoremstyle{plain}
 \newtheorem{theorem}{Theorem}[section]
 \newtheorem{proposition}{Proposition}[section]
@@ -120,8 +124,9 @@ and
 \end{definition}
 \ \\
 {\bf \noindent Note:} Fields have a unique additive and multiplicative identity denoted 0 and 1 respectively. Moreover, when the additive and multiplicative inverses exist they are unique.\\
-\ \\
-{\bf \noindent Some examples:} All of the following examples are with their standard operations. 
+
+\begin{example}
+ All of the following examples are with their standard operations. 
 \begin{enumerate}[1.]
 \setlength{\itemsep}{5pt}
 \item $\mathbb{Q}$ (rational numbers)
@@ -129,6 +134,7 @@ and
 \item $\mathbb{C}$ (complex numbers)
 \item $\mathbb{Z}/p\mathbb{Z}$ for $p$ prime (Integers modulo p)
 \end{enumerate}
+\end{example}
 
 {\bf\noindent Non example: }$\mathbb{Z}$ is not a field, it lacks multiplicative inverses. 
 
@@ -153,8 +159,8 @@ and
 \[a\cdot(u+v)=a\cdot u+a\cdot v\] 
 \end{enumerate}
 \end{definition}
-\ \\
-{\bf \noindent Some examples:} All of the following examples are with their standard operations. 
+
+\begin{example} All of the following examples are with their standard operations. 
 \begin{enumerate}[1.]
 \setlength{\itemsep}{5pt}
 \item $\mathbb{F}^n=\left\{\begin{bmatrix}a_1\\ \vdots \\ a_n\end{bmatrix}: a_i\in \mathbb{F}\right\}$ where $\mathbb{F}$ is a field. 
@@ -164,6 +170,7 @@ and
 \item Functions from a field $X$ into a field $Y$. 
 \item $\mathbb{F}^\infty=\{(a_1, a_2, a_3, \ldots): a_i\in \mathbb{F}\}$. 
 \end{enumerate}
+\end{example}
 
 \begin{proposition}Every vector space $V$ has a unique additive identity. The unique additive identity is denoted $0$. 
 \end{proposition}
@@ -188,15 +195,15 @@ where $a_1,\ldots, a_m\in \mathbb{F}$.
 \end{definition}
 
 \begin{definition} The set of all linear combinations of a list of vectors $v_1, \ldots, v_m$ in $V$ is called the \emph{span} of $v_1, \ldots,v_m$ denoted by 
-$\text{span}\{v_1,\ldots,v_m\}$.
-\[\text{span}\{v_1,\ldots,v_m\}=\{a_1v_1+\ldots+a_mv_m\mid a_i\in \mathbb{F}\}\]
+$\span\{v_1,\ldots,v_m\}$.
+\[\span\{v_1,\ldots,v_m\}=\{a_1v_1+\ldots+a_mv_m\mid a_i\in \mathbb{F}\}\]
 \end{definition}
 
-\begin{definition} If $V$ is a vector space and $V=\text{span}\{v_1,\ldots,v_m\}$ then we say that $v_1, \ldots, v_m$ span $V$. 
+\begin{definition} If $V$ is a vector space and $V=\span\{v_1,\ldots,v_m\}$ then we say that $v_1, \ldots, v_m$ span $V$. 
 \end{definition}
 
 \begin{definition} We say that a vectors space is \emph{finite dimensional} if there exists a finite list of vectors $v_1,\ldots, v_m$ such that 
-\[\text{span}\{v_1,\ldots v_m\}=V\] 
+\[\span\{v_1,\ldots v_m\}=V\] 
 Otherwise we say that $V$ is \emph{infinite dimensional}.
 \end{definition}
 
@@ -207,8 +214,8 @@ Otherwise we say that $V$ is \emph{infinite dimensional}.
 
 \begin{lemma} Suppose that $v_1,\ldots, v_m$ is a linearly dependent list in $V$. There exists a $j\in\{1,\ldots, m\}$ such that \\
 \begin{enumerate}[1)]
-\item $v_j\in \text{span}\{v_1,\ldots v_{j-1}\}$
-\item $\text{span}\{v_1,\ldots, v_{j-1},v_j,v_{j+1},\ldots v_m\}=\text{span}\{v_1,\ldots, v_{j-1},v_{j+1},\ldots v_m\}$
+\item $v_j\in \span\{v_1,\ldots v_{j-1}\}$
+\item $\span\{v_1,\ldots, v_{j-1},v_j,v_{j+1},\ldots v_m\}=\span\{v_1,\ldots, v_{j-1},v_{j+1},\ldots v_m\}$
 \end{enumerate}
 \end{lemma}
 
@@ -219,7 +226,7 @@ Otherwise we say that $V$ is \emph{infinite dimensional}.
 \begin{definition} A basis for a vector space $V$ is a list of vectors $\{v_1, \ldots, v_n\}$ such that 
 \begin{enumerate}[1.]
 \item $\{v_1, \ldots, v_n\}$ is linearly independent
-\item $\text{span}\{v_1, \ldots, v_n\}=V$. 
+\item $\span\{v_1, \ldots, v_n\}=V$. 
 \end{enumerate}
 \end{definition}
 \begin{proposition} A list of vectors $\{v_1, \ldots, v_n\}$ in $V$ is a basis for $V$ if and only if every vector $v\in V$ can be written \emph{uniquely} in the form
@@ -235,7 +242,7 @@ for some $a_1, \ldots, a_n\in \mathbb{F}$.
 \begin{proposition} Any two basis of a finite dimensional vector space $V$ have the same length. 
 \end{proposition}
 
-\begin{definition} The dimension of a finite dimensional vector space is the length of any basis of the vector space. Denoted $\text{dim}(V)$. 
+\begin{definition} The dimension of a finite dimensional vector space is the length of any basis of the vector space. Denoted $\dim(V)$. 
 \end{definition}
 
 \begin{proposition} Suppose $V$ is finite dimensional. Every list of linearly independent vectors whose length is equal to the dimension of $V$ is a basis. 
@@ -256,7 +263,7 @@ for some $a_1, \ldots, a_n\in \mathbb{F}$.
 \end{enumerate}
 \end{proposition}
 
-\begin{proposition} If $U$ is a subspace of a finite dimensional vector space $V$ then $\text{dim}(U)\leq\text{dim}(V)$. Moreover, $\text{dim}(U)=\text{dim}(V)$ if and only if $V=U$. 
+\begin{proposition} If $U$ is a subspace of a finite dimensional vector space $V$ then $\dim(U)\leq\dim(V)$. Moreover, $\dim(U)=\dim(V)$ if and only if $V=U$. 
 \end{proposition}
 
 \subsection{Direct Sums}
@@ -301,7 +308,7 @@ and
 
 
 \begin{proposition} Let $V$ be a finite dimensional vector space and $U$ be a subspace. 
-\[\text{dim}(V/U)=\text{dim}(V)-\text{dim}(U)\]
+\[\dim(V/U)=\dim(V)-\dim(U)\]
 \end{proposition}
 
 \section{Linear Maps}
@@ -326,21 +333,21 @@ and
 \end{proposition}
 \subsection{One to One, Onto, Invertibility, and Isomorphisms}
 \begin{definition} For $T\in \mathcal{L}(V,W)$ define the \emph{null space} of $T$ (or kernel of T) to be 
-\[\text{null}(T)=\{v\in V\ \mid \  Tv=0\}\subseteq V\]
+\[\nul(T)=\{v\in V\ \mid \  Tv=0\}\subseteq V\]
 and define the \emph{range} of $T$ to be 
-\[\text{ran}(T)=\{Tv\ \mid \  v\in V\}\subseteq W.\]
+\[\ran(T)=\{Tv\ \mid \  v\in V\}\subseteq W.\]
 \end{definition}
 
-\begin{theorem} For $T\in \mathcal{L}(V,W)$ both $\text{null}(T)$ and $\text{ran}(T)$ are subspaces. A linear transformation is injective if and only if 
-\[\text{null}(T)=\{0\}.\]
-A linear transformation is surjective if and only if $\text{ran}(T)=W$. 
+\begin{theorem} For $T\in \mathcal{L}(V,W)$ both $\nul(T)$ and $\ran(T)$ are subspaces. A linear transformation is injective if and only if 
+\[\nul(T)=\{0\}.\]
+A linear transformation is surjective if and only if $\ran(T)=W$. 
 \end{theorem}
 \begin{definition} The \emph{rank} of a linear transformation is the dimension of its range. The \emph{nullity} of a transformation is the dimension of its null space. 
 \end{definition}
 
 \begin{definition} A vector space isomorphism from $V$ onto $W$ is a bijective linear map $T:V\rightarrow W$. If there is a vector space isomorphism from $V$ onto $W$ we say $V$ is isomorphic to $W$ and write $V\cong W$. 
 \end{definition}
-\begin{theorem} Let $V$ and $W$ be two finite dimensional vector spaces. $V$ is isomorphic to $W$ if and only if $\text{dim}(V)=\text{dim}(W)$.
+\begin{theorem} Let $V$ and $W$ be two finite dimensional vector spaces. $V$ is isomorphic to $W$ if and only if $\dim(V)=\dim(W)$.
 \end{theorem}
 \begin{definition} A linear map $T:V\rightarrow W$ is \emph{invertible} if there exists an map $S:W\rightarrow V$ such that 
 \[S\circ T=\text{Id}_{V}\]
@@ -350,33 +357,33 @@ A linear transformation is surjective if and only if $\text{ran}(T)=W$.
 \end{theorem}
 \subsection{Fundamental Theorem of Linear Maps}
 \begin{proposition} Suppose $T\in \mathcal{L}(V,W)$ and define 
-\[\tilde{T}:V/\text{null}(T)\rightarrow W\] 
+\[\tilde{T}:V/\nul(T)\rightarrow W\] 
 by
-\[\tilde{T}(v+\text{null}(T))=Tv.\]
+\[\tilde{T}(v+\nul(T))=Tv.\]
 The following hold:
 \begin{enumerate}[a)]
 \item $\tilde{T}$ is linear
 \item $\tilde{T}$ is injective
-\item $\text{ran}(\tilde{T})=\text{ran}(T)$
-\item $V/\text{null}(T)\cong \text{ran}(T)$.
+\item $\ran(\tilde{T})=\ran(T)$
+\item $V/\nul(T)\cong \ran(T)$.
 \end{enumerate}
 
 \end{proposition}
 \begin{theorem}[Fundamental Theorem of Linear Maps/ Rank-Nullity]
-Suppose $V$ is a finite dimensional vector space and $T\in \mathcal{L}(V,W)$. We have $\text{ran}(T)$ is finite dimensional and 
-\[\text{dim}(V)=\text{dim}(\text{ran}(T))+\text{dim}(\text{null}(T)).\]
+Suppose $V$ is a finite dimensional vector space and $T\in \mathcal{L}(V,W)$. We have $\ran(T)$ is finite dimensional and 
+\[\dim(V)=\dim(\ran(T))+\dim(\nul(T)).\]
 \end{theorem}
 
 \begin{proposition} Suppose $V$ and $W$ are finite dimensional vector spaces. Let $T\in \mathcal{L}(V,W)$. 
 \begin{enumerate}[a)]
-\item If $\text{dim}(V)<\text{dim}(W)$ then $T$ is not surjective.
-\item If $\text{dim}(V)>\text{dim}(W)$ then $T$ is not injective.
+\item If $\dim(V)<\dim(W)$ then $T$ is not surjective.
+\item If $\dim(V)>\dim(W)$ then $T$ is not injective.
 \end{enumerate}
 \end{proposition}
 
 \begin{definition} A linear map $T\in \mathcal{L}(V,V)$ is called an \emph{operator}. 
 \end{definition}
-\begin{theorem} Suppose $T$ is an operator over a vector space $V$. If $V$ is finite dimension the following are equivalent:
+\begin{theorem} Suppose $T$ is an operator over a vector space $V$. If $V$ is finite dimensional the following are equivalent:
 \begin{enumerate}[a)]
 \item $T$ is injective
 \item $T$ is surjective
@@ -589,6 +596,8 @@ An elementary matrix is any matrix obtained from performing a single row operati
 \item $\det(I)=1$.
 \end{enumerate}
 \section{Eigenvalues and Eigenvectors}
+{\color{red}{\bf \noindent Note: }We will assume all vector spaces in this section are complex! (However, a lot of the following is definable for a vector spaces over any field)}
+
 \begin{definition} Suppose $T\in \mathcal{L}(V)$. A subspace $U$ of $V$ is called \emph{invariant under} $T$ if $u\in U$ implies that $Tu\in U$. 
 \end{definition}
 \begin{definition}Suppose $T\in \mathcal{L}(V)$. A scalar $\lambda\in \mathbb{F}$ is an \emph{eigenvalue} of $T$ if there exists a $v\in V$ such that $v\neq 0$ and $Tv=\lambda v$. The vector $v$ is called an \emph{eigenvector}.
@@ -599,14 +608,16 @@ An elementary matrix is any matrix obtained from performing a single row operati
 \begin{theorem}Suppose $V$ is a finite dimensional vector space and $T\in \mathcal{L}(V)$. The following are equivalent:
 \begin{enumerate}[(a)]
 \item $\lambda\in \mathbb{F}$ is an eigenvalue.
-\item $T-\lambda I$ is not injective.
-\item $T-\lambda I$ is not surjective.
-\item $T-\lambda I$ is not invertible.
+\item $T-\lambda Id$ is not injective.
+\item $T-\lambda Id$ is not surjective.
+\item $T-\lambda Id$ is not invertible.
 \end{enumerate}
 \end{theorem}
 
 \begin{proposition} Suppose  $T\in \mathcal{L}(V)$. If $\lambda_1, \ldots, \lambda_m$ are distinct eigenvalues of $T$ and $v_1, \ldots, v_m$ are corresponding eigenvectors then $\{v_1, \ldots, v_m\}$ is a linearly independent set. 
 \end{proposition}
+\begin{corollary} Suppose $T\in \mathcal{L}(V)$ and $\dim(V)=n$. Then $T$ has at most $n$ distinct eigenvalues. 
+\end{corollary}
 
 \begin{definition}Suppose  $T\in \mathcal{L}(V)$. Define for positive $m$
 \[T^m=\underbrace{T\circ\ldots\circ T}_{m\text{ times}}\]
@@ -620,7 +631,126 @@ and if $T$ is invertible
 
 \end{definition}
 
+\begin{proposition} Let $T\in \mathcal{L}(V)$. If $p(x)$ is a polynomial over $\mathbb{F}$ and $p(x)=s(x)q(x)$ then $p(T)=s(T)q(T)$. 
+\end{proposition}
 
+
+\begin{theorem} Every operator on a finite dimensional, non-zero, \emph{complex} vector space has an eigenvalue. 
+\end{theorem}
+
+\subsection{Upper Triangular Matrices}
+\begin{proposition}Suppose $T\in \mathcal{L}(V)$ and $\beta=\{v_1, \ldots, v_n\}$ is a basis of $V$. The following statements are equivalent. 
+\begin{enumerate}[(a)]
+\item $[T]_\beta$ is upper triangular. 
+\item $Tv_j\in \span\{v_1, \ldots, v_n\}$ for all $1\leq j\leq n$. 
+\item $\span\{v_1, \ldots, v_j\}$ is invariant under $T$ for all $1\leq j\leq n$. 
+\end{enumerate}
+\end{proposition}
+
+\begin{theorem}Suppose $T\in \mathcal{L}(V)$ where $V$ is finite dimensional. The operator $T$ has an upper triangular matrix with respect to some basis. 
+\end{theorem}
+
+\begin{proposition}Suppose $T\in \mathcal{L}(V)$ and $\beta=\{v_1, \ldots, v_n\}$ is a basis of $V$. If $[T]_\beta$ is an upper triangular matrix then the following statements hold:
+\begin{enumerate}[(a)]
+\item $T$ is invertible if and only if the diagonal entries of $[T]_\beta$ are non-zero. 
+\item The eigenvalues of $T$ (and $[T]_\beta$) are the diagonal entries of $[T]_\beta$. 
+\item $\det([T]_\beta)$ is the product of the eigenvalues of $T$. 
+\item If $\gamma$ is another basis for $V$ then $\det([T]_\gamma)$ is the product of the eigenvalues of $T$. 
+\end{enumerate}
+\end{proposition}
+\subsection{Diagonal Matrices}
+\begin{proposition}Suppose $T\in \mathcal{L}(V)$ where $V$ is $n$-dimensional. If $T$ has $n$ distinct eigenvalues then $T$ has a diagonal matrix with respect to some basis of $V$. 
+\end{proposition}
+
+\begin{theorem} Suppose $T\in \mathcal{L}(V)$ where $V$ is finite dimensional. Let $\lambda_1, \ldots, \lambda_m$ be the distinct eigenvalues of $T$. The following are equivalent. 
+\begin{enumerate}[(a)]
+\item $T$ has a diagonal matrix with respect to some basis. 
+\item $V$ has a basis of eigenvectors
+\item There exists one dimensional subspaces $U_1, \ldots, U_n$ of $V$ where $U_i=\span\{v_i\}$ $1\leq i\leq n$ and each $U_i$ is invariant under $T$ such that $V=U_1\oplus \ldots \oplus U_n$. 
+\item $V=\nul(T-\lambda_1Id)\oplus \ldots \oplus \nul(T-\lambda_m Id)$ 
+\item $\dim(V)=\dim(\nul(T-\lambda_1Id))+ \ldots  + \dim(\nul(T-\lambda_m Id))$ 
+\end{enumerate}
+\end{theorem}
+
+\section{Inner Products} 
+{\color{red}{\bf \noindent Note: }We will assume all vector spaces in this section are either real or complex!}
+
+\begin{definition}Let $V=\mathbb{C}^n$ (or $V=\mathbb{R}^n$). We define the \emph{dot product} of two vectors $\vec{x}=\left[x_1,\ldots ,x_n\right]^\top$ and $\vec{y}=\left[y_1,\ldots ,y_n\right]^\top$ as 
+\[\vec{x}\cdot \vec{y}=x_1\bar{y}_1+\ldots+x_n\bar{y}_n\] where if $z=a+ib\in \mathbb{C}$ for $a,b\in \mathbb{R}$ then $\bar{z}=a-ib$. We call $\bar{z}$ the \emph{complex conjugate} of $z$. 
+\end{definition}
+
+
+\begin{definition}Let $V$ be a complex vector space (or a real vector space). An inner product on $V$ is a function 
+\[\ip{\cdot}{\cdot}:V\times V\rightarrow \mathbb{C} \quad \quad(\text{or }\ip{\cdot}{\cdot}:V\times V\rightarrow \mathbb{R}) \]
+such that 
+\begin{enumerate}[(a)]
+\item $\ip{v}{v}\geq 0$ for all $v\in V$. 
+\item $\ip{v}{v}=0$ if and only if $v=0$. 
+\item $\ip{\lambda v+u}{w}=\lambda\ip{v}{w}+\ip{u}{w}$ for all $\lambda \in \mathbb{C} \ (\text{or } \mathbb{R})$ and $u,v,w\in V$. 
+\item $\ip{v}{w}=\overline{\ip{w}{v}}$ \quad \quad(or $\ip{v}{w}=\ip{w}{v}$).
+\end{enumerate}
+A vector space $V$ with an inner product defined on $V$ is called an \emph{inner product space}.
+\end{definition}
+{\bf \noindent Note: }Properties (3) and (4) say that the inner product is linear in the first variable and conjugate linear in the second variable. This is the common convention in mathematics. Physics uses the opposite convention on inner products, i.e. the inner product is conjugate linear in the first variable and linear in the second variable. This is mostly a matter of convenience for physicists as they use the ``bra-ket" notation for inner-products. \emph{{ In this course we will use the mathematics convention!}}
+
+\begin{example}
+The following are inner product spaces. 
+\begin{enumerate}[(a)]
+\item $\mathbb{C}^n$ (or $\mathbb{R}^n$) with the dot product. 
+\item $\ell^2(\mathbb{C})=\left\{{\bf a}=(a_0, a_1, \ldots )\middle | \sum_{n=0}^\infty |a_i|^2<\infty \right\}$ with $\ip{{\bf a}}{{\bf b}}=\sum_{i=0}^\infty a_i\overline{b_i}$. 
+\item $\mathcal{L}^2(\mathbb{R}, dx)=\left\{ f:\mathbb{R}\rightarrow \mathbb{C} \middle | \int_{-\infty}^\infty |f(x)|^2\, dx<\infty \right\}$ with $\ip{f}{g}=\int_{-\infty}^\infty f(x)\overline{g}(x)\, dx$. 
+\end{enumerate}
+\end{example}
+
+\begin{definition} The \emph{norm} or \emph{length} of a vector $v$ in an inner product space $V$ is defined to be $\|v\|=\sqrt{\ip{v}{v}}$.
+\end{definition}
+
+\begin{definition} If $z=a+ib\in \mathbb{C}$ define the \emph{modulus} (or absolute value) of a complex number to be $|z|:=\sqrt{a^2+b^2}$.
+\end{definition}
+
+\begin{lemma} For $v\in V$ and $a\in \mathbb{F}$ we have $\|av\|=|a|\|v\|$. 
+\end{lemma}
+
+\subsection{Geometry}
+\begin{definition} We say that two vectors $v$ and $u$ in an inner product space $V$ are \emph{perpendicular} or \emph{orthogonal} if $\ip{v}{u}=0$. We say two vectors $v$ and $u$ are \emph{parallel} if $u=av$ for some $a\in \mathbb{F}$. 
+\end{definition}
+\begin{theorem}[Pythagorean Theorem] 
+If $u$ and $v$ are orthogonal vectors in an inner product space $V$ then \[\|u+v\|^2=\|u\|^2+\|v\|^2.\] 
+\end{theorem}
+
+\begin{theorem}[Triangle Inequality] 
+If $u$ and $v$ are vectors in an inner product space $V$ then \[\|u+v\|\leq \|u\|+\|v\|.\] 
+\end{theorem}
+
+\begin{theorem}[Parallelogram Law] 
+If $u$ and $v$ are vectors in an inner product space $V$ then \[\|u+v\|^2+\|u-v\|^2= 2(\|u\|^2+\|v\|^2).\] 
+\end{theorem}
+
+\subsection{Orthogonal Projections}
+\begin{definition} Given two vectors $\vec{v}$ and $\vec{u}$ in $\mathbb{R}^n$ we define
+\[\hat{v}=\left(\dfrac{\vec{v}\cdot \vec{u}}{\vec{u}\cdot \vec{u}}\right)\vec{u}\] to be the \emph{orthogonal projection} of $\vec{v}$ onto $\vec{u}$. 
+This is sometimes denoted
+\[\hat{v}=\text{proj}_{\vec{u}}(\vec{v}).\]
+\begin{center}
+\includegraphics[scale=.75]{vector_projection.eps}
+\end{center}
+\end{definition}
+In the above picture the green vector $\vec{v}$ is being projected onto the blue vector $\vec{u}$ and the resulting red vector is the projection. Notice that the projection points in the same direction as $\vec{u}$. \\
+\ \\
+Moreover, 
+\[\vec{z}=(\vec{v}-\hat{v})\bot\, \vec{u}\]
+and the length of $\vec{z}=\vec{v}-\hat{v}$ is represented by the dashed line.
+\begin{definition}
+Let $\vec{v}$ and $\vec{u}$ be two vectors let $\hat{v}$ be the projection of $\vec{v}$ onto $\vec{u}$. If we define $\vec{z}=\vec{v}-\hat{v}$ then
+\[\vec{v}=\hat{v}+\vec{z}\] where $\hat{v}$ is parallel to $\vec{u}$ and $\vec{z}$ is perpendicular to $\vec{u}$. We call $\hat{v}$ the component of $\vec{v}$ parallel to $\vec{u}$ and $\vec{z}$ is the component of $\vec{v}$ perpendicular to $\vec{u}$. 
+\end{definition}
+\begin{definition} Let $u$ and $v$ be non-zero vectors in an inner product space $V$. The orthogonal decomposition of $u$ with respect to $v$ is defined to be 
+\[u=\frac{\ip{u}{v}}{\ \|v\|^2}v+\left(u-\frac{\ip{u}{v}}{\|v\|^2}v\right)\]
+where $\frac{\ip{u}{v}}{\ \|v\|^2}v$ is parallel to $v$ and $\left(u-\frac{\ip{u}{v}}{\ \|v\|^2}v\right)$ is perpendicular to $v$. 
+\end{definition}
+\begin{theorem}[Cauchy-Schwarz Inequality]If $u$ and $v$ are vectors in an inner product space $V$ then 
+\[\left|\ip{u}{v}\right|^2\leq \|u\|\ \|v\|.\]
+\end{theorem}
 \end{document}
 
 
