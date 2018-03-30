@@ -1,0 +1,101 @@
+\documentclass[12pt,letterpaper]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{amsmath}
+\usepackage{enumerate}
+
+%Here are some user-defined notations
+\newcommand{\RR}{\mathbf R}  %bold R
+\newcommand{\CC}{\mathbf C}  %bold C
+\newcommand{\ZZ}{\mathbf Z}   %bold Z
+\newcommand{\QQ}{\mathbf Q}   %bold Q
+\newcommand{\rr}{\mathbb R}     %blackboard bold R
+\newcommand{\cc}{\mathbb C}    %blackboard bold R
+\newcommand{\zz}{\mathbb Z}    %blackboard bold R
+\newcommand{\qq}{\mathbb Q}   %blackboard bold Q
+\newcommand{\calM}{\mathcal M}  %calligraphic M
+\newcommand{\sm}{\setminus} 
+\newcommand{\bfa}{\mathbf a}
+\newcommand{\bfb}{\mathbf b}
+\newcommand{\bfc}{\mathbf c}
+
+
+
+
+%Here are some user-defined operators
+\newcommand{\re}{\operatorname {Re}}
+\newcommand{\im}{\operatorname {Im}}
+
+
+%These commands deal with theorem-like environments (i.e., italic)
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{conjecture}[theorem]{Conjecture}
+
+%These deal with definition-like environments (i.e., non-italic)
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{remark}[theorem]{Remark}
+
+%your name and date in the header.
+\usepackage[us]{datetime} 
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\lhead{}
+\chead{MATH 3210\\ Homework 4}
+\rhead{ Your name \\ date}
+\lfoot{}
+\cfoot{}
+\rfoot{\thepage}
+\renewcommand{\headrulewidth}{0 pt}
+\renewcommand{\footrulewidth}{0 pt}
+\begin{document}
+\begin{enumerate}[1.]
+\item Suppose $S,T\in \mathcal{L}(V)$ are such that $ST=TS$. Prove that $\text{ran}(S)$ is invariant under $T$
+\item Let $V=\left(\mathbb{Z}/5\mathbb{Z}\right)^3$. Define, $\langle \cdot, \cdot \rangle: V\times V\rightarrow \mathbb{Z}/5\mathbb{Z}$ by 
+\[\langle\vec{x},\vec{y}\rangle =x_1y_1+x_2y_2+x_3y_3 \quad \quad \text{ for all }\vec{x},\vec{y}\in V.\] 
+Is $\langle \cdot, \cdot \rangle$ an inner product?
+\item Let $V=\left(\mathbb{Z}/5\mathbb{Z}\right)^2$ and $T:V\rightarrow V$ be the transformation $T(\vec{x})=A\cdot \vec{x}$ where $A$ is given by 
+\[A=\begin{bmatrix}2 & 3 \\ 0 & 4\end{bmatrix}\in M_{2\times 2}(\mathbb{Z}/5\mathbb{Z}).\]
+Does $T$ have eigenvalues and eigenvectors? If so, find them and determine if $T$ has a diagonal matrix with respect to a basis of eigen-vectors. 
+\item In class we defined for a polynomial $p(x)=a_nx^n+\ldots+a_1x +a_0$ and an operator $T\in \mathcal{L}(V)$ the operator $p(T)$ as 
+\[p(T)=a_nT^n+\ldots +a_1T+a_0I\in \mathcal{L}(V).\]
+Let $e^x=\sum_{n=0}^\infty \frac{x^n}{n!}$ and define for a operator $T\in \mathcal{L}(V)$ 
+\[e^{T}=\sum_{n=0}^\infty \frac{T^n}{n!}.\]
+[If you have taken analysis do not worry about convergence, the power series has an infinite radius of convergence.]
+
+Let $A=\begin{bmatrix}1 & 1 \\ 0 & 1\end{bmatrix}$. 
+
+\begin{enumerate}[(a)]
+\item Find a formula for $A^n$ and prove it by induction. 
+\item Find $e^A$.
+\end{enumerate}
+
+\item The Fibonacci sequence $F_1, F_2, \ldots$ is defined by 
+\[F_1=1, F_2=1, \quad \text{ and }\quad F_n=F_{n-2}+F_{n-1} \text{ for }n\geq 3\]
+Define $T\in \mathcal{L}(\mathbb{R}^2)$ by 
+\[T \left( \left[\begin{array}{c}x\\y\end{array}\right]\right)=\left[\begin{array}{cc}y\\ x+y\end{array}\right].\]
+\begin{enumerate}[(a)]
+\item Show that $T^n\left(\left[\begin{array}{c}0\\1\end{array}\right]\right)=\left[\begin{array}{c}F_n\\F_{n+1}\end{array}\right]$
+\item Find the eigenvalues of $T$.
+\item Find a basis of $\mathbb{R}^2$ consisting of eigenvectors of $T$. 
+\item Use the solution to part (c) to compute $T^n\left(\left[\begin{array}{c}0\\1\end{array}\right]\right)$. Conclude that 
+\[F_n=\frac{1}{\sqrt{5}}\left[\left(\frac{1+\sqrt{5}}{2}\right)^n-\left(\frac{1-\sqrt{5}}{2}\right)^n\right]\]
+for each positive integer $n$. 
+\end{enumerate}
+\end{enumerate}
+
+\end{document}
+
+
+
+
+
+
+
+
