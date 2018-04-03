@@ -19,3 +19,4 @@
 \contentsline {section}{\numberline {7}Inner Products}{17}{section.7}
 \contentsline {subsection}{\numberline {7.1}Geometry}{19}{subsection.7.1}
 \contentsline {subsection}{\numberline {7.2}Orthogonal Projections}{19}{subsection.7.2}
+\contentsline {subsection}{\numberline {7.3}Orthonormal Basis for a Vector Space}{20}{subsection.7.3}

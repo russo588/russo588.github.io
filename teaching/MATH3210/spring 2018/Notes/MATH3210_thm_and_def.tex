@@ -751,6 +751,33 @@ where $\frac{\ip{u}{v}}{\ \|v\|^2}v$ is parallel to $v$ and $\left(u-\frac{\ip{u
 \begin{theorem}[Cauchy-Schwarz Inequality]If $u$ and $v$ are vectors in an inner product space $V$ then 
 \[\left|\ip{u}{v}\right|\leq \|u\|\ \|v\|.\]
 \end{theorem}
+\subsection{Orthonormal Basis for a Vector Space}
+\begin{definition} A list of vectors $\{v_1, \ldots, v_k\}$ is called \emph{orthogonal} if
+\[\ip{v_i}{v_j}=0 \quad \quad i\neq j \]
+for all $i,j\in \{1,\ldots, k\}$. An \emph{orthogonal basis} is a basis that is also an orthogonal list.
+
+\end{definition}
+\begin{definition} A list of vectors $\{v_1, \ldots, v_k\}$ is called \emph{orthonormal} if
+\[\ip{v_i}{v_j}=\left\{\begin{array}{lr}0 & i\neq j \\ 1 & i=j\end{array}\right.\]
+for all $i,j\in \{1,\ldots, k\}$. An \emph{orthonormal basis} is a basis that is also an orthonormal list.
+\end{definition}
+
+\begin{proposition} If $\{e_1, \ldots, e_m\}$ is an orthonormal list of vectors then 
+\[\|a_1e_1+\ldots+a_me_m\|^2=|a_1|^2+\ldots+|a_m|^2\]
+for all $a_1, \ldots, a_m\in \mathbb{F}$.
+\end{proposition}
+
+\begin{corollary} Every orthonormal list of vectors is linearly independent. 
+\end{corollary}
+
+\begin{theorem} If $\{v_1, \ldots, v_m\}$ is a linearly independent list of vectors in $V$ then there exists an orthonormal list of vectors $\{e_1, \ldots, e_m\}$ of vectors in $V$ such that $span\{v_1, \ldots, v_k\}=\span\{e_1, \ldots, e_k\}$ for $k\in\{1, \ldots, m\}$.
+\end{theorem}
+
+\begin{corollary} Every finite dimensional inner product space has an orthonormal basis. 
+\end{corollary}
+\begin{corollary} Every orthonormal list of vectors in $V$ can be extended to a orthonormal basis of $V$. 
+\end{corollary}
+
 \end{document}
 
 
