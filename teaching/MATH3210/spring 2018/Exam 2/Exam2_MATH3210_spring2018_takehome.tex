@@ -1,0 +1,87 @@
+\documentclass[12pt,letterpaper]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{amsmath}
+\usepackage{enumerate}
+
+%Here are some user-defined notations
+\newcommand{\RR}{\mathbf R}  %bold R
+\newcommand{\CC}{\mathbf C}  %bold C
+\newcommand{\ZZ}{\mathbf Z}   %bold Z
+\newcommand{\QQ}{\mathbf Q}   %bold Q
+\newcommand{\rr}{\mathbb R}     %blackboard bold R
+\newcommand{\cc}{\mathbb C}    %blackboard bold R
+\newcommand{\zz}{\mathbb Z}    %blackboard bold R
+\newcommand{\qq}{\mathbb Q}   %blackboard bold Q
+\newcommand{\calM}{\mathcal M}  %calligraphic M
+\newcommand{\sm}{\setminus} 
+\newcommand{\bfa}{\mathbf a}
+\newcommand{\bfb}{\mathbf b}
+\newcommand{\bfc}{\mathbf c}
+
+\newcommand{\tr}{\text{tr}}
+
+
+
+%Here are some user-defined operators
+\newcommand{\re}{\operatorname {Re}}
+\newcommand{\im}{\operatorname {Im}}
+
+
+%These commands deal with theorem-like environments (i.e., italic)
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{conjecture}[theorem]{Conjecture}
+
+%These deal with definition-like environments (i.e., non-italic)
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{remark}[theorem]{Remark}
+
+%your name and date in the header.
+\usepackage[us]{datetime} 
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\lhead{}
+\chead{MATH 3210\\ Exam 2}
+\rhead{}
+\lfoot{}
+\cfoot{}
+\rfoot{\thepage}
+\renewcommand{\headrulewidth}{0 pt}
+\renewcommand{\footrulewidth}{0 pt}
+\begin{document}
+\begin{enumerate}[{\bf1.}]
+
+\item Find a formula for the determinant of a matrix $A$ whose entries are given by $A_{i,j}=\frac{1}{\min\{i,j\}}$. (You must prove your formula works.)
+
+\item Let $P(\mathbb{R})$ be the vector space of polynomials and $\mathbb{R}^\infty$ be the vector space of sequences of real numbers. Show that $P(\mathbb{R})^*$ and $\mathbb{R}^\infty$ are isomorphic. \vspace{-.1in}\\
+
+{\bf Hint: }Construct an explicit isomorphism between $P_n(\mathbb{R})^\prime$ and $\mathbb{R}^{n+1}$ and extend this in the natural way to $P(\mathbb{R})$ and $\mathbb{R}^\infty$. 
+
+\item Let $M_{2\times 2}(\mathbb{R})$ denote the vector space of $2\times 2$ matrices with real entries.  Define the trace of a matrix $A$  as the sum of the diagonal entries, i.e. 
+\[\tr(A)=a_{1,1}+a_{2,2}\]
+Show that 
+\[\langle A, B\rangle=\tr(B^\top A)\]
+is an inner product on this space. 
+
+\item Let $n\in \mathbb{N}$ be an odd number. Show that every $n\times n$ matrix with real entries has at least one real eigenvalue. \\
+
+\item Let $V$ be a finite dimensional vector-space and $P\in \mathcal{L}(V)$ be an operator such that $P^2=P$. Show that the only eigenvalues are $1$ and $0$. 
+
+
+\end{enumerate}
+\end{document}
+
+
+
+
+
+
+
+
