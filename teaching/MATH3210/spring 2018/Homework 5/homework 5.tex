@@ -1,0 +1,89 @@
+\documentclass[12pt,letterpaper]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{amsmath}
+\usepackage{enumerate}
+
+%Here are some user-defined notations
+\newcommand{\RR}{\mathbf R}  %bold R
+\newcommand{\CC}{\mathbf C}  %bold C
+\newcommand{\ZZ}{\mathbf Z}   %bold Z
+\newcommand{\QQ}{\mathbf Q}   %bold Q
+\newcommand{\rr}{\mathbb R}     %blackboard bold R
+\newcommand{\cc}{\mathbb C}    %blackboard bold R
+\newcommand{\zz}{\mathbb Z}    %blackboard bold R
+\newcommand{\qq}{\mathbb Q}   %blackboard bold Q
+\newcommand{\calM}{\mathcal M}  %calligraphic M
+\newcommand{\sm}{\setminus} 
+\newcommand{\bfa}{\mathbf a}
+\newcommand{\bfb}{\mathbf b}
+\newcommand{\bfc}{\mathbf c}
+
+
+
+
+%Here are some user-defined operators
+\newcommand{\re}{\operatorname {Re}}
+\newcommand{\im}{\operatorname {Im}}
+
+
+%These commands deal with theorem-like environments (i.e., italic)
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{conjecture}[theorem]{Conjecture}
+
+%These deal with definition-like environments (i.e., non-italic)
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{remark}[theorem]{Remark}
+
+%your name and date in the header.
+\usepackage[us]{datetime} 
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\lhead{}
+\chead{MATH 3210\\ Homework 5}
+\rhead{ Your name \\ date}
+\lfoot{}
+\cfoot{}
+\rfoot{\thepage}
+\renewcommand{\headrulewidth}{0 pt}
+\renewcommand{\footrulewidth}{0 pt}
+\begin{document}
+\begin{enumerate}[1.]
+\item Let $C_0^1[0,1]=\{f:[0,1]\rightarrow \mathbb{C} \mid f\text{ is continuously differentiable and } f(0)=0=f(1)\}$, i.e. it is the vector-space of functions with a continuous derivative which are zero at the end points. Let 
+\[\langle f, g\rangle =\int_{0}^1f(x)\bar{g}(x)\, dx\]
+be an inner-product on this space. Define a map $T: C_0^1[0,1]\rightarrow C[0,1]$ by $T(f)=-i\frac{df}{dx}$. 
+Show that, 
+\[\langle Tf, g\rangle =\langle f, Tg\rangle.\]
+{\bf Hint: }Use integration by parts.
+
+\item Show that a normal operator is self adjoint if and only if its eigenvalues are real. 
+
+\item Let $U\in \mathcal{L}(V)$ be called a unitary operator if $U^*U=UU^*=I$. 
+\begin{enumerate}
+\item Show that for all $v\in V$ that $\|v\|=\|Uv\|$. 
+\item Show that if $\lambda$ is an eigenvalue of $U$ then $|\lambda|=1$. 
+\item Show that if $\{e_1, e_2, \ldots, e_n\}$ is an orthonormal basis then $\{Ue_1, Ue_2, \ldots, Ue_n\}$ is an orthonormal basis.
+\item Show that if  $S$ is an operator such that if $\{e_1,\ldots, e_n\}$ is an orthonormal basis then $\{Se_1, \ldots, Se_n\}$ is an orthonormal basis then $S$ is unitary.
+\end{enumerate}
+
+\item Call a matrix $U$ unitary if the operator $S(x)=Ux$ is a unitary operator. Let $T:\mathbb{C}^n\rightarrow \mathbb{C}^n$ be a normal operator given by $T(x)=Ax$ where $A$ is an $n\times n$ matrix ($A$ is the matrix for $T$ with respect to the standard basis.) Show that there exists a unitary matrix $U$ such that $U^{-1}AU=D$ where $D$ is a diagonal matrix. 
+
+\end{enumerate}
+
+
+\end{document}
+
+
+
+
+
+
+
+
