@@ -6,7 +6,6 @@ import matplotlib as mpl
 import matplotlib.pyplot as plt
 
 
-
 #intial conditions
 t0=0
 y0=1
