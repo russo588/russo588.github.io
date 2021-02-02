@@ -1,0 +1,48 @@
+\documentclass{article}
+\usepackage[margin=1in]{geometry}
+\usepackage[utf8]{inputenc}
+\usepackage{amsthm, amsmath, amssymb, amsfonts}
+\usepackage{enumerate}
+\usepackage{graphicx}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\lhead{{\bf Homework 0}}
+\rhead{{\bf Your name here}}
+\begin{document}
+\begin{enumerate}[1)]
+\item Let $f:X\rightarrow Y$ be a function and let $A$ and $B$ be subsets of $X$. Show that 
+\[f(A\cup B)=f(A)\cup f(B).\]
+
+We will show that $f(A\cup B)\subseteq f(A)\cup f(B)$ and $f(A)\cup f(B)\subseteq f(A\cup B)$.
+
+\begin{proof}
+Let $y\in f(A\cup B)$ be arbitrary. If $y\in f(A\cup B)$ then $y=f(x)$ where $x\in A\cup B$. If $x\in A$ then $y\in f(A)$ and by definition $y\in f(A)\cup f(B)$. If $x\in B$ then similarly $y\in f(B)$ and $y\in f(A)\cup f(B)$. Since $y\in f(A\cup B)$ was arbitrary, this shows that $f(A\cup B)\subseteq f(A)\cup f(B)$. 
+
+Conversely, let $y\in f(A)\cup f(B)$ be arbitrary. Suppose $y\in f(A)$, then $y=f(x)$ where $x\in A$. Since $A\subseteq A\cup B$ we have that $x\in A\cup B$. Therefore, $y=f(x)$ with $x\in A\cup B$, i.e. $y\in f(A\cup B)$. Similarly, if $y\in f(B)$, since $B\subseteq A\cup B$ we have that $y\in f(A\cup B)$. Since $y\in f(A)\cup f(B)$ was arbitrary, this shows that $f(A)\cup f(B)\subseteq f(A\cup B)$. 
+
+Since $f(A)\cup f(B)\subseteq f(A\cup B)$ and $f(A\cup B)\subseteq f(A)\cup f(B)$ we have that $f(A\cup B)=f(A)\cup f(B)$.
+\end{proof}
+
+
+\item Let $g$ be a differentiable function on $X$ and suppose that $g(x_0)\neq 0$ for $x_0\in X$. Show that 
+\[(1/g)'(x_0)=-\frac{g'(x_0)}{(g(x_0))^2}.\]
+
+\begin{proof} By the definition of the derivative, we will show that 
+\[\lim_{x\rightarrow x_0} \frac{(1/g)(x)-(1/g)(x_0)}{x-x_0}= \frac{-g'(x_0)}{(g(x_0))^2}.\]
+Note, 
+\begin{align}
+    \lim_{x\rightarrow x_0} \frac{(1/g)(x)-(1/g)(x_0)}{x-x_0}
+    &=\lim_{x\rightarrow x_0}\frac{\frac{1}{g(x)}-\frac{1}{g(x_0)}}{x-x_0}\label{line 1} \\
+    &=\lim_{x\rightarrow x_0}\frac{g(x_0)-g(x)}{(x-x_0)g(x)g(x_0)}\label{line 2}\\
+    &=\lim_{x\rightarrow x_0}-\left(\frac{g(x)-g(x_0)}{x-x_0}\right)\cdot \lim_{x\rightarrow x_0}\frac{1}{g(x)g(x_0)}\label{line 3}\\
+    &=\frac{-g'(x_0)}{(g(x_0))^2}\label{line 4}.
+\end{align}
+
+Equality of lines (\ref{line 1}) thru (\ref{line 3}) follow from the limit laws. Since $g(x)$ is continuous and $g(x_0)\neq 0$ equality of lines (\ref{line 3}) and (\ref{line 4}) is evident. 
+
+
+
+\end{proof}
+
+\end{enumerate}
+\end{document}
