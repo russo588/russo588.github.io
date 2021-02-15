@@ -1,0 +1,91 @@
+\documentclass[12pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{amsmath}
+\usepackage{enumerate}
+
+%Here are some user-defined notations
+\newcommand{\RR}{\mathbf R}  %bold R
+\newcommand{\CC}{\mathbf C}  %bold C
+\newcommand{\ZZ}{\mathbf Z}   %bold Z
+\newcommand{\QQ}{\mathbf Q}   %bold Q
+\newcommand{\rr}{\mathbb R}     %blackboard bold R
+\newcommand{\cc}{\mathbb C}    %blackboard bold R
+\newcommand{\zz}{\mathbb Z}    %blackboard bold R
+\newcommand{\qq}{\mathbb Q}   %blackboard bold Q
+\newcommand{\calM}{\mathcal M}  %calligraphic M
+\newcommand{\sm}{\setminus} 
+\newcommand{\bfa}{\mathbf a}
+\newcommand{\bfb}{\mathbf b}
+\newcommand{\bfc}{\mathbf c}
+
+
+
+
+%Here are some user-defined operators
+\newcommand{\re}{\operatorname {Re}}
+\newcommand{\im}{\operatorname {Im}}
+\newcommand{\lub}{\operatorname {lub}}
+\newcommand{\glb}{\operatorname {glb}}
+
+
+%These commands deal with theorem-like environments (i.e., italic)
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{conjecture}[theorem]{Conjecture}
+
+%These deal with definition-like environments (i.e., non-italic)
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{remark}[theorem]{Remark}
+
+%your name and date in the header.
+\usepackage[us]{datetime} 
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\lhead{Homework 1}
+\chead{MTH 354}
+\rhead{Your name here}
+\lfoot{\ }
+\cfoot{\ }
+\rfoot{\thepage}
+%\renewcommand{\headrulewidth}{0 pt}
+%\renewcommand{\footrulewidth}{0 pt}
+\begin{document}
+\begin{enumerate}[1.]
+\item In this question I will guide you through the proof of the following proposition:
+\begin{proposition}
+ If $y\geq 0$ and $n\in \mathbb{N}^+$ then there is a unique non-negative real number $s$ such that $s^n=y$. In particular, the function $f:[0,\infty)\rightarrow [0,\infty)$ defined by $f(x)=x^n$ is one to one and onto. 
+\end{proposition}
+\begin{enumerate}[a)]
+\item Prove the following two lemmas that are used throughout the rest of the proof.
+\begin{lemma}
+If $x<y$ then $xz<yz$ for all $x,y,z\in \mathbb{R}^+$
+\end{lemma}
+\begin{lemma}
+If $0<x<1$ then $x^n<x$ for all $n\in \mathbb{N}^+$ and if $x>1$ then $x^n>x$ for all $n\in \mathbb{N}^+$.\\
+\end{lemma}
+\item Let $S=\{x\in \mathbb{R}: x>0 \text{ and }x^n<y\}$, $\alpha=\min\{1,y\}$ and $\beta=\max\{1,y\}$. Show that if $x<\alpha$ then $x\in S$ and that $\beta$ is an upper-bound for $S$. From this information show that $S$ has a least upper bound, call it $s$. We will show that this is the root for $y$.
+\ \\
+\item Show that if $t>0$ and $y<t^n$, then $t$ is an upper bound for $S$. 
+\ \\
+\item Show that if $t>0$ and $y<t^n$, then there is a $v\in (0,t)$ such that $y<v^n$. Hence, $v<t$ and $v$ is an upper bound for $S$. In particular, $t$ is not the least upper bound for $S$ and therefore $s^n\leq y$. \\
+{\noindent\bf Hint:} Suppose for the sake of contradiction that $v^n<y$ for all $v\in (0,t)$. Thus, $v^n<y<t^n$ and hence $0<|t^n-y|<|t^n-v^n|$ (why?). Then conclude that this is a contradiction based on the fact that for a fixed $t$ and $v\in (0,t)$ 
+\[|t^n-v^n|\leq |t-v|\cdot M \text{ for some }M\in\mathbb{R}^+\]
+(state why this is contradiction). 
+\ \\
+\item Show that if $t>0$ and $t^n<y$ then there exists a $v$ such that $0<t<v$ and $v^n<y$. Use this to conclude that $t$ is not an upper bound for $S$ and thus $s^n\geq y$. In combination with the above parts conclude that $s^n=y$
+\end{enumerate}
+ \end{enumerate}
+
+
+\end{document}
+
+
